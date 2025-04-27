@@ -1,0 +1,21 @@
+- Date
+- Variation
+- Registrar
+- Notice
+- Default
+- Offence
+- Company
+- Officer
+- Conviction
+- Fine
+- Standard Scale
+- Share Capital
+- Limited Company
+- Private Company
+- Special Resolution
+- Solvency Statement
+- Court
+- Redeemable Shares
+- Acquisition
+- Parent Undertaking
+- Members

@@ -1,0 +1,14 @@
+- Goods and Services
+- Agent
+- Principal
+- Performance Obligation
+- Contract
+- Customer
+- Control
+- Asset Transfer
+- Service Right
+- Inventory Risk
+- Price Discretion
+- Revenue Recognition
+- Consideration
+- Performance Obligation Satisfaction

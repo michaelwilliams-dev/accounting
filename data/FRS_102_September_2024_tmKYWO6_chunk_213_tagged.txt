@@ -1,0 +1,31 @@
+- December 20X5
+- Opening balance
+- Interest on the loan
+- Interest rate swap fair value movement
+- Closing balance
+- 31 December 20X6
+- Settlement receipt interest rate swap
+- Reclassification from cash flow hedge reserve
+- 31 December 20X7
+- Settlement payment interest rate swap
+- Key to table
+- Hedge accounting
+- Net investment in a foreign operation
+- Foreign operation
+- Foreign currency risk
+- Foreign currency loan
+- 1 April 20X5
+- Functional currency CU
+- Investment in overseas subsidiary
+- Functional currency FC
+- Loan with a third party
+- Effects of interest
+- Transaction costs
+- Carrying amount of the investment
+- Financial year ends on 31 December
+- Qualifying conditions for hedge accounting
+- Applicable exchange rates
+- Foreign exchange gains and losses
+- Retranslation differences on the foreign investment
+- Other comprehensive income
+- Section 30.

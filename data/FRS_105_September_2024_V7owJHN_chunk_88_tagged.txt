@@ -1,0 +1,20 @@
+- Purchase
+- Sale
+- Transfer
+- Cancellation of treasury shares
+- Distributions to owners
+- Equity reserves
+- Disclosures
+- Irish micro-entity
+- Dividends
+- Financial Statements
+- Revenue from Contracts with Customers
+- Lease agreements
+- Financial instruments
+- Contractual rights or obligations
+- Investments in Joint Ventures
+- Non-monetary exchanges
+- Revenue recognition model
+- Goods or services
+- Consideration
+- Contract identification.

@@ -1,0 +1,1 @@
+Accounting, Transaction Date, Settlement Date, Debtor, Spot Rate, Forward Rate, FX Gain, Loss on Derivative, FRS 102, SSAP 20, Derivative Liability, Cash, Sales, Fair Value, Measurement, Recognition, Contracted Rate

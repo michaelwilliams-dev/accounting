@@ -1,0 +1,27 @@
+- Document Type
+- Root Node
+- Default Namespace
+- Submission Request
+- Submission Acknowledgment
+- Message Source/Destination
+- Transaction Engine
+- Portal/Client Application
+- Submission Poll
+- Submission Response
+- Submission Error
+- CorrelationID
+- GovTalkMessage
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Class
+- Qualifier
+- Function
+- TransactionID
+- ResponseEndPoint
+- PollInterval
+- GatewayTimestamp
+- SenderDetails
+- GovTalkDetails
+- Keys
+- Body

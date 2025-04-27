@@ -1,0 +1,29 @@
+- Sole Trader
+- Partnership UTR
+- COTAX
+- Corporation Tax Reference
+- Limited Company
+- Employment Contracts
+- Employee Information
+- FPS
+- National Insurance Number
+- Title
+- Surname
+- Family Name
+- Forename
+- Given Name
+- Second Forename
+- Initials
+- Date of Birth
+- Gender
+- Address
+- UK Postcode
+- Foreign Country
+- Residence
+- Payroll ID
+- Payroll ID Changed Indicator
+- Tax Year
+- Duplicate Record
+- Payroll Reporting
+- Channel Islands
+- Isle of Man.

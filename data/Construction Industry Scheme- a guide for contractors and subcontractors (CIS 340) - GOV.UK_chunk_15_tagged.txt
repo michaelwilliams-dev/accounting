@@ -1,0 +1,13 @@
+- Future payments
+- Subcontractor
+- Contractor
+- Re-engagement
+- Last payment
+- Payment return
+- Tax years
+- Gross payment
+- Verification
+- Deduction
+- Standard rate of deduction
+- Group companies
+- Verification within tax years

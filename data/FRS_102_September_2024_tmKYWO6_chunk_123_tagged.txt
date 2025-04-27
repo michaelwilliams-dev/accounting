@@ -1,0 +1,31 @@
+- Demand deposits
+- Bank
+- Investment entity
+- Rents
+- Property owners
+- Cash receipts
+- Cash payments
+- Advances
+- Repayment
+- Principal amounts
+- Credit card customers
+- Purchase of investments
+- Sale of investments
+- Short-term borrowings
+- Maturity period
+- Financial institutions
+- Net basis reporting
+- Insurance contracts
+- Mutual life assurance companies
+- Long-term business
+- Cash transferred
+- Obligations
+- Foreign currency cash flows
+- Functional currency
+- Exchange rate
+- Foreign subsidiary
+- Group's presentation currency
+- Unrealised gains
+- Unrealised losses
+- Foreign currency exchange rates
+- Cash equivalents.

@@ -1,0 +1,1 @@
+["default", "offence", "summary conviction", "fine", "standard scale", "appointment of proxy", "traded company", "member", "identity", "voting instructions", "authority", "appointment validity", "company's articles", "meeting", "adjourned meeting", "poll", "Resolutions and meetings", "Chapter"]

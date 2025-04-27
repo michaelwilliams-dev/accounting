@@ -1,0 +1,14 @@
+- Contract
+- Customer
+- Supplier
+- Asset
+- Substitution Right
+- Evaluation
+- Inception Date
+- Future Events
+- Physically Distinct Asset
+- Economic Benefits
+- Subleasing
+- Primary Output
+- By-products
+- Cash Flows.

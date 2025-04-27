@@ -1,0 +1,21 @@
+- Director
+- Company
+- Annual turnover
+- Fine
+- False information
+- Gross payment status
+- Construction Industry Scheme (CIS)
+- Sole trader
+- Partnership
+- Limited company
+- Tax
+- Self Assessment tax return
+- Corporation Tax return
+- HM Revenue and Customs (HMRC)
+- Annual review
+- Tax returns
+- Tax payments
+- Shareholders
+- Late payments
+- Contact HMRC
+- Review failure.

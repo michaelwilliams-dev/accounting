@@ -1,0 +1,1 @@
+Income, Deductions, Contractors, CIS Deductions, HM Revenue and Customs, Tax, National Insurance, Tax Year, Tax Refund, Limited Companies, Gross Payment Status, Corporation Tax Return, Monthly Payroll Scheme, Penalty, Full Payment Submission, Employer Payment Summary, PAYE Tax, Zero Balance, Carry Forward, Evidence, Appeal, Decision.

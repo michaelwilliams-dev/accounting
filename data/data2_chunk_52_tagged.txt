@@ -1,0 +1,1 @@
+["Discharge Order", "Regulator", "Director", "Notice", "Appeal", "High Court", "Court of Session", "Notification", "Registrar of Companies", "Companies Act 2006", "Appointment of Manager", "Community Interest Company", "Regulator's Staff", "Company's Directors", "Manager's Functions"]

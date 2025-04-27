@@ -1,0 +1,21 @@
+- Guidance
+- Payroll information
+- HMRC
+- Full Payment Submission (FPS)
+- Employer Payment Summary (EPS)
+- PAYE
+- HM Revenue & Customs
+- Employer running payroll
+- Employee’s pay
+- Payrolled benefits
+- Deductions
+- Payday
+- Employer information
+- HMRC office number
+- Employer PAYE reference
+- Accounts Office reference
+- Tax year
+- Employer’s Contracted Out Number (ECON)
+- SA UTR
+- Unique Taxpayer Reference (UTR)
+- Self Assessment (SA)

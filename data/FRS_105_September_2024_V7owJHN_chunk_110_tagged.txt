@@ -1,0 +1,19 @@
+- Employee Benefits
+- Share-based Payment
+- Short-term Employee Benefits
+- Post-employment Benefits
+- Long-term Employee Benefits
+- Termination Benefits
+- Micro-entity
+- Liability
+- Asset
+- Expense
+- Inventories
+- Property, Plant and Equipment
+- Employee Benefit Fund
+- Voluntary Redundancy
+- Reporting Period
+- Service Rendered
+- Cash Refund
+- Future Payments
+- Normal Retirement Date

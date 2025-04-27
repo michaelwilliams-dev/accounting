@@ -1,0 +1,18 @@
+- Financial Reporting Framework
+- First-time Adopter
+- Asset
+- Liability
+- Hedging Relationship
+- Cash Flow Hedge
+- Equity
+- Net Investment
+- Foreign Operation
+- Profit or Loss
+- Hedging Instrument
+- Hedged Item
+- Financial Statements
+- Accounting Policy
+- IAS 39 Financial Instruments: Recognition and Measurement
+- IFRS 9 Financial Instruments
+- Transitional Provisions
+- IFRS 1 First-time Adoption of International Financial Reporting Standards

@@ -1,0 +1,25 @@
+- Expectation
+- Parameters
+- Population analysis
+- Auditors
+- Debtors
+- Cash
+- Revenue
+- Analytical tool
+- Outliers
+- Transactions
+- Gift cards
+- Business operations
+- Exceptions
+- Substantive testing
+- Sampling methodology
+- ISA (UK) 530 Audit Sampling
+- Automated Tools and Techniques
+- ISA (UK) 315 (Revised July 2020)
+- Audit data analytics (ADA)
+- AQR’s 2020 review
+- IAASB Data Analytics Working Group’s Request for Input dated September 2016
+- Technology
+- Risk assessment procedures
+- Audit evidence
+- Technological resources.

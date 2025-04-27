@@ -1,0 +1,17 @@
+- Profit or Loss
+- Liability Adjustment
+- Non-financial Asset
+- Hedging Loss
+- Forward Currency Contract
+- Settlement
+- Purchase
+- Spot Rate
+- Accounting Entries
+- Cash Flow Hedge Accounting
+- Interest Rate Risk
+- Floating Rate Loan
+- Interest Rate Swap
+- Fixed Rate
+- Loan Repayment
+- Notional Amount
+- IBOR Rates

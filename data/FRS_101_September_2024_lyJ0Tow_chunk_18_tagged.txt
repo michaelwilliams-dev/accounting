@@ -1,0 +1,1 @@
+["IAS 20", "asset carrying amount", "deferred income", "profit or loss", "useful life of the asset", "cash flow", "statement of cash flows", "statement of financial position", "grants related to income", "Other income", "IAS 37 Provisions", "Contingent Liabilities", "Contingent Assets", "disclosure", "dispute"]

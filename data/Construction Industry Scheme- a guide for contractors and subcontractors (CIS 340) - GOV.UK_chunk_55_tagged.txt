@@ -1,0 +1,1 @@
+#Subcontractors, #Deductions, #StandardRate, #LabourOnly, #Contractor, #MonthlyReturn, #SupplyAndFix, #Expenses, #VAT, #Materials, #AccommodationCosts, #FuelCosts, #InvoiceAmount, #CalculationOfDeduction, #NetPayment

@@ -1,0 +1,1 @@
+Interest rate, Fair value, Hypothetical swap, Hedging relationship, Actual 3-month IBOR, Actual 6-month IBOR, Interest payments, Interest rate swap, Hedging instrument, Swap settlement receipts, Hedged item, Cash flow hedge reserve, Cumulative gain, Cumulative change, Other comprehensive income, Fixed interest element, Variable rate component.

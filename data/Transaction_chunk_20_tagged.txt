@@ -1,0 +1,42 @@
+- MessageDetails
+- SenderDetails
+- Header
+- GovTalkDetails
+- Keys
+- Body
+- StatusReport
+- SenderID
+- StartTimeStamp
+- EndTimeStamp
+- StatusRecord
+- TimeStamp
+- CorrelationID
+- TransactionID
+- Identifiers
+- Identifier
+- UTR
+- Status
+- SUBMISSION_RESPONSE
+- GovTalkMessage
+- Error-Return Codes
+- Transaction Engine
+- Major Errors
+- Error Code
+- Description
+- System failure
+- XML document
+- GovTalk schema
+- Errors in Submission
+- Authentication Failure
+- StartDate
+- StartTime
+- EndDate
+- EndTime
+- Method
+- Body
+- User credentials
+- MD5
+- Transaction Engine Services
+- Record
+- Correlation ID
+- Submission

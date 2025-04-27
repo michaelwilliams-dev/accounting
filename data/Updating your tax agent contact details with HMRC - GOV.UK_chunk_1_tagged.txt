@@ -1,0 +1,27 @@
+- Guidance
+- Updating contact details
+- Tax agent
+- HMRC
+- Anti-money laundering supervision details
+- HM Revenue & Customs
+- Business name
+- Business address
+- Phone number
+- Email
+- Legal entity
+- Agent services account
+- VAT services
+- VAT Mini One Stop Shop
+- VAT EU Refunds for Agents
+- Admin user
+- Director
+- Company secretary
+- Sole trader
+- Proprietor
+- Partner
+- Self Assessment
+- Corporation Tax agent codes
+- Agent Compliance Team
+- Corporation Tax agent code details
+- About Your Firm section
+- Online account

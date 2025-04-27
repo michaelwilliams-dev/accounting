@@ -1,0 +1,1 @@
+#FairValueMeasurement, #AssetValuation, #CostsToSell, #SaleRestrictions, #ValueInUse, #FutureCashFlows, #DiscountRate, #RiskFreeRate, #MarketRisk, #Illiquidity, #CashInflows, #CashOutflows

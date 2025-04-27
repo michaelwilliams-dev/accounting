@@ -1,0 +1,1 @@
+["proxy", "relevant interest", "restrictions", "offence", "associated right", "agreement", "restrictions notice", "shares", "company", "officer", "conviction", "indictment", "fine", "summary conviction", "England and Wales", "Scotland", "Northern Ireland", "statutory maximum", "direction", "relaxation of restrictions", "court", "order"]

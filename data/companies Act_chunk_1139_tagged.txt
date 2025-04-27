@@ -1,0 +1,15 @@
+- Payment
+- Transfer
+- Company
+- Shares
+- Securities
+- Allotment
+- Registered shares
+- Instrument of transfer
+- Holder of shares
+- Offeror
+- Warrants
+- Trust
+- Section 982
+- Section 981(9)
+- Bank account

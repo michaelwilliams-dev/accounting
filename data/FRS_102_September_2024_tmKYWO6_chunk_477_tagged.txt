@@ -1,0 +1,41 @@
+#Rate
+#Estimated Future Cash Payments
+#Financial Instrument
+#Carrying Amount
+#Financial Asset
+#Financial Liability
+#Employee Benefits
+#Service Rendered
+#Entity Combination
+#Business Combination
+#Equity
+#Residual Interest
+#Assets
+#Liabilities
+#Equity-Settled Share-Based Payment Transaction
+#Goods or Services
+#Equity Instruments
+#Shares
+#Share Options
+#Errors
+#Financial Statements
+#Prior Periods
+#Reliable Information
+#EU-Adopted IFRS
+#IFRS Accounting Standards
+#European Union
+#EU Regulation 1606/2002
+#Expenses
+#Decreases in Assets
+#Increases in Liabilities
+#Equity Investors
+#Fair Value
+#Asset
+#Liability
+#Market Participants
+#Measurement Date
+#FRS
+#Section 2A Fair Value Measurement
+#Finance Lease
+#Ownership of an Asset
+#Title Transfer

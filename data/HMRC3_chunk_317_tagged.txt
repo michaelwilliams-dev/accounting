@@ -1,0 +1,22 @@
+- Assets
+- Liabilities
+- Company
+- Goods
+- Stock
+- Financial year
+- Buyers
+- Sellers
+- Parent companies
+- Subsidiary undertaking
+- Accounting records
+- Companies Act
+- UK-adopted International Accounting Standards
+- Registered office address
+- Inspection
+- Financial position
+- Private companies
+- Public companies
+- Individual accounts
+- Group accounts
+- Dormant company
+- Subsidiary

@@ -1,0 +1,1 @@
+["hedging instrument", "effective hedge", "other comprehensive income", "hedge ineffectiveness", "profit or loss", "cash flow hedge reserve", "non-financial asset", "non-financial liability", "fair value hedge accounting", "initial cost", "carrying amount", "interest income", "interest expense", "forecast sale", "net investment", "foreign operation"]

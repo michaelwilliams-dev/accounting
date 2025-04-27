@@ -1,0 +1,1 @@
+#InvestmentProperty, #MicroEntity, #GoodsSale, #ServicesSale, #PaymentDeferral, #TransactionPrice, #CreditTerms, #TransactionCosts, #FinancialAsset, #FinancialLiability, #ExpenseRecognition, #ProfitOrLoss, #BankLoan, #ArrangementFees, #Investment, #SharesPurchase, #LegalFees, #ForwardForeignCurrencyExchangeContract.

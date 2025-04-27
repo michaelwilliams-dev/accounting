@@ -1,0 +1,15 @@
+- Consideration amount
+- Goods or services transfer
+- Agent role
+- Returns and refunds
+- Warranties and related obligations
+- Performance obligations
+- Revenue recognition methods
+- Unfulfilled performance obligations
+- Contract duration
+- Assets recognized from contract costs
+- Amortization and impairment losses
+- Time value of money
+- Costs to obtain a contract
+- Contract setup costs
+- Pre-contract costs

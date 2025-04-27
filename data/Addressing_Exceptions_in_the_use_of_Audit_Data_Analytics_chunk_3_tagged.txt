@@ -1,0 +1,12 @@
+- Population analysis
+- ADA (Analytical Data Auditing)
+- Outliers
+- Audit procedures
+- Terminology
+- Exceptions
+- Tool scoping
+- Poorly defined parameters
+- Poor quality data
+- ISA (UK) 520 Analytical Procedures
+- Misstatement
+- Audit evidence

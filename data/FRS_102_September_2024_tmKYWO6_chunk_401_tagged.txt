@@ -1,0 +1,23 @@
+- Economic benefits
+- Property
+- Current tax
+- Deferred tax
+- Tax assets
+- Tax liabilities
+- Uncertain tax treatments
+- Taxation authority
+- Taxable profit
+- Tax loss
+- Tax bases
+- Unused tax losses
+- Unused tax credits
+- Tax rates
+- Income tax filings
+- Charitable entity
+- HMRC
+- Tax reliefs
+- Charitable purposes
+- Most likely amount
+- Expected value
+- Probability-weighted amounts
+- Change in relevant

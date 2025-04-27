@@ -1,0 +1,1 @@
+#allowances, #SecondHandElectricCar, #MainRateAllowances, #CO2Emissions, #SpecialRateAllowances, #CarsBought, #NewAndUnused, #FirstYearAllowances, #Claim, #Over50g/km, #Over110g/km, #Over130g/km, #Over160g/km, #LessThan50g/km, #LessThan75g/km, #LessThan95g/km, #LessThan110g/km, #LessThan160g/km, #April2009, #April2013, #April2015, #April2018, #April2021.

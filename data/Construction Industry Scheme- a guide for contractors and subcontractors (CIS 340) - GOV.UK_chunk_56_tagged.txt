@@ -1,0 +1,11 @@
+- Subcontractor
+- Contractor
+- Cost of materials
+- Deduction
+- Accounts office
+- Monthly return
+- VAT
+- Labour charge
+- Invoice amount
+- Net payment
+- Higher rate deduction

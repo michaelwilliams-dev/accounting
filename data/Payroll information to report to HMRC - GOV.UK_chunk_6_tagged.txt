@@ -1,0 +1,17 @@
+- Payment frequency
+- Tax month number
+- Earnings periods
+- Bacs hash code
+- Service User Number (SUN)
+- Aggregated earnings indicator
+- National Insurance
+- Late reporting reason
+- HMRC code
+- Foreign tax
+- PAYE
+- Payroll report correction
+- Employee payment
+- Expense or benefit payment
+- National Insurance contributions
+- Income Tax
+- Work-based payment

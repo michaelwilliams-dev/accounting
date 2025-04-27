@@ -1,0 +1,1 @@
+#FinancialEffect, #Uncertainty, #FutureEvents, #FRS102, #Insurer, #Judgements, #Estimates, #Liabilities, #IG2.26, #Claims, #UnexpiredRisk, #Policies, #ReportingDate, #InvestmentReturn, #UnearnedPremiums, #DeferredAcquisitionCosts, #IG2.27, #ProfitOrLoss, #EqualisationReserves, #IG2.28, #Disclosure, #PRA_Rulebook, #FinancialStatements, #TechnicalProvisions, #Equity.

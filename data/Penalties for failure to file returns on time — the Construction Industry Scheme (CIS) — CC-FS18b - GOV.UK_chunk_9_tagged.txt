@@ -1,0 +1,17 @@
+- Liability
+- Payments
+- Tax
+- Penalty
+- Officer
+- Behaviour
+- Late return
+- Factsheet
+- Disclosure
+- Subcontractors
+- Gross payments
+- Deliberate behaviour
+- Concealed behaviour
+- Unprompted disclosure
+- Prompted disclosure
+- Increased penalty
+- Minimum penalty percentage.

@@ -1,0 +1,22 @@
+- Tax
+- National Insurance contributions
+- Salary payment
+- Student Loan Plan type
+- Student Loans Company
+- Student loan start notice (SL1)
+- Year to date totals
+- Taxable pay to date
+- Benefits
+- Payroll
+- Total tax to date
+- Student Loan repayment
+- Postgraduate Loan repayment
+- Employment
+- Pension deductions
+- Employee pension contributions
+- Net pay arrangements
+- Statutory maternity pay (SMP)
+- Statutory paternity pay (SPP)
+- Statutory adoption pay (SAP)
+- Statutory Shared Parental Pay (ShPP)
+- Partner surname or family name.

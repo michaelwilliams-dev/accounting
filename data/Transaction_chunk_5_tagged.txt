@@ -1,0 +1,28 @@
+- SUBMISSION_REQUEST
+- Message Source/Destination
+- Portal/Client application
+- Transaction Engine Processing
+- HMRC back-end system
+- GovTalkMessage Body
+- XML namespace
+- SenderDetails
+- Authentication Level
+- Level 1: SenderDetails User ID/password
+- enrolment
+- Keys
+- Message Structure
+- GovTalkMessage
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Class
+- Qualifier
+- Function
+- TransactionID
+- SUBMISSION_ERROR
+- SUBMISSION_RESPONSE
+- Portal/client application
+- Transaction Engine
+- AuditID
+- CorrelationID
+- ResponseEndPoint

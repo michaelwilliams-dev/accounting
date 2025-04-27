@@ -1,0 +1,22 @@
+- Discovering patterns
+- Analysing patterns
+- Deviations
+- Inconsistencies
+- Identifying anomalies
+- Extracting information
+- Data analysis
+- Modelling
+- Visualisation
+- Audit planning
+- Audit performance
+- ADA
+- Risk assessment
+- Tests of controls
+- Substantive procedures
+- Concluding audit procedures
+- Technological resources
+- ISA 220 (Revised 2020)
+- Audit evidence
+- Audit process management
+- Artificial Intelligence (AI)
+- Machine Learning (ML)

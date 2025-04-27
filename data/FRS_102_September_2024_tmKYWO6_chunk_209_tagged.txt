@@ -1,0 +1,27 @@
+- Swap reset
+- Fixed annually
+- 31 December
+- Expected IBOR rates
+- Loan and swap interest rates
+- Interest rate variability
+- Hedging
+- 3-month IBOR
+- 6-month IBOR
+- Interest rate swap
+- Ineffectiveness
+- Cash flows
+- Fair value
+- Counterparty credit risk
+- Transaction costs
+- Financial year end
+- Hedge accounting
+- Qualifying conditions
+- Profit or loss
+- Other comprehensive income
+- Applicable IBOR rates
+- Interest payments
+- Swap settlements
+- Hypothetical swap
+- Variable interest rate payments
+- Fixed to floating interest rate swap
+- Fixed rate of 4.3%

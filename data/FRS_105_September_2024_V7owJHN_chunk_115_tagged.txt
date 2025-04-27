@@ -1,0 +1,1 @@
+#Obligation, #ReportingDate, #DiscountRate, #InterestExpense, #ProfitOrLoss, #TerminationBenefits, #MicroEntity, #Legislation, #ContractualAgreements, #ConstructiveObligation, #BusinessPractice, #EmployeeTermination, #ExpenseRecognition, #Liability, #VoluntaryRedundancy, #FormalPlan, #Expenditure, #Measurement, #PresentValue, #Disclosures

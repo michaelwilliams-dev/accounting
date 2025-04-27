@@ -1,0 +1,13 @@
+- Financial asset
+- Financial liability
+- Contractual cash flows
+- Contractual terms
+- Initial recognition
+- Financial instrument
+- Interest rate benchmark
+- Alternative benchmark rate
+- Fallback clause
+- Interest rate benchmark reform
+- Economically equivalent basis
+- Change in contractual cash flows
+- Practical expedient.

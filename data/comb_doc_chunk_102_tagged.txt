@@ -1,0 +1,38 @@
+- Repurchase of debenture loan
+- Expenses paid in connection with share issue
+- Financing
+- Increase in cash
+- Illustrative Cash Flow Statement
+- FRS 102 The Financial Reporting Standard
+- UK and Republic of Ireland Cash flow statement
+- Profit for the financial year
+- Depreciation of property, plant and equipment
+- Amortisation of intangible assets
+- Profit on disposal of property, plant and equipment
+- Interest paid
+- Interest received
+- Taxation
+- Decrease/(increase) in trade and other receivables
+- Decrease/(increase) in inventories
+- Increase/(decrease) in trade payables
+- Cash from operations
+- Income taxes paid
+- Net cash generated from operating activities
+- Cash flows from investing activities
+- Proceeds from sale of equipment
+- Purchases of property, plant and equipment
+- Purchases of intangible assets
+- Net cash from investing activities
+- Cash flows from financing activities
+- Issue of ordinary share capital
+- Repayment of borrowings
+- Dividends paid
+- Net cash used in financing activities
+- Net increase/(decrease) in cash and cash equivalents
+- Cash and cash equivalents at beginning of year
+- Cash and cash equivalents at end of year
+- FRS 1 Cash flow statements (revised 1996)
+- Notes to the financial statements
+- Reconciliation of operating profit to net cash inflow from operating activities
+- Analysis of changes in net debt
+- Reconciliation of net cash flow to movement in

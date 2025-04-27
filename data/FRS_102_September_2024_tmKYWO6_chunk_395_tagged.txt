@@ -1,0 +1,32 @@
+- Actuarial valuation
+- Reporting date
+- Defined benefit obligation
+- Plan assets
+- Reimbursement right
+- Employee service
+- Profit or loss
+- Interest income
+- Interest expense
+- Remeasurement
+- Actuarial gains and losses
+- Plan introductions
+- Plan changes
+- Plan curtailments
+- Plan settlements
+- Contributions
+- Payments
+- Foreign exchange rates
+- Business combinations
+- Business disposals
+- Plan assets
+- Equity instruments
+- Debt instruments
+- Property
+- Entity's own financial instruments
+- Return on plan assets
+- Actuarial assumptions
+- Discount rates
+- Salary increases
+- Medical cost trend rates
+- Plan surplus
+- Prior periods.

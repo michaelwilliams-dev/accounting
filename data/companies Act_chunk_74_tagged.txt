@@ -1,0 +1,1 @@
+["email address", "registrar", "company", "offence", "conviction", "fine", "Scotland", "Northern Ireland", "standard scale", "Change of registered email address", "notice", "Part 7 – Re-registration", "altering a company's status", "Trading disclosures", "Companies Act 2006", "legislation", "future date", "annotations", "Introductory Alteration of status", "re-registration"]

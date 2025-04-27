@@ -1,0 +1,25 @@
+- Identifier Information
+- Backward Compatibility
+- StartDate
+- StartTime
+- EndDate
+- EndTime
+- Sample Data Request
+- DATA_RESPONSE
+- Message Source/Destination
+- Transaction Engine
+- Portal/Client Application
+- DATA_REQUEST
+- Body Elements
+- Submission Error
+- Deleted Resources
+- Time Window
+- Message Structure
+- GovTalkMessage
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Class
+- Qualifier
+- Function
+- TransactionID

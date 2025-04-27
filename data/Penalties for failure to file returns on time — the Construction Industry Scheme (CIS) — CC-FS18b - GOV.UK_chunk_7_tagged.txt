@@ -1,0 +1,1 @@
+['Deliberate behaviour', 'Penalties', 'Concealed behaviour', 'Non-deliberate behaviour', 'Withheld information', 'Unprompted disclosure', 'Prompted disclosure', 'Penalty percentage rate', 'Reduce penalty rate', 'Late return', 'Automatic second further penalty', 'Higher second further penalty', 'Subcontractors', 'Gross payments', 'Liability']
