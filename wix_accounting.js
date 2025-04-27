@@ -141,7 +141,7 @@ $w.onReady(() => {
   
     console.log("📤 Sending payload:", payload);
   
-    fetch("https://police-procedures-new.onrender.com/generate", {
+    fetch("https://accounting-1es7.onrender.com/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
