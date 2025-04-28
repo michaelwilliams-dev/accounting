@@ -349,9 +349,12 @@ def generate_response():
 
         matched_chunks = []
         for i in I[0]:
-            chunk_file = metadata[i]["chunk_file"]
-            with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
-                matched_chunks.append(f.read().strip())
+            if "chunk_file" in metadata[i]:
+                chunk_file = metadata[i]["chunk_file"]
+                with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
+                    matched_chunks.append(f.read().strip())
+            else:
+                print(f"⚠️ Missing 'chunk_file' for index {i} in metadata.")
 
         context = "\n\n---\n\n".join(matched_chunks)
 
