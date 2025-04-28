@@ -94,6 +94,8 @@ def add_markdown_bold(paragraph, text):
 #client = OpenAI(api_key=OPENAI_API_KEY)
 import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
+# ✅ Insert this line immediately after setting the API key:
+client = openai.OpenAI()
 
 app = Flask(__name__)
 CORS(app, origins=["https://www.aivs.uk"])
