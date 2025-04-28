@@ -337,9 +337,9 @@ def generate_response():
     timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
     if faiss_index:
-        query_vector = client.embeddings.create(
-            input=[query_text.replace("\n", " ")],
-            model="text-embedding-3-small"
+        query_vector = openai.Embedding.create(
+           input=[query_text.replace("\n", " ")],
+           model="text-embedding-3-small"
         ).data[0].embedding
 
         D, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
