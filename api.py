@@ -277,7 +277,7 @@ def send_email_mailjet(to_emails, subject, body_text, attachments=[], full_name=
         if role == full_name:
             text_body = f"""To: {full_name},
 
-Please find attached the AI-generated analysis based on your query submitted on {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")}.
+Please find attached the AI-generated analysis based on your query submitted on {datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")}.
 """
         elif role == supervisor_name:
             text_body = f"""To: {supervisor_name},
@@ -405,7 +405,7 @@ def generate_response():
     title_run.font.color.rgb = RGBColor(0, 0, 0)
     
     # ✅ UK-style timestamp
-    uk_time = datetime.now(ZoneInfo("Europe/London"))
+    uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
     generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
     doc.add_paragraph(f"Generated: {generated_datetime}")
 
