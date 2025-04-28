@@ -1,0 +1,20 @@
+- Subcontractor
+- Contractor
+- Payment
+- Deduction
+- Cost of materials
+- Travelling expenses
+- Fuel costs
+- Subsistence
+- Gross amount
+- VAT
+- Monthly returns
+- Construction operations
+- Consumable stores
+- Plant hire
+- Cost of manufacture
+- Prefabrication of materials
+- Evidence
+- Record keeping
+- Contract payment
+- Construction contract

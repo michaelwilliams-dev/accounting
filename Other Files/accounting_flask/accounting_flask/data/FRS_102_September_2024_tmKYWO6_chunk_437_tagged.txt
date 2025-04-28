@@ -1,0 +1,27 @@
+- Operations
+- Liquidity risk
+- Financial institution
+- Maturity analysis
+- Financial liabilities
+- Contractual maturities
+- Undiscounted amounts
+- Derivative financial liabilities
+- Non-derivative financial liabilities
+- Lease liabilities
+- Market risk
+- Sensitivity analysis
+- Interest rate risk
+- Currency risk
+- Other price risk
+- Profit or loss
+- Equity
+- Value-at-risk
+- Risk variables
+- Exchange rates
+- IFRS 9 Financial Instruments
+- Capital
+- Capital management
+- Externally imposed capital requirements
+- Subordinated debt
+- Equity components
+- Cash flow hedges.

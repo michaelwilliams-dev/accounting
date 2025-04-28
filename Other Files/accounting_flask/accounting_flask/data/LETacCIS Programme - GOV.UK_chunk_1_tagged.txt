@@ -1,0 +1,29 @@
+- Guidance
+- LETacCIS Programme
+- Land Environment Tactical Communications and Information Systems
+- Tactical military communications
+- Ministry of Defence
+- Published 1 October 2020
+- Last updated 2 November 2023
+- LETacCIS vision
+- Tactical command
+- Control
+- Communications
+- Computers and intelligence (C4I)
+- War-fighter
+- LETacCIS overview
+- Communication Information Systems (CIS)
+- Army Headquarters
+- Defence Digital’s Tactical Systems (TacSys) Service Executive
+- Industry partners
+- Multi-vendor programme
+- Information management
+- Dismounted Situational Awareness (DSA)
+- Dismounted Close Combat (DCC)
+- MORPHEUS
+- Bowman system
+- TRINITY
+- Wide Area Network (WAN)
+- Defence as a Platform
+- Protected Core Network
+- Bowman ComBAT Infrastructure and Platform 5.6 (BCIP 5.6)

@@ -1,0 +1,37 @@
+- SUBMISSION_RESPONSE message
+- GovTalkMessage Body payload
+- back-end system
+- Transaction Engine
+- XML namespace
+- Body element
+- root XML node
+- SUBMISSION_POLL messages
+- DELETE_REQUEST message
+- transmission error
+- HTTP error
+- Business Response
+- Department
+- Message Structure
+- GovTalkMessage
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Class
+- Qualifier
+- Function
+- TransactionID
+- CorrelationID
+- SUBMISSION_ACKNOWLEDGMENT
+- ResponseEndPoint
+- HTTP end point address
+- PollInterval attribute
+- Transformation
+- GatewayTimestamp
+- SenderDetails
+- GovTalkDetails
+- Keys
+- TargetDetails
+- Organisation
+- business response message
+- HMRC
+- GatewayValidation

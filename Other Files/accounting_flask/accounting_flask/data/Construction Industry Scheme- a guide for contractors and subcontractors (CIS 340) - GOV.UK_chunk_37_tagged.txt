@@ -1,0 +1,26 @@
+- Scheme
+- Gross payment status
+- Deductions
+- Sole proprietor
+- Business
+- Partner
+- Director
+- Contractor
+- Subcontractor verifications
+- Ongoing contracts
+- Business transfer
+- CIS helpline
+- UTR accounts
+- Office reference
+- Employer reference
+- Close company
+- Change of control
+- Share transfer
+- Share issue
+- Shareholders
+- Change of address
+- Business address
+- Registered office address
+- Private address
+- Contra
+- Set-offs

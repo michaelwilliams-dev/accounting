@@ -1,0 +1,23 @@
+- HMRC
+- Deductions
+- Subcontractor's tax
+- National Insurance bill
+- CIS deduction
+- Subcontractor's invoice
+- VAT
+- Consumable stores
+- Fuel used
+- Plant hire
+- Manufacturing materials
+- Prefabricating materials
+- Evidence
+- Receipts
+- CIS percentage rate
+- Net amount
+- Paying subcontractors
+- Third party payment
+- Payment and deduction statement
+- Tax month
+- Inactive scheme
+- Construction Industry Scheme (CIS)
+- CIS payment scheme

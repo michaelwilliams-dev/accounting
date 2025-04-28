@@ -1,0 +1,31 @@
+- Processing
+- Message Structure
+- Samples
+- DELETE_RESPONSE
+- Message Source/Destination
+- DATA_REQUEST
+- DATA_RESPONSE
+- Appendix A: Error-Return Codes
+- Errors Raised by the Transaction Engine
+- Major Errors
+- Errors in Submission
+- Messages Referring to Transaction Engine Services
+- Messages Referring to HMRC Services
+- Appendix C: Error-Response Schema (Business Errors)
+- Appendix D: External Test Service
+- Appendix E: Glossary
+- Document Submission Protocol
+- Intended Readership
+- Glossary of Terms
+- Self-Assessment tax forms
+- Department Portal
+- HMRC Online service Web site
+- 3rd party application
+- Transaction Engine
+- GovTalk Protocol
+- GovTalk Message Envelope
+- GovTalk 2.0 Envelope schema
+- XML formatted
+- UTF-8 encoding standard
+- Hypertext Transport Protocol (HTTP)
+- HTTP 1.1 POST requests

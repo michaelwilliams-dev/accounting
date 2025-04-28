@@ -1,0 +1,27 @@
+- Contract
+- Issuer
+- Profits
+- Non-financial variable
+- Fair value
+- IFRS
+- Amortised cost
+- Financial instruments
+- Trade accounts
+- Notes receivable and payable
+- Loans from banks
+- Accounts payable in foreign currency
+- Exchange rate
+- Loans to subsidiaries or associates
+- Debt instrument
+- Default
+- Interest payment
+- Principal payment
+- Investment in equity instruments
+- Non-derivative financial instrument
+- Ordinary shares
+- Preference shares
+- Convertible debt
+- Financial assets and liabilities
+- Contractual provisions
+- Initial recognition
+- Initial measurement

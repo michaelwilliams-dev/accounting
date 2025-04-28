@@ -1,0 +1,19 @@
+- CATO service
+- Companies House
+- HMRC
+- Government Gateway credentials
+- Company authentication code
+- Joint filing option
+- Audit exempt accounts
+- Full abridged micro-entity
+- Small companies
+- Profit and loss account
+- Director's report
+- Filing deadlines
+- Penalties for late filing
+- Director's responsibility
+- Filing accounts on paper
+- Company name and number
+- Balance sheet
+- Director's signature
+- Auditor's report

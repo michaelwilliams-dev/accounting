@@ -1,0 +1,12 @@
+- Tax reporting
+- Earnings
+- Primary Threshold (PT)
+- Upper Earnings Limit (UEL)
+- Employee contributions
+- National Insurance contributions
+- Employer's contributions
+- Pay period
+- Scheme Contracted Out Number (SCON)
+- Workplace pension scheme
+- National Insurance category letter
+- Director's National Insurance contribution calculation method

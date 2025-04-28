@@ -1,0 +1,19 @@
+- Registered name
+- Subsidiary number
+- Financial year
+- Statement date
+- Parent company name
+- Parent company number
+- Country of registration
+- Companies Act 2006
+- Signatures
+- Parent company's accounts
+- Auditor's report
+- Annual report
+- Subsidiary company's name
+- Subsidiary company's registered number
+- Exemption
+- Outstanding liabilities
+- Companies House
+- Document submission
+- Covering letter.

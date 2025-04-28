@@ -1,0 +1,19 @@
+- Auditor
+- Entity understanding
+- Environment understanding
+- Outliers assessment
+- Data quality
+- ADA (Audit Data Analytics)
+- Parameter refinement
+- Best practice
+- Analysis of outliers
+- Management discussion
+- Analytical procedures
+- ISA (UK) 520
+- ISA (UK) 300
+- Underlying data examination
+- Audit process
+- Revenue ADA
+- Revenue ledger
+- Debtors
+- Cash

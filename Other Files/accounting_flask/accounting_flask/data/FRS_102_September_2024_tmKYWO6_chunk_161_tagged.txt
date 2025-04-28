@@ -1,0 +1,21 @@
+- Cash flows
+- Repayment of principal
+- Time value of money
+- Credit risk
+- Lending risks
+- Liquidity risk
+- Administrative costs
+- Lender's profit margin
+- Exposure to unrelated risks
+- Volatility
+- Equity prices
+- Commodity prices
+- Debt instruments
+- Zero-coupon loan
+- Fixed interest rate loan
+- Initial tie-in period
+- Bank's standard variable interest rate
+- Variable rate
+- Loan with interest payable at the bank's standard variable rate plus 1% 
+- Positive fixed rate
+- Positive variable rate.

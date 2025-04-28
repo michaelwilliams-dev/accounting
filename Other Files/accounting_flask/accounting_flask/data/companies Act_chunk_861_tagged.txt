@@ -1,0 +1,1 @@
+["Changes", "Future Date", "Annotations", "Trading Certificate", "Company", "Officer", "Offence", "Conviction", "Indictment", "Fine", "Statutory Maximum", "Transaction", "Directors", "Liability", "Indemnify", "Loss", "Damage", "Certification and Transfer of Securities", "Companies Act 2006", "Legislation", "Prospective Changes"]

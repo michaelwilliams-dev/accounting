@@ -1,0 +1,1 @@
+Office Number, Structure and format, XML, Mandatory, X-Path, IEnvelope/AgentRequest/Remove/CIS/TaxOffice/Number, Data Type, Numeric, Length, Max 3, Validation / Processing, Tax Office Reference, IEnvelope/AgentRequest/Remove/CIS/TaxOffice/Reference, Max 10.

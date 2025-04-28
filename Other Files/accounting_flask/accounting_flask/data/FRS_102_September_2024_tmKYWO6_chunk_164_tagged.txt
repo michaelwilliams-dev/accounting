@@ -1,0 +1,1 @@
+Loan, Interest, Variable Rate, Inverse Floating Interest, Fixed Rate, 6-month IBOR, Breach, Paragraph 11.9(a)(iv), Paragraph 11.9A, Fair Value, Section 12, GBP Denominated Mortgage, UK Land Registry House Price Index (HPI), Inflation Index, Residential Properties, Risk, Basic Lending Arrangement, Early Repayment.

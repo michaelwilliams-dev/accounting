@@ -1,0 +1,21 @@
+- New Employee
+- Starter Declaration
+- Pensioners
+- Employees Seconded from Abroad
+- Student Loan Indicator
+- UK Address
+- Postcode
+- Foreign Country
+- Passport Number
+- Workplace Pension
+- Employee Leaving
+- PAYE Scheme
+- Date of Leaving
+- Payment After Leaving Indicator
+- Occupational Pension Indicator
+- Annual Amount of Occupational Pension
+- Recently Bereaved Spouse/Civil Partner
+- Trivial Commutation Payment Type
+- Trivial Commutation Payment
+- Taxable Pay to Date
+- Taxable Pay in Period

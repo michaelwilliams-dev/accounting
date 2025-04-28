@@ -1,0 +1,24 @@
+- False registration
+- Online registration
+- Net payment status
+- Payment under deduction
+- UTR
+- Government Gateway user ID
+- Password
+- Self Assessment
+- CIS
+- Agent services account
+- HMRC
+- Postal form
+- Sole trader
+- Partnership
+- Limited company
+- Subcontractor based abroad
+- Construction work in the UK
+- Webinars
+- Emails
+- Construction Industry Scheme (CIS)
+- Legal business name
+- Trading name
+- Unique Taxpayer Reference (UTR)
+- Deduction rates

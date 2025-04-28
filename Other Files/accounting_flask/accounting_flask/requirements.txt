@@ -1,0 +1,4 @@
+echo 'OPENAI_API_KEY=sk-proj-
+pYQSbVD_ACqiC24zqk0ltBlW3W2Gy7oxBV4K21gCcYjnlBBabXHdLmWGqjPJ
+BuMx69DS9I14diT3BlbkFJGaj4a29kmpVMZINYx0e2aW7LuuKOslB6VGNsbf2X
+haYsObDsU5UTfTziYDlFeyQo5fUBF4o7cA' >> .env

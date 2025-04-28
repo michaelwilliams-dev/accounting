@@ -1,0 +1,22 @@
+- HMRC
+- Agent Services Account
+- Online Services Account
+- Registration
+- Application Process
+- HMRC Standard for Agents
+- Charities
+- Construction Industry Scheme for Agents (CIS)
+- Corporation Tax
+- Employment Related Securities for Agents (ERS)
+- Gambling Tax
+- Machine Games Duty
+- Notification of Vehicle Arrivals (NOVA)
+- PAYE
+- Self Assessment
+- VAT
+- VAT EU Refunds for Agents
+- VAT Mini One Stop Shop for Agents (MOSS)
+- Government Gateway User ID
+- Agent Code
+- Reference Number
+- Tax Service Enrollment

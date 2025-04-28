@@ -1,0 +1,25 @@
+- Derivative financial instrument
+- Loan commitments
+- Non-derivative financial instrument
+- Equity of the issuer
+- Ordinary shares
+- Preference shares
+- Basic financial instrument
+- Debt instrument
+- Contractual return
+- Fixed amount
+- Positive fixed rate
+- Positive variable rate
+- Negative fixed rate
+- Principal repayments
+- Return to the holder
+- Observable index of general price inflation
+- Currency denomination
+- Variation of return
+- Contractual variable rate
+- Credit deterioration
+- Central bank levies
+- Taxation changes
+- Law changes
+- Market rate of interest
+- Lender's unilateral option.

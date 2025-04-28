@@ -1,0 +1,1 @@
+#SmallEntity, #FinancialStatements, #RealisedLoss, #SpecialCircumstances, #CompaniesAct2014, #Goodwill, #Asset, #StatementOfFinancialPosition, #AccountingPolicies, #PriorPeriodErrors, #ChangeInFormat, #ChangeInAccountingPolicy, #ReportingPeriod, #Schedule3A, #Paragraphs

@@ -1,0 +1,16 @@
+- HMRC
+- Monthly returns
+- Contractors
+- Subcontractors
+- Tax month
+- Gross payment
+- Net payment
+- Standard deduction
+- Higher deduction
+- HMRC CIS online service
+- Commercial CIS software
+- Non-scheme payments
+- Incorrect return
+- Deductions
+- No return due
+- Penalty

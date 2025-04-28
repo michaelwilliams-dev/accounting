@@ -1,0 +1,1 @@
+#assets, #liabilities, #income_statement, #financial_position, #measurement, #initial_recognition, #micro-entity, #cost, #fair_value, #valuation_technique, #subsequent_measurement, #financial_assets, #financial_liabilities, #investments, #preference_shares, #ordinary_shares, #subsidiaries

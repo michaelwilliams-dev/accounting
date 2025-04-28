@@ -1,0 +1,1 @@
+Company, Director, Member, Court, Quorum, Meeting, Notice, General Meeting, Traded Company, Opted-in Company, Takeover Bid, Private Company, Public Company, Annual General Meeting, Company's Articles

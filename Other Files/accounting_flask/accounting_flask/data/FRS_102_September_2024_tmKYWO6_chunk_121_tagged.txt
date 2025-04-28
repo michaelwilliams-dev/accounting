@@ -1,0 +1,39 @@
+- Financing activities
+- Cash receipts
+- Futures contracts
+- Forward contracts
+- Option contracts
+- Swap contracts
+- Hedge
+- Other Financial Instruments Issues
+- Contributed equity
+- Borrowings
+- Issuing shares
+- Equity instruments
+- Redeeming shares
+- Issuing debentures
+- Loans
+- Notes
+- Bonds
+- Mortgages
+- Short-term borrowings
+- Long-term borrowings
+- Repayments of amounts borrowed
+- Lease liability
+- Reporting cash flows
+- Operating activities
+- Indirect method
+- Direct method
+- Non-cash transactions
+- Deferrals
+- Accruals
+- Investing cash flows
+- Financing cash flows
+- Gross cash receipts
+- Gross cash payments
+- Reconciliation
+- Net cash flow
+- Profit or loss
+- Statement of comprehensive income
+- Separate income statement
+- Changes during the period.

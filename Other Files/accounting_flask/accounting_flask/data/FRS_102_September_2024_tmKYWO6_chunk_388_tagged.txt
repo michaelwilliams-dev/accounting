@@ -1,0 +1,27 @@
+- Benefit obligation
+- Related expense
+- Defined benefits
+- Future salaries
+- Projected unit credit method
+- Estimated future salary increases
+- Actuarial assumptions
+- Discount rates
+- Employee turnover
+- Mortality
+- Medical cost trend rates
+- Independent actuary
+- Comprehensive actuarial valuation
+- Employee demographics
+- Number of employees
+- Salary levels
+- Plan introductions
+- Plan changes
+- Plan curtailments
+- Plan settlements
+- Net defined benefit liability
+- Profit or loss
+- Defined benefit plan curtailment
+- Defined benefit plan settlement
+- Defined benefit plan asset
+- Present value of defined benefit obligation
+- Fair value of plan assets.

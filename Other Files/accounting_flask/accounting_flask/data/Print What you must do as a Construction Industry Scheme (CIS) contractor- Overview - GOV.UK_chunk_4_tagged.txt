@@ -1,0 +1,24 @@
+- Subcontractor
+- Payments
+- Verification
+- Construction Industry Scheme (CIS)
+- Deduction rates
+- Registered subcontractors
+- Unregistered subcontractors
+- Gross payment status
+- HMRC
+- Tax
+- National Insurance
+- CIS deduction
+- Invoice
+- VAT
+- Equipment
+- Fuel
+- Plant hire
+- Manufacturing materials
+- Prefabricating materials
+- Receipts
+- Third party payments
+- Payment and deduction statement
+- Tax month
+- Inactive scheme

@@ -1,0 +1,21 @@
+- Average number of employees
+- Small company accounts
+- Public company
+- Ineligible group
+- Authorised insurance company
+- Banking company
+- E-money issuer
+- MiFID investment firm
+- UCITS management company
+- Insurance market activity
+- Transferable securities
+- UK regulated market
+- Financial Services and Markets Act 2000
+- Regulated activity
+- Business review
+- Strategic report
+- Directors' report
+- Companies House
+- Financial Conduct Authority
+- Small company qualification
+- Financial year.

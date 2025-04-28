@@ -1,0 +1,21 @@
+- Specified price
+- Contractual cash flows
+- Nominal amount
+- Hedging instruments
+- Financial instrument
+- Fair value
+- Profit or loss
+- External contract
+- Written option
+- Paragraph 12.17C
+- Proportion designation
+- Spot risk element
+- Foreign currency contract
+- Intrinsic value of an option
+- Time value
+- Hedge of foreign currency risk
+- Derivative financial instrument
+- Offset
+- Zero cost interest rate collar
+- Hedge accounting
+- Hedging relationship

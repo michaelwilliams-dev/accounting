@@ -1,0 +1,12 @@
+- Document Submission
+- Error Codes
+- HMRC Services
+- Business Errors
+- Error-Response Schema
+- XML
+- Transaction Engine
+- Independent Software Vendors (ISVs)
+- DSP Protocol
+- External Test Service
+- Business Transaction
+- Communication Mechanisms

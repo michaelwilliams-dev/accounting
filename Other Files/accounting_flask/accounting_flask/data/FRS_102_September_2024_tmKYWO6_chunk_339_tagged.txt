@@ -1,0 +1,16 @@
+- Asset
+- Customer
+- Good or Service
+- Control
+- Performance Obligation
+- Contract Inception
+- Satisfied Over Time
+- Satisfied at a Point in Time
+- Economic Benefits
+- Routine or Recurring Services
+- Cleaning Service
+- Freight Logistics Contract
+- Construction Contract
+- Work in Progress
+- Enforceable Right to Payment
+- Performance Completed to Date

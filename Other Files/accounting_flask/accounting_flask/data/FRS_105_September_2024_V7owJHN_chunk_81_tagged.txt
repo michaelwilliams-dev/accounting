@@ -1,0 +1,24 @@
+- Sale
+- Product
+- Manufacturer
+- Contract for sale
+- Repair
+- Replacement
+- Manufacturing defects
+- Warranty
+- Legal obligation
+- Economic benefits
+- Micro-entity
+- Provision
+- Costs
+- Reporting date
+- Calculations
+- Goods
+- Warranty repairs
+- Minor repairs
+- Major repairs
+- Estimated warranty costs
+- Expenditures
+- Cash flows
+- Risk-free discount rate
+- National government bonds.

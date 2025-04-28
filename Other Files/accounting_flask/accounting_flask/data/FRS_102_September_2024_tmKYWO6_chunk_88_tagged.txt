@@ -1,0 +1,1 @@
+#Asset, #Liability, #TransactionCosts, #FairValue, #ValueInUse, #FulfilmentValue, #CashFlows, #EconomicBenefits, #CurrentCost, #MeasurementBasis, #FinancialPosition, #FinancialPerformance, #Relevance

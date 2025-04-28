@@ -1,0 +1,12 @@
+- Fixed interest rate
+- Bank's standard variable rate
+- Negative interest rate
+- Economic conditions
+- Monetary policies
+- Lending risks
+- Contractual variable rate
+- Interest rate floor
+- Loan conditions
+- Paragraph 11.9(a)(iv)
+- Paragraph 11.9A
+- Paragraph 11.9(aB)(i)(1)

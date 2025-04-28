@@ -1,0 +1,41 @@
+- Non Protectively Marked
+- Transaction Engine Document
+- Submission Protocol Revision
+- Sign-Off Sheet
+- Change Record
+- HMRC
+- Baseline Candidate
+- Internal Review
+- ResponseEndPoint clarifications
+- Remove digital certificate references
+- Glossary additions
+- URL reinsertion
+- Formatting fixes
+- MD5 method
+- Document Status
+- Drafts
+- Baseline
+- Table of Contents
+- Purpose of the Document
+- Intended Readership
+- Glossary of Terms
+- Document Submission Protocol
+- GovTalk Protocol
+- Document Submission Message Sequence
+- Submission Sequence
+- End-Points
+- Transaction Engine Endpoints
+- DSP Submission End-Point
+- Client Message Definitions
+- SUBMISSION_REQUEST
+- Message Source/Destination
+- Processing
+- Message Structure
+- Samples
+- SUBMISSION_ACKNOWLEDGMENT
+- SUBMISSION_POLL
+- SUBMISSION_ERROR
+- SUBMISSION_RESPONSE / ERROR
+- Business Response
+- Business Error Response
+- DELETE_REQUEST

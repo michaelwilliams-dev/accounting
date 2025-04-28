@@ -1,0 +1,13 @@
+- Vesting conditions
+- Service condition
+- Performance conditions
+- Non-market vesting condition
+- Market vesting condition
+- Fair value estimation
+- Equity instruments
+- Shares
+- Share options
+- Measurement date
+- Savings plan
+- Observable market price
+- Three-tier measurement hierarchy

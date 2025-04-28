@@ -1,0 +1,1 @@
+#EconomicResource, #Liability, #Obligation, #Entity, #Contract, #Legislation, #ConstructiveObligation, #Transfer, #CashPayment, #GoodsDelivery, #Services, #EconomicExchange

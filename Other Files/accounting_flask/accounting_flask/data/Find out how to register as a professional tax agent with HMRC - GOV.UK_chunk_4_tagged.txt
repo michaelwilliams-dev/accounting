@@ -1,0 +1,13 @@
+- Register
+- Air Passenger Duty
+- Aggregates Levy
+- Bingo Duty
+- Gaming Duty
+- Insurance Premium Tax
+- Landfill Tax
+- Lottery Duty
+- Stamp Taxes
+- Published date
+- Last updated date
+- Open Government Licence v3.0
+- Crown copyright

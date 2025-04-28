@@ -1,0 +1,25 @@
+- Instant payment
+- Bank account
+- Online payment
+- Direct Debit
+- HMRC online account
+- Government Gateway user ID
+- Password
+- Return payments
+- Self Assessment online
+- PAYE for employers
+- Corporation Tax online
+- CIS online
+- Machine Games Duty online
+- Debit card payment
+- Corporate credit card payment
+- Non-refundable fee
+- Personal credit card
+- Payment details
+- Bank transfer
+- CHAPS
+- Faster Payments
+- Bacs
+- Bank's processing times
+- Maximum transaction limits
+- UK account details

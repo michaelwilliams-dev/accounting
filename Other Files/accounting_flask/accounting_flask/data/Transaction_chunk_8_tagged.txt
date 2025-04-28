@@ -1,0 +1,34 @@
+- SUBMISSION_POLL
+- Message Source/Destination
+- Portal/Client Application
+- Transaction Engine Processing
+- URL destination
+- SUBMISSION_ACKNOWLEDGEMENT message
+- PollInterval attribute
+- CorrelationID
+- Class
+- SUBMISSION_REQUEST
+- Message Structure
+- GovTalkMessage
+- MANDATORY
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Qualifier
+- Function
+- TransactionID
+- OPTIONAL
+- XSD pattern
+- GovTalk envelope specification
+- Transformation
+- XML
+- GatewayTimestamp
+- SenderDetails
+- GovTalkDetails
+- Keys
+- Body
+- Samples
+- SUBMISSION_ERROR
+- DELETE_REQUEST
+- DATA_REQUEST
+- GovTalkErrors element

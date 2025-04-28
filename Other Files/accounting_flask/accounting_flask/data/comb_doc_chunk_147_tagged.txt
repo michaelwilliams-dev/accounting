@@ -1,0 +1,1 @@
+#assets, #revenue, #grants, #income, #costs, #compensation, #financial_support, #FRS_102, #manufacturing_company, #government_grant, #unemployment, #construction, #factory, #depreciation, #buildings, #useful_life, #SSAP_4, #company_law, #liability, #profit_and_loss_account, #fixed_assets, #cash, #deferred_grants

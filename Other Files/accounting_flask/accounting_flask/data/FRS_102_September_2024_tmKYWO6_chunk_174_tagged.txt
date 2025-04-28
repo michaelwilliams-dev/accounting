@@ -1,0 +1,30 @@
+- Principal receivable
+- Principal payable
+- Maturity
+- Future interest payments
+- Carrying amount
+- Asset
+- Liability
+- Financial asset
+- Financial liability
+- Cash flows
+- Present value
+- Effective interest rate
+- Income
+- Expense
+- Profit or loss
+- Amortised cost
+- Five-year loan
+- Effective interest method
+- Bond
+- Currency Units (CU)
+- Transaction costs
+- Interest
+- Mandatory redemption
+- Carrying amount at beginning of period
+- Interest income
+- Cash inflow
+- Carrying amount at end of period
+- Effective interest rate
+- Interest rate benchmark reform
+- Contractual cash flows.

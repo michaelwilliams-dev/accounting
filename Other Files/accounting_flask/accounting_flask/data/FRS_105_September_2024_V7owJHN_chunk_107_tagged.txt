@@ -1,0 +1,14 @@
+- Asset's fair value
+- Costs to sell
+- Value in use
+- Asset impairment
+- Recoverable amount
+- Asset disposal
+- Measurement based on fair value
+- Restrictions on sale or use of asset
+- Cost of obtaining relaxation of a restriction
+- Factors affecting fair value
+- Present value of future cash flows
+- Estimating future cash inflows and outflows
+- Applying discount rate to future cash flows
+- Projections of cash inflows.

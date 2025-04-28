@@ -1,0 +1,27 @@
+- Employer helpline
+- CIS helpline
+- Webinars
+- Emails
+- HMRC videos
+- CIS
+- Verify subcontractors
+- HM Revenue and Customs (HMRC)
+- Construction Industry Scheme (CIS)
+- Deduction rate
+- Unique Taxpayer Reference (UTR)
+- HMRC accounts office reference number
+- HMRC employer reference
+- Subcontractor's UTR
+- National Insurance number
+- Company name
+- Company UTR
+- Registration number
+- Partner details
+- Trading name
+- Partnership UTR
+- Deductions
+- Pay subcontractors
+- CIS deduction rates
+- Registered subcontractors
+- Unregistered subcontractors
+- Gross payment status.

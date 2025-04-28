@@ -1,0 +1,17 @@
+- Maximum price
+- Minimum price
+- Shares
+- Authority
+- Company resolution
+- Expiry date
+- Purchase of own shares
+- Contract of purchase
+- Authority expiration
+- Price calculation
+- Company's constitution
+- Contract inspection
+- Off-market purchase
+- Acquisition by limited company
+- Companies Act 2006
+- Legislation changes
+- Future date changes.

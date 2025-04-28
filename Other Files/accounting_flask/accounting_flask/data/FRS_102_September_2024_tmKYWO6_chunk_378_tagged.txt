@@ -1,0 +1,1 @@
+["profit or loss", "asset", "revalued amount", "FRS", "revaluation model", "Section 17", "impairment loss", "revaluation increase", "carrying amount", "amortisation", "depreciation", "residual value", "systematic basis", "remaining useful life", "recoverable amount", "cash-generating unit", "goodwill", "current reporting date", "limitation", "increase in carrying amounts"]

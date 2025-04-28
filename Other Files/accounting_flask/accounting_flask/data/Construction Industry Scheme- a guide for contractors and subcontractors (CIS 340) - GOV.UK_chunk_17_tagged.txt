@@ -1,0 +1,12 @@
+- Subcontractor
+- Gross payment
+- Net payment
+- Deductions
+- Standard rate
+- Higher rate
+- Registration
+- Verification
+- HMRC
+- Verification reference number
+- Monthly return
+- Payment and deduction statement

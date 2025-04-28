@@ -1,0 +1,19 @@
+- Contractor registration
+- HMRC
+- PAYE Scheme
+- PAYE/CIS scheme
+- Monthly payments
+- Quarterly payments
+- PAYE tax
+- National Insurance
+- CIS deductions
+- Late payment penalties
+- Monthly returns
+- Subcontractor payments
+- HMRC CIS online service
+- Commercial CIS software
+- Employment status declaration
+- Penalty for wrong employment status
+- Inactivity request
+- Negative values in CIS software
+- Reporting to HMRC by phone or post.

@@ -1,0 +1,1 @@
+Company, Officer, Default, Offence, Conviction, Fine, Standard Scale, Contravention, Members, Registrar, Notice, Share Capital, Reduction of Share Capital, Legislation, Companies Act 2006, Variation of Class Rights.

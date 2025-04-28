@@ -1,0 +1,1 @@
+Contractors, Statements, Employer Tax Reference, Tax Month, Payment Date, Subcontractor, UTR, Personal Verification Number, Deduction Rate, Gross Amount, Payment Details, VAT, Gross Payment Status, Payment Statement, Duplicate Statements, Appendix E.

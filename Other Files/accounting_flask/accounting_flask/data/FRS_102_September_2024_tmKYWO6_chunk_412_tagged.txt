@@ -1,0 +1,1 @@
+#Entity, #FunctionalCurrency, #PresentationCurrency, #Hyperinflation, #FinancialStatements, #HyperinflationaryEconomy, #Wealth, #NonMonetaryAssets, #StableForeignCurrency, #PurchasingPower, #PriceIndex, #InflationRate, #MeasuringUnit, #ReportingPeriod, #ComparativeInformation

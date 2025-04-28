@@ -1,0 +1,25 @@
+- GOV.UK
+- Beta
+- PAYE21035
+- Employer records
+- Construction Industry Scheme (CIS)
+- Contractors responsibilities
+- PAYE Employer Office staff
+- Form CIS1
+- CIS vouchers
+- HMRC
+- New CIS
+- PAYE21040
+- Construction operations
+- Companies holding CIS5 certificates
+- Subcontractors holding Registration cards
+- Construction Industry Processing Centre
+- Annual return form CIS36
+- Maintain scheme type
+- PAYE27025
+- XP or PSC scheme types
+- ETMP and CIS
+- Processing staff (employer)
+- Processing staff (SA)
+- Sole traders
+- Partnerships

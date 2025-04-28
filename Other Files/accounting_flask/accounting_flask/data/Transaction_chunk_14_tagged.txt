@@ -1,0 +1,14 @@
+- Transaction Engine
+- CorrelationID
+- Business Error response message
+- DELETE_REQUEST message
+- Class value
+- Business/Business Error response
+- SUBMISSION_ERROR
+- DELETE_RESPONSE
+- Message Structure
+- GovTalkMessage
+- EnvelopeVersion
+- Header
+- MessageDetails
+- Class

@@ -1,0 +1,18 @@
+- Employment Allowance
+- Eligibility
+- Tax year
+- Claim
+- Generic Notification Service (GNS) message
+- Economic activity
+- De minimis state aid rules
+- Business sector
+- Agriculture sector
+- Fisheries and aquaculture sector
+- Road transport sector
+- Industrial/other sector
+- Services
+- Utilities
+- Merchandising
+- Manufacturing
+- Hairdressers
+- Restaurant

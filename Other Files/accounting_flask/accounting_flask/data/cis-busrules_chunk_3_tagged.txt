@@ -1,0 +1,16 @@
+- Invalid Characters
+- XML
+- Escaped Character
+- Truncate
+- Authorisation Request for CIS
+- Tax Office Number
+- Tax Office Reference
+- Accounts Office Reference
+- Your Reference
+- Agent Request ID
+- Status
+- Code
+- Agent Authorisation Code
+- Unique 10 Digit Reference
+- Removal of Agent Authorisation
+- Tax

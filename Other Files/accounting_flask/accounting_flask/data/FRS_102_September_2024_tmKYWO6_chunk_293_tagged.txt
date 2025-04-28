@@ -1,0 +1,1 @@
+#LeaseModifications, #FinanceLease, #OperatingLease, #Lessor, #AccountingPolicy, #LeasePayments, #Depreciation, #LeaseIncome, #UnderlyingAssets, #LeaseScopeIncrease, #LeaseContract, #Inflation, #ExpenseRecognition
