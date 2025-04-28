@@ -334,7 +334,7 @@ def generate_response():
     supervisor_email = data.get("supervisor_email")
     hr_email = data.get("hr_email")
     supervisor_name = data.get("supervisor_name", "Supervisor")
-    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
     if faiss_index:
         query_vector = client.embeddings.create(
