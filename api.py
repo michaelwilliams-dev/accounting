@@ -64,7 +64,7 @@ import faiss
 import pickle
 import json
 import base64
-import datetime
+import datetime.datetime.utcnow()
 import re
 import numpy as np
 import requests
