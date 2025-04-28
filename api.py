@@ -302,12 +302,14 @@ This document was generated following a query submitted by {full_name}. Please f
             "TextPart": text_body,
             "HTMLPart": f"<pre>{text_body}</pre>",
             "Attachments": [
+            
                 {
                     "ContentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                    "Filename": os.path.basename(file_path),
-                    "Base64Content": base64.b64encode(open(file_path, "rb").read()).decode()
+                    "Filename": f"{full_name.replace(' ', '_')}_Response.docx",
+                    "Base64Content": base64.b64encode(doc_buffer.read()).decode()
+                    
                 }
-                for file_path in attachments
+                
             ]
         })
 
