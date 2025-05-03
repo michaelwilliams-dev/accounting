@@ -50,8 +50,8 @@ def ping():
 
 # Load FAISS index
 try:
-    faiss_index = faiss.read_index("data/accounting/accounting_chunks.index")
-    with open("data/accounting/metadata.pkl", "rb") as f:
+    faiss_index = faiss.read_index("data/accounting/accounting.index")
+    with open("data/accounting/accounting_metadata.json", "r") as f:
         metadata = pickle.load(f)
     print("✅ Accounting FAISS index and metadata loaded.")
 except Exception as e:
