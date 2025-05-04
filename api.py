@@ -239,13 +239,20 @@ def generate_response():
         ).data[0].embedding
 
         D, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
+        # ✅ Log matched chunk filenames
+        print("📂 Matched chunk files:")
+        for i in I[0]:
+           key = str(i)
+           chunk_file = metadata.get(key, {}).get("chunk_file")
+           if chunk_file:
+              print(f" - {chunk_file}")
 
         matched_chunks = []
         for i in I[0]:
             key = str(i)
             if "chunk_file" in metadata.get(key, {}):
                 chunk_file = metadata[key]["chunk_file"]
-                with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
+                with open(f"data/accounting/{chunk_file}", "r", encoding="utf-8") as f:
                     matched_chunks.append(f.read().strip())
             else:
                 print(f"⚠️ Missing 'chunk_file' for index {i} in metadata.")
