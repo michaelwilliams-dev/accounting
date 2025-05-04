@@ -19,9 +19,18 @@ from docx.shared import Mm, Pt, RGBColor
 from zoneinfo import ZoneInfo
 
 # ✅ Unzip chunks.zip once at startup
-zip_path = "data/accounting/chunks.zip"
-chunks_dir = "data/accounting/"
-if os.path.exists(zip_path):
+import os
+import zipfile
+
+# Path to zip file and extraction folder (relative to api.py)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+zip_path = os.path.join(base_dir, "chunks.zip")
+chunks_dir = os.path.join(base_dir, "data/accounting")
+
+# Unzip only if not already unzipped
+sample_chunk = os.path.join(chunks_dir, "Check when you must use the VAT domestic reverse charge for building and construction services - GOV.UK_chunk_2.txt")
+
+if os.path.exists(zip_path) and not os.path.exists(sample_chunk):
     try:
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(chunks_dir)
