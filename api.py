@@ -1,16 +1,3 @@
-# ✅ Unzip chunks.zip once at startup
-zip_path = "data/accounting/chunks.zip"
-chunks_dir = "data/accounting/"
-if os.path.exists(zip_path):
-    try:
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(chunks_dir)
-            print("✅ Unzipped chunks.zip to data/accounting/")
-    except Exception as e:
-        print(f"❌ Failed to unzip chunks.zip: {e}")
-
-__version__ = "v1.0.7-test"
-print(f"🚀 API Version: {__version__}")
 
 import os
 import faiss
@@ -30,6 +17,21 @@ from flask import Flask, request, jsonify
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
 from zoneinfo import ZoneInfo
+
+# ✅ Unzip chunks.zip once at startup
+zip_path = "data/accounting/chunks.zip"
+chunks_dir = "data/accounting/"
+if os.path.exists(zip_path):
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(chunks_dir)
+            print("✅ Unzipped chunks.zip to data/accounting/")
+    except Exception as e:
+        print(f"❌ Failed to unzip chunks.zip: {e}")
+
+__version__ = "v1.0.7-test"
+print(f"🚀 API Version: {__version__}")
+
 
 # ✅ Unzip chunks.zip once at startup
 zip_path = "data/accounting/chunks.zip"
