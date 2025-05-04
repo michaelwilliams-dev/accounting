@@ -1,8 +1,16 @@
-"""
-=============================================================================
-AIVS Accounting RAG API 12.30 2 MAY 2025
-=============================================================================
-"""
+# ✅ Unzip chunks.zip once at startup
+zip_path = "data/accounting/chunks.zip"
+chunks_dir = "data/accounting/"
+if os.path.exists(zip_path):
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall(chunks_dir)
+            print("✅ Unzipped chunks.zip to data/accounting/")
+    except Exception as e:
+        print(f"❌ Failed to unzip chunks.zip: {e}")
+
+__version__ = "v1.0.7-test"
+print(f"🚀 API Version: {__version__}")
 
 import os
 import faiss
@@ -15,18 +23,29 @@ import numpy as np
 import requests
 import textwrap
 import openai
+import zipfile
 from io import BytesIO
-from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask import Flask, request, jsonify
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
-from zoneinfo import ZoneInfo  # Python 3.9+
+from zoneinfo import ZoneInfo
+
+# ✅ Unzip chunks.zip once at startup
+zip_path = "data/accounting/chunks.zip"
+sample_txt = "data/accounting/Check when you must use the VAT domestic reverse charge for building and construction services - GOV.UK_chunk_2.txt"
+
+if os.path.exists(zip_path) and not os.path.exists(sample_txt):
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+            zip_ref.extractall("data/accounting")
+            print("✅ Unzipped chunks.zip to data/accounting/")
+    except Exception as e:
+        print(f"❌ Failed to unzip chunks.zip: {e}")
 
 __version__ = "v1.0.7-test"
 print(f"🚀 API Version: {__version__}")
 
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-# client = openai.OpenAI()
 from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -185,21 +204,7 @@ def send_email_mailjet(to_emails, subject, body_text, doc_buffer, full_name=None
 @app.route("/generate", methods=["POST"])
 def generate_response():
     print("📥 /generate route hit")
-# ✅ Unzip chunks.zip if needed
-    import os
-    import zipfile
 
-    zip_path = "data/accounting/chunks.zip"
-    sample_txt = "data/accounting/Check when you must use the VAT domestic reverse charge for building and construction services - GOV.UK_chunk_2.txt"
-
-    if not os.path.exists(sample_txt) and os.path.exists(zip_path):
-        try:
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                zip_ref.extractall("data/accounting")
-                print("✅ Unzipped chunks.zip to data/accounting/")
-        except Exception as unzip_error:
-            print("❌ Failed to unzip chunks:", unzip_error)
-            return jsonify({"error": "Failed to unzip chunks"}), 500
     
     try:
         data = request.get_json()
