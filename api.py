@@ -185,6 +185,22 @@ def send_email_mailjet(to_emails, subject, body_text, doc_buffer, full_name=None
 @app.route("/generate", methods=["POST"])
 def generate_response():
     print("📥 /generate route hit")
+# ✅ Unzip chunks.zip if needed
+    import os
+    import zipfile
+
+    zip_path = "data/accounting/chunks.zip"
+    sample_txt = "data/accounting/Check when you must use the VAT domestic reverse charge for building and construction services - GOV.UK_chunk_2.txt"
+
+    if not os.path.exists(sample_txt) and os.path.exists(zip_path):
+        try:
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall("data/accounting")
+                print("✅ Unzipped chunks.zip to data/accounting/")
+        except Exception as unzip_error:
+            print("❌ Failed to unzip chunks:", unzip_error)
+            return jsonify({"error": "Failed to unzip chunks"}), 500
+    
     try:
         data = request.get_json()
         print("🔎 Payload received:", data)
