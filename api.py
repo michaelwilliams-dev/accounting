@@ -25,8 +25,10 @@ from zoneinfo import ZoneInfo  # Python 3.9+
 __version__ = "v1.0.7-test"
 print(f"🚀 API Version: {__version__}")
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
-client = openai.OpenAI()
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+# client = openai.OpenAI()
+from openai import OpenAI
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 app = Flask(__name__)
 CORS(app, origins=["https://www.aivs.uk"])
