@@ -8,4 +8,4 @@
 - Recognition criteria
 - Land and buildings
 - Initial measurement
-- Cost
+- Cost 

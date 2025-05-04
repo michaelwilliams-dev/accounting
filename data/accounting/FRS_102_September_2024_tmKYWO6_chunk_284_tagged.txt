@@ -11,4 +11,4 @@
 - Lease liability
 - Public benefit entity
 - Original lease
-- Consideration for the lease
+- Consideration for the lease 

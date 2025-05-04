@@ -1,1 +1,1 @@
-ADA, audit evidence, non-data analytics tools, audit risks, firm's methodology, data flows, data management, data storage, data quality, data analysis, data cleansing, data processing, audit procedure, system migration.
+ADA, audit evidence, non-data analytics tools, audit risks, firm's methodology, data flows, data management, data storage, data quality, data analysis, data cleansing, data processing, audit procedure, system migration. 

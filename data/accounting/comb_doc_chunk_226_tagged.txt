@@ -17,4 +17,4 @@
 - Basic financial assets
 - Financial liabilities
 - Amortised cost
-- Effective interest method
+- Effective interest method 

@@ -15,4 +15,4 @@
 - Residual value
 - Initial direct costs
 - Subsequent measurement
-- Finance income
+- Finance income 

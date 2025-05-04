@@ -13,4 +13,4 @@
 - Asset
 - Liability
 - Arm's Length Transaction
-- Cash-settled Share-based Payment Transactions
+- Cash-settled Share-based Payment Transactions 

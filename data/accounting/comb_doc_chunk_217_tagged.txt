@@ -1,1 +1,1 @@
-Accounting, Seller, Buyer, Deferred Payment, Manufacturer, Customer, Credit, Machinery, Trade Receivable, Revenue, Amortised Cost, Effective Interest Method, Interest Income, Property, Plant and Equipment, Trade Payable, FRS 102.
+Accounting, Seller, Buyer, Deferred Payment, Manufacturer, Customer, Credit, Machinery, Trade Receivable, Revenue, Amortised Cost, Effective Interest Method, Interest Income, Property, Plant and Equipment, Trade Payable, FRS 102. 

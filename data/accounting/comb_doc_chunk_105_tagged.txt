@@ -23,4 +23,4 @@
 - Foreign exchange differences
 - Profit and loss items
 - Closing rate
-- Average rate for the period.
+- Average rate for the period. 

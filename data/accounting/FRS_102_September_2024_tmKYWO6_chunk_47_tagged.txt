@@ -22,4 +22,4 @@
 - Performance obligations in contracts with customers
 - Current tax
 - Deferred tax
-- Employee numbers
+- Employee numbers 

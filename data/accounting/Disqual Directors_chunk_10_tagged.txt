@@ -15,4 +15,4 @@
 - Official receiver
 - Insolvent company
 - Application for disqualification order
-- Time limit for application.
+- Time limit for application. 

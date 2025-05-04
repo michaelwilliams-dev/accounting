@@ -1,1 +1,1 @@
-#accounting, #tax_treatments, #withholding_tax, #dividends, #shareholders, #taxation_authorities, #value_added_tax, #VAT, #sales_taxes, #financial_statements, #comprehensive_income, #equity, #business_combination, #tax_expense, #tax_income
+#accounting, #tax_treatments, #withholding_tax, #dividends, #shareholders, #taxation_authorities, #value_added_tax, #VAT, #sales_taxes, #financial_statements, #comprehensive_income, #equity, #business_combination, #tax_expense, #tax_income 

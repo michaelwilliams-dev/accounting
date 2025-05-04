@@ -15,4 +15,4 @@
 - UCITS management company
 - Insurance market activity
 - UK regulated market
-- Transferable securities.
+- Transferable securities. 

@@ -15,4 +15,4 @@
 - Liability
 - Shadow director
 - Exceptions
-- Purported appointment.
+- Purported appointment. 

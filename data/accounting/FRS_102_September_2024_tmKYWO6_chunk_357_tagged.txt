@@ -9,4 +9,4 @@
 - Equity-settled share-based payment transactions
 - Cash-settled share-based payment transactions
 - Goods or services
-- Equity instruments
+- Equity instruments 

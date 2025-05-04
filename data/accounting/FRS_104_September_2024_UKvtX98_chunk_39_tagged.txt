@@ -1,1 +1,1 @@
-#Depreciation, #Amortisation, #InterimPeriod, #Assets, #FinancialYear, #Inventories, #FinancialReporting, #FRS102, #NetRealisableValue, #ManufacturingVariances, #InterimDates, #ForeignCurrencyTranslation
+#Depreciation, #Amortisation, #InterimPeriod, #Assets, #FinancialYear, #Inventories, #FinancialReporting, #FRS102, #NetRealisableValue, #ManufacturingVariances, #InterimDates, #ForeignCurrencyTranslation 

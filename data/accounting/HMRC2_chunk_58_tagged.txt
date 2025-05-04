@@ -13,4 +13,4 @@
 - Audit exemption for Northern Ireland charitable companies
 - UK companies
 - Financial thresholds
-- Gross income.
+- Gross income. 

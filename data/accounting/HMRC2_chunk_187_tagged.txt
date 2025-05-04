@@ -15,4 +15,4 @@
 - Company members
 - Written resolution
 - Auditor removal
-- Auditor reappointment
+- Auditor reappointment 

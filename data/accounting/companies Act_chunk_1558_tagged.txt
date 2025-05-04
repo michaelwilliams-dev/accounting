@@ -1,1 +1,1 @@
-["Interest in Shares", "Rights and Obligations", "Companies Act 2006", "Legislation", "Contract", "Acquisition", "Delivery of Shares", "Exercise of Rights"]
+["Interest in Shares", "Rights and Obligations", "Companies Act 2006", "Legislation", "Contract", "Acquisition", "Delivery of Shares", "Exercise of Rights"] 

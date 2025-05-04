@@ -1,1 +1,1 @@
-["Standard Scale", "Redenomination of Share Capital", "Limited Company", "Share Capital", "Currency Conversion", "Spot Rate of Exchange", "Companies Act 2006", "Legislation Changes", "Resolution", "Conditions", "Effective Date"]
+["Standard Scale", "Redenomination of Share Capital", "Limited Company", "Share Capital", "Currency Conversion", "Spot Rate of Exchange", "Companies Act 2006", "Legislation Changes", "Resolution", "Conditions", "Effective Date"] 

@@ -19,4 +19,4 @@
 - Insolvency Act 1986
 - Insolvency (Northern Ireland) Order 1989
 - Winding up
-- Administration
+- Administration 

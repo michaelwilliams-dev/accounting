@@ -15,4 +15,4 @@
 - Fair Value
 - Depreciation
 - Cost
-- Acquisition Date.
+- Acquisition Date. 

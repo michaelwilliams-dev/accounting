@@ -13,4 +13,4 @@
 - Regulations breach
 - Registration team
 - Working days
-- Complexity in registration application.
+- Complexity in registration application. 

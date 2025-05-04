@@ -18,4 +18,4 @@
 - Loans payable
 - Trade debtors
 - Trade creditors
-- Sale of goods or services.
+- Sale of goods or services. 

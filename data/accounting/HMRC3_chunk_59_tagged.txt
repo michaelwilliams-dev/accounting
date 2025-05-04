@@ -19,4 +19,4 @@
 - Audit requirements
 - Public company
 - Dormant company
-- Authorised company
+- Authorised company 

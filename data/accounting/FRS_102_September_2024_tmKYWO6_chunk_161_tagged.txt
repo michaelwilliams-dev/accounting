@@ -18,4 +18,4 @@
 - Variable rate
 - Loan with interest payable at the bank's standard variable rate plus 1% 
 - Positive fixed rate
-- Positive variable rate.
+- Positive variable rate. 

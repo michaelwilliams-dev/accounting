@@ -1,1 +1,1 @@
-#Lease, #LeaseLiability, #LeasePayments, #InterestRate, #PublicBenefitEntity, #FinancialInstitutions, #FixedPayments, #VariableLeasePayments, #ResidualValueGuarantees, #PurchaseOption, #Inventories, #Obligations, #Costs, #BorrowingRate
+#Lease, #LeaseLiability, #LeasePayments, #InterestRate, #PublicBenefitEntity, #FinancialInstitutions, #FixedPayments, #VariableLeasePayments, #ResidualValueGuarantees, #PurchaseOption, #Inventories, #Obligations, #Costs, #BorrowingRate 

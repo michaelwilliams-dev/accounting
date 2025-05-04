@@ -13,4 +13,4 @@
 - IAS 18 Revenue
 - IAS 11 Construction Contracts
 - Recognition and Measurement of Revenue
-- Contracts with Customers
+- Contracts with Customers 

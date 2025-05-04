@@ -16,4 +16,4 @@
 - Financial Conduct Authority
 - Small company
 - Exemptions
-- Accounting periods.
+- Accounting periods. 

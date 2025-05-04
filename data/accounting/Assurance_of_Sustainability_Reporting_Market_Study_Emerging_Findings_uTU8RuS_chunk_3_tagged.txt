@@ -24,4 +24,4 @@
 - 39 FTSE 250 companies
 - Change in assurance providers
 - Non-audit firms to audit firms
-- Number of switches of sustainability assurance provider.
+- Number of switches of sustainability assurance provider. 

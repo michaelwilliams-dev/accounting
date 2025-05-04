@@ -1,1 +1,1 @@
-["Legal Text", "Statutory Instruments", "Regulations", "Amendments", "Modifications", "Legal Provisions", "Exclusions"]
+["Legal Text", "Statutory Instruments", "Regulations", "Amendments", "Modifications", "Legal Provisions", "Exclusions"] 

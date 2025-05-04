@@ -10,4 +10,4 @@
 - Uncertain tax treatments
 - Retrospective application
 - Cumulative effect
-- Retained earnings.
+- Retained earnings. 

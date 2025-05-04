@@ -11,4 +11,4 @@
 - Accounting requirements
 - Transaction
 - Event
-- Paragraph 2.33
+- Paragraph 2.33 

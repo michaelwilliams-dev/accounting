@@ -18,4 +18,4 @@
 - Joint control
 - Compliance with company law
 - IFRS 1
-- Equity accounting adjustments.
+- Equity accounting adjustments. 

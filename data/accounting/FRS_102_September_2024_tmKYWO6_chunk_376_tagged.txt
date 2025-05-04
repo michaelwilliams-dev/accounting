@@ -14,4 +14,4 @@
 - Reporting entity
 - Subsidiaries
 - Goodwill relating to integrated entities
-- Goodwill relating to non-integrated entities.
+- Goodwill relating to non-integrated entities. 

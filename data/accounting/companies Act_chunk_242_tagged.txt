@@ -19,4 +19,4 @@
 - Contract
 - Articles of a company
 - Pension scheme indemnity provision
-- Qualifying third party indemnity provision.
+- Qualifying third party indemnity provision. 

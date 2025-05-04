@@ -22,4 +22,4 @@
 - Performance-related conditions
 - Grant proceeds
 - Revenue
-- Grant relating to assets.
+- Grant relating to assets. 

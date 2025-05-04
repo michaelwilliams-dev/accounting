@@ -12,4 +12,4 @@
 - FRS 102
 - Present value calculation
 - Financial statements
-- Equity
+- Equity 

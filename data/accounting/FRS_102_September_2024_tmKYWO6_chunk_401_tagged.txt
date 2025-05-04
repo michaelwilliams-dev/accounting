@@ -20,4 +20,4 @@
 - Most likely amount
 - Expected value
 - Probability-weighted amounts
-- Change in relevant
+- Change in relevant 

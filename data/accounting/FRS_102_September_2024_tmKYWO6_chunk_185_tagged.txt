@@ -10,4 +10,4 @@
 - Derivatives
 - Credit risk
 - Market risk
-- Alternative method
+- Alternative method 

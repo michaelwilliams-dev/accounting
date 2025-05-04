@@ -31,4 +31,4 @@
 - UK accounting standards
 - SSAP 21 Accounting for leases and hire purchase contracts
 - FRS 5 Reporting the substance of transactions
-- UITF abstract 28 Operating lease
+- UITF abstract 28 Operating lease 

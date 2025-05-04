@@ -18,4 +18,4 @@
 - Statement of financial position
 - Revenue from contracts with customers
 - Retrospectively
-- Cumulative effect.
+- Cumulative effect. 

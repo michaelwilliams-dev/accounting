@@ -21,4 +21,4 @@
 - Transitional arrangements
 - First-time adopters
 - Group reporting
-- Opening balances
+- Opening balances 

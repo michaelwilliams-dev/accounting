@@ -19,4 +19,4 @@
 - Financial statements
 - Non-adjusting events
 - Market value of investments
-- Financial statements authorisation
+- Financial statements authorisation 

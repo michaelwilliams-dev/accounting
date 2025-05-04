@@ -26,4 +26,4 @@
 - Investment property
 - Settlement deferred
 - Sections 10 Inventories
-- Section 12 Property, Plant and Equipment
+- Section 12 Property, Plant and Equipment 

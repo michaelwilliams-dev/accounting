@@ -22,4 +22,4 @@
 - Technology
 - Risk assessment procedures
 - Audit evidence
-- Technological resources.
+- Technological resources. 

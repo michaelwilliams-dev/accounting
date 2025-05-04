@@ -10,4 +10,4 @@
 - Offeror
 - Securities purchase
 - Offer price
-- Offer consideration
+- Offer consideration 

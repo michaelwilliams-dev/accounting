@@ -14,4 +14,4 @@
 - Promoter
 - Payment in money or shares
 - Registration of allotment
-- Allotment of shares.
+- Allotment of shares. 

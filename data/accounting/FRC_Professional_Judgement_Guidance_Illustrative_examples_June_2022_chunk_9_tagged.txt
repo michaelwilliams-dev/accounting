@@ -22,4 +22,4 @@
 - Expected growth
 - Timing of cash flows
 - Bank lending
-- Renewal of facilities.
+- Renewal of facilities. 

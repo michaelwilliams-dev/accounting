@@ -28,4 +28,4 @@
 - Unrealised gains
 - Unrealised losses
 - Foreign currency exchange rates
-- Cash equivalents.
+- Cash equivalents. 

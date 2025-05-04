@@ -19,4 +19,4 @@
 - Market interest rates
 - Return on investments
 - Discount rate
-- Asset's value in use
+- Asset's value in use 

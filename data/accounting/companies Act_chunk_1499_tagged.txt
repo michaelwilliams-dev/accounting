@@ -18,4 +18,4 @@
 - Statutory auditor
 - Transfer request
 - Statement of reasons
-- Functions.
+- Functions. 

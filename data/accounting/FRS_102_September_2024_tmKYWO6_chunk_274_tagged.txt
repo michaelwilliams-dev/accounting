@@ -11,4 +11,4 @@
 - Contract components
 - Lease
 - Non-lease elements
-- Accounting for lease components
+- Accounting for lease components 

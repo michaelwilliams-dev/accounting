@@ -1,1 +1,1 @@
-["work", "services", "public company", "shares", "premium", "nominal value", "interest", "register of members", "instrument of transfer", "share capital", "payment for shares", "Companies Act 2006", "legislation", "changes", "annotations", "public companies", "allotment of shares"]
+["work", "services", "public company", "shares", "premium", "nominal value", "interest", "register of members", "instrument of transfer", "share capital", "payment for shares", "Companies Act 2006", "legislation", "changes", "annotations", "public companies", "allotment of shares"] 

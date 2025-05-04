@@ -1,1 +1,1 @@
-Customer, Entity, Good, Service, Performance Obligations, Micro-Entity, Contract, Set-Up Activities, Administrative Tasks, Principal, Agent, Specified Good or Service, Control, Asset, Right to a Service, Indicators.
+Customer, Entity, Good, Service, Performance Obligations, Micro-Entity, Contract, Set-Up Activities, Administrative Tasks, Principal, Agent, Specified Good or Service, Control, Asset, Right to a Service, Indicators. 

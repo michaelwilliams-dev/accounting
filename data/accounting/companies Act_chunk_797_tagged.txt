@@ -14,4 +14,4 @@
 - Class of shares
 - Default
 - Offence committed by company
-- Company officer.
+- Company officer. 

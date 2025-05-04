@@ -19,4 +19,4 @@
 - Profit or loss
 - Financial asset
 - Financial liability
-- Statement presentation.
+- Statement presentation. 

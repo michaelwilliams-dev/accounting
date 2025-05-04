@@ -1,1 +1,1 @@
-["changes", "force", "annotations", "directors", "general meeting", "company", "requests", "members", "paid-up capital", "voting rights", "resolution", "business", "company's constitution", "hard copy", "electronic form", "authenticated", "Directors' duty", "section 303"]
+["changes", "force", "annotations", "directors", "general meeting", "company", "requests", "members", "paid-up capital", "voting rights", "resolution", "business", "company's constitution", "hard copy", "electronic form", "authenticated", "Directors' duty", "section 303"] 

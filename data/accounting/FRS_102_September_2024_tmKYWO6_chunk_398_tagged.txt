@@ -17,4 +17,4 @@
 - Tax charges
 - Business combinations
 - Goodwill
-- Purchase method
+- Purchase method 

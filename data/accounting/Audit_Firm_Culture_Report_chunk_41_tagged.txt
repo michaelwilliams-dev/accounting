@@ -20,4 +20,4 @@
 - Audit quality
 - Quality scores
 - Associates
-- Assistant managers.
+- Assistant managers. 

@@ -25,4 +25,4 @@
 - Debtor
 - Sales
 - Year End
-- Foreign currency monetary assets
+- Foreign currency monetary assets 

@@ -14,4 +14,4 @@
 - Unprompted disclosure
 - Prompted disclosure
 - Increased penalty
-- Minimum penalty percentage.
+- Minimum penalty percentage. 

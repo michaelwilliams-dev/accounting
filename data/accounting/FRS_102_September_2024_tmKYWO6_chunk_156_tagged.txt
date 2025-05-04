@@ -20,4 +20,4 @@
 - Financial instrument
 - Financial asset
 - Financial liability
-- Equity instrument
+- Equity instrument 

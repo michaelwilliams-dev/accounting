@@ -1,1 +1,1 @@
-["force date", "future changes", "annotations", "resolution", "agreement", "enactment", "company member", "treasury shares", "registrar", "offence", "conviction", "fine", "standard scale", "liquidator", "company's objects", "amendments", "notice"]
+["force date", "future changes", "annotations", "resolution", "agreement", "enactment", "company member", "treasury shares", "registrar", "offence", "conviction", "fine", "standard scale", "liquidator", "company's objects", "amendments", "notice"] 

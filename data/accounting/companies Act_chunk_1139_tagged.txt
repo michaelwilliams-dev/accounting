@@ -12,4 +12,4 @@
 - Trust
 - Section 982
 - Section 981(9)
-- Bank account
+- Bank account 

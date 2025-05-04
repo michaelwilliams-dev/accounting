@@ -12,4 +12,4 @@
 - Depreciation
 - Amortisation
 - Non-exchange transaction
-- Fair value.
+- Fair value. 

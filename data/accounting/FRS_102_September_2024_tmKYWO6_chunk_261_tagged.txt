@@ -13,4 +13,4 @@
 - Income and expenses
 - Depreciation expense
 - Depreciable assets
-- Fair values
+- Fair values 

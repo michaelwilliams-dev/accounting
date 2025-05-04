@@ -15,4 +15,4 @@
 - Original equity instrument
 - Modified equity instrument
 - Modification date
-- Grant date fair value.
+- Grant date fair value. 

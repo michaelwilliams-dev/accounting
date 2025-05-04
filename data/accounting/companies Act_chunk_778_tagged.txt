@@ -22,4 +22,4 @@
 - Aggregate nominal value of shares of that class
 - F969(ba)
 - F970
-- F970(d)
+- F970(d) 

@@ -18,4 +18,4 @@
 - Financial Reporting Standard
 - FRC
 - Revenue recognition model
-- Micro-entities.
+- Micro-entities. 

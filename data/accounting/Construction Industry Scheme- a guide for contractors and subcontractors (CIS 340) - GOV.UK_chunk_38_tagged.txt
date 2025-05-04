@@ -11,4 +11,4 @@
 - Payment methods
 - Credit cards
 - Debit cards
-- Accounting system
+- Accounting system 

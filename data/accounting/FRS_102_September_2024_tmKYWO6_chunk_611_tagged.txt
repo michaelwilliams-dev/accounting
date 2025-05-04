@@ -19,4 +19,4 @@
 - FRS 102
 - On-balance sheet lease accounting model
 - Periodic Review 2024
-- IAS 17 Leases.
+- IAS 17 Leases. 

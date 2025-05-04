@@ -16,4 +16,4 @@
 - Index
 - Market rental rates
 - Cash flows
-- Lease adjustment
+- Lease adjustment 

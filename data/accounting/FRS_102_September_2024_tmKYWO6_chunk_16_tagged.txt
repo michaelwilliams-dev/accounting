@@ -11,4 +11,4 @@
 - Equity adjustment
 - Hedge documentation
 - Financial statements
-- Disclosure requirements
+- Disclosure requirements 

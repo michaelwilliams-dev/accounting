@@ -24,4 +24,4 @@
 - General principles
 - Recoverable amount
 - Carrying amount
-- Micro-entity.
+- Micro-entity. 

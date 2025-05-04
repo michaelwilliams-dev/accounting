@@ -14,4 +14,4 @@
 - Company contracts
 - Common seal
 - Authority
-- Contract formalities
+- Contract formalities 

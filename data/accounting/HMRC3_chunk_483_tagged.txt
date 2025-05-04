@@ -14,4 +14,4 @@
 - Turnover
 - VAT
 - Sole trader
-- Partnership
+- Partnership 

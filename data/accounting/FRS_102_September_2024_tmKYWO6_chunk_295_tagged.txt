@@ -20,4 +20,4 @@
 - Section 16
 - Section 18
 - Section 27
-- Section 34.
+- Section 34. 

@@ -45,4 +45,4 @@
 - Insurance risk
 - Policyholder
 - Uncertain future event
-- Insured event.
+- Insured event. 

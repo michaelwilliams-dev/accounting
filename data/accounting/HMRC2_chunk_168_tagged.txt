@@ -20,4 +20,4 @@
 - Conditions to qualify as a micro-entity
 - Turnover limit
 - Balance sheet total limit
-- Employee number limit
+- Employee number limit 

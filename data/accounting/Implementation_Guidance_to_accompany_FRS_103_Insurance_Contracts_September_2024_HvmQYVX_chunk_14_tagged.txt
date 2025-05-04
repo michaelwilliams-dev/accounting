@@ -14,4 +14,4 @@
 - Seasonal claims
 - Non-adjusting events
 - FRS 102
-- Financial statements.
+- Financial statements. 

@@ -16,4 +16,4 @@
 - Companies House
 - Financial Conduct Authority
 - Small company qualification
-- Accounting periods.
+- Accounting periods. 

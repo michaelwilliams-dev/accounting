@@ -16,4 +16,4 @@
 - Range of reasonable valuations
 - Probabilities
 - Quoted market price
-- Asset acquisition
+- Asset acquisition 

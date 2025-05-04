@@ -19,4 +19,4 @@
 - Deferred Tax
 - Depreciation Charge
 - Revalued Amount
-- Retained Earnings
+- Retained Earnings 

@@ -12,4 +12,4 @@
 - Small companies regime
 - Audit exemption for Northern Ireland charitable companies
 - Financial thresholds
-- Gross income.
+- Gross income. 

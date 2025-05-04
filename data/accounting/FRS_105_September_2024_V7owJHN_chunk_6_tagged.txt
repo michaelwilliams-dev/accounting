@@ -26,4 +26,4 @@
 - Recognition and measurement of transactions
 - Micro-entities
 - Inconsistencies
-- Requirements.
+- Requirements. 

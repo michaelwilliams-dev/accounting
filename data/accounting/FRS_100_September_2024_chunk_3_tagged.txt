@@ -23,4 +23,4 @@
 - Qualifying entity
 - FRS 101.5
 - Statements of recommended practice (SORPs)
-- Small entity in the Republic of Ireland.
+- Small entity in the Republic of Ireland. 

@@ -16,4 +16,4 @@
 - Liabilities
 - Impairment of Assets
 - Recognition of impairment losses
-- Contract assets.
+- Contract assets. 

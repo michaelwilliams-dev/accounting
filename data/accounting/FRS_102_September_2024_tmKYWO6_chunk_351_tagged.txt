@@ -13,4 +13,4 @@
 - Type of good or service
 - Geographical market
 - Market or type of customer
-- Timing of transfer of goods
+- Timing of transfer of goods 

@@ -1,1 +1,1 @@
-["Management of the company", "Personal responsibility", "Debts and liabilities", "Director disqualification sanctions", "Relevant debts", "Instructions", "Director of the company", "Disqualification order", "Disqualification undertaking", "Undischarged bankrupt"]
+["Management of the company", "Personal responsibility", "Debts and liabilities", "Director disqualification sanctions", "Relevant debts", "Instructions", "Director of the company", "Disqualification order", "Disqualification undertaking", "Undischarged bankrupt"] 

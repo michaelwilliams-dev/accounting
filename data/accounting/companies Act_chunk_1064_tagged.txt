@@ -24,4 +24,4 @@
 - Annotations
 - Reports and inspection
 - Merger by absorption
-- Transferee company
+- Transferee company 

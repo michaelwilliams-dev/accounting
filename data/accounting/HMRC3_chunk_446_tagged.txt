@@ -13,4 +13,4 @@
 - Aggregate balance sheet total
 - Aggregate average number of employees
 - Exemptions for small companies
-- Ineligible groups
+- Ineligible groups 

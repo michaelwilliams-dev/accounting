@@ -31,4 +31,4 @@
 - Date of birth
 - Usual residential address
 - Date of becoming a registrable person
-- Nature of control
+- Nature of control 

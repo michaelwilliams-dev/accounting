@@ -8,4 +8,4 @@
 - Labour charge
 - Invoice amount
 - Net payment
-- Higher rate deduction
+- Higher rate deduction 

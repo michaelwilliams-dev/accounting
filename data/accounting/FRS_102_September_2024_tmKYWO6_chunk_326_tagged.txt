@@ -14,4 +14,4 @@
 - Task performance
 - Return shipping service
 - Defective product
-- Separate performance obligation.
+- Separate performance obligation. 

@@ -12,4 +12,4 @@
 - Estimating Fair Value
 - Number of Awards Expected to Vest
 - Goods or Services Received as Consideration
-- Cash Alternatives in Share-Based Payment Transactions
+- Cash Alternatives in Share-Based Payment Transactions 

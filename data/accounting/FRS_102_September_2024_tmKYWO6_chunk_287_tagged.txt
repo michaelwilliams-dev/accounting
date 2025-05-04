@@ -19,4 +19,4 @@
 - Lease commitments
 - Short-term leases of low-value assets
 - Lease term of one month or less
-- Lease term of one to five years.
+- Lease term of one to five years. 

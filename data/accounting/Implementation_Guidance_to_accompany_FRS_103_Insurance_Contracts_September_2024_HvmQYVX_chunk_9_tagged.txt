@@ -24,4 +24,4 @@
 - Commission
 - Intermediary
 - Wholesale Policies
-- Insured Amount.
+- Insured Amount. 

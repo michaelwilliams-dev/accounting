@@ -16,4 +16,4 @@
 - Guarantee
 - Security
 - Resolution of the members
-- Approval of transaction.
+- Approval of transaction. 

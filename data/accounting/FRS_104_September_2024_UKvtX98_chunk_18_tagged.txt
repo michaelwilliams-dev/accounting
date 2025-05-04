@@ -9,4 +9,4 @@
 - Interim Periods
 - Financial Year
 - Transaction Classes
-- Interim Allocation Difficulties.
+- Interim Allocation Difficulties. 

@@ -19,4 +19,4 @@
 - Estimate recoverable amount
 - Cash-generating unit
 - Forecasting cash flows
-- Individual assets.
+- Individual assets. 

@@ -22,4 +22,4 @@
 - E-money issuer
 - MiFID (Markets in Financial Instruments Directive)
 - UCITS (Undertakings for Collective Investment in Transferable Securities)
-- Management company.
+- Management company. 

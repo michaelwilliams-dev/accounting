@@ -10,4 +10,4 @@
 - Goods or services received
 - Grant date
 - Transactions with parties other than employees
-- Conditional grant of equity instruments
+- Conditional grant of equity instruments 

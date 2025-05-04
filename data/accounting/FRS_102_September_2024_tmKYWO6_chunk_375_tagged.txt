@@ -11,4 +11,4 @@
 - Fair value
 - Costs to sell
 - Cash flows
-- Additional requirements for impairment of goodwill
+- Additional requirements for impairment of goodwill 

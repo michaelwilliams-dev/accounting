@@ -8,4 +8,4 @@
 - Legislation changes
 - Company's registration
 - Required information about a director
-- Individual director
+- Individual director 

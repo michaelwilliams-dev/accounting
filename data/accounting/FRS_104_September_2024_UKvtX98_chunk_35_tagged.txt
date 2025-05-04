@@ -19,4 +19,4 @@
 - Estimated average annual income tax rate
 - Year-to-date basis
 - Disclosure of significant change in estimate
-- Taxing jurisdictions
+- Taxing jurisdictions 

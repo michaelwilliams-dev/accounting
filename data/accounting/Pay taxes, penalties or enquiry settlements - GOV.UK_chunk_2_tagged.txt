@@ -22,4 +22,4 @@
 - Bacs
 - Bank's processing times
 - Maximum transaction limits
-- UK account details
+- UK account details 

@@ -19,4 +19,4 @@
 - Annual turnover
 - Balance sheet total
 - Average number of employees
-- Issued share capital.
+- Issued share capital. 

@@ -1,1 +1,1 @@
-#FinancialReporting, #RelatedPartyDisclosures, #FinancialStatements, #Transactions, #Subsidiary, #RelatedParty, #KeyManagementPersonnel, #ParentEntity, #AssociateEntity, #JointVenture
+#FinancialReporting, #RelatedPartyDisclosures, #FinancialStatements, #Transactions, #Subsidiary, #RelatedParty, #KeyManagementPersonnel, #ParentEntity, #AssociateEntity, #JointVenture 

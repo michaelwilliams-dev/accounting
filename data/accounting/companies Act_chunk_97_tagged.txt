@@ -21,4 +21,4 @@
 - Membership cessation
 - Share capital
 - Shares
-- Member names and addresses
+- Member names and addresses 

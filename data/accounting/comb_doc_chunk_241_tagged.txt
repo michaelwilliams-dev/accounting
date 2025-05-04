@@ -27,4 +27,4 @@
 - Cost of inventory
 - Agricultural produce
 - Section 34 Specialised Activities
-- Disclosure of inventories recognised as an expense.
+- Disclosure of inventories recognised as an expense. 

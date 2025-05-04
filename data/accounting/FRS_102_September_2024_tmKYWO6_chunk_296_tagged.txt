@@ -16,4 +16,4 @@
 - Market rates
 - Prepayment of lease payments
 - Above-market terms
-- Below-market terms
+- Below-market terms 

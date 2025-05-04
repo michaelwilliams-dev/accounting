@@ -14,4 +14,4 @@
 - Small companies regime
 - Micro-entities
 - Accounting periods
-- Financial year.
+- Financial year. 

@@ -15,4 +15,4 @@
 - Accounting periods
 - Relevant conditions
 - Sections 384A and 384B of the Act
-- Non-company entities.
+- Non-company entities. 

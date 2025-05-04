@@ -15,4 +15,4 @@
 - Account number
 - Branch sort code
 - Building society reference
-- Claim Employment Allowance.
+- Claim Employment Allowance. 

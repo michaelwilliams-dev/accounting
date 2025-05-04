@@ -22,4 +22,4 @@
 - Third party software
 - Charity Commission
 - Filing deadlines
-- Accounting reference date.
+- Accounting reference date. 

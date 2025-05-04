@@ -14,4 +14,4 @@
 - Contract modifications
 - Scope change
 - Price change
-- Contract approval
+- Contract approval 

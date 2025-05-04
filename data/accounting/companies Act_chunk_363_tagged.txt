@@ -15,4 +15,4 @@
 - Member request
 - Valid vote recording and counting
 - Information provision
-- Time period.
+- Time period. 

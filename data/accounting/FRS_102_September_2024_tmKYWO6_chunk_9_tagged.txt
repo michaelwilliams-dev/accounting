@@ -16,4 +16,4 @@
 - Parent Entity
 - Basic Financial Instruments
 - Classification Conditions
-- Legal Requirements for Financial Statements Preparation
+- Legal Requirements for Financial Statements Preparation 

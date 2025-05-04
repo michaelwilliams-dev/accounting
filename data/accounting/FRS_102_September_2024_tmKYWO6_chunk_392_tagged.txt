@@ -22,4 +22,4 @@
 - Termination plan
 - Measurement
 - Expenditure estimate
-- Obligation settlement
+- Obligation settlement 

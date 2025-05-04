@@ -14,4 +14,4 @@
 - Interest expense
 - Effective interest method
 - Basic Financial Instruments
-- Lease liabilities
+- Lease liabilities 

@@ -22,4 +22,4 @@
 - Consideration for payment
 - Property and liabilities
 - Allocation
-- Transfer.
+- Transfer. 

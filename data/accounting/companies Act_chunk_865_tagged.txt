@@ -22,4 +22,4 @@
 - Execution of share transfer
 - Personal representative
 - Deceased member
-- Instrument of transfer
+- Instrument of transfer 

@@ -25,4 +25,4 @@
 - Payment
 - HMRC
 - Small contracts
-- Construction operations cost.
+- Construction operations cost. 

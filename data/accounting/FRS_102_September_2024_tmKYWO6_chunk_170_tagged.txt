@@ -12,4 +12,4 @@
 - Debt instruments
 - Fair value through profit or loss
 - Accounting mismatch
-- Assets measurement
+- Assets measurement 

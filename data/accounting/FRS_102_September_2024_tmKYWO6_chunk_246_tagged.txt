@@ -16,4 +16,4 @@
 - Probability Recognition Criterion
 - Business Combination
 - Goodwill
-- Recognition Criteria
+- Recognition Criteria 

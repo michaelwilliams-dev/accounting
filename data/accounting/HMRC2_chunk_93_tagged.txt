@@ -11,4 +11,4 @@
 - Accounting periods
 - Aggregate turnover
 - Aggregate balance sheet total
-- Aggregate average number of employees.
+- Aggregate average number of employees. 

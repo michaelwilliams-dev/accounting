@@ -12,4 +12,4 @@
 - Company
 - Subsidiary company
 - Holding company
-- Control of political donations and expenditure
+- Control of political donations and expenditure 

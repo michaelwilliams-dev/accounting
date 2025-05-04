@@ -10,4 +10,4 @@
 - Contract terms and conditions
 - Lease component
 - Reassessment
-- Explicitly specified asset
+- Explicitly specified asset 

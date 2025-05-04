@@ -17,4 +17,4 @@
 - Application to class meetings
 - Company without a share capital
 - General meeting
-- Subsections.
+- Subsections. 

@@ -20,4 +20,4 @@
 - Fixed interest element
 - Variable rate component
 - Reclassification adjustment
-- Paragraph 12.23(d)(ii)
+- Paragraph 12.23(d)(ii) 

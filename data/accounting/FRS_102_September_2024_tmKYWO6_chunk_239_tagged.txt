@@ -20,4 +20,4 @@
 - Accumulated impairment losses
 - Revalued amount
 - Regular revaluations
-- Carrying amount discrepancy
+- Carrying amount discrepancy 

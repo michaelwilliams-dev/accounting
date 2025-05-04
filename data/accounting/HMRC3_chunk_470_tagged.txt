@@ -18,4 +18,4 @@
 - Financial Conduct Authority (FCA)
 - UCITS (Undertaking for Collective Investment in Transferable Securities)
 - Alternative Investment Funds
-- Filing with the FCA
+- Filing with the FCA 

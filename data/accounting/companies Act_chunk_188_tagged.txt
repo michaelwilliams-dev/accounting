@@ -12,4 +12,4 @@
 - Requirement compliance
 - Conflict of interest
 - Director's awareness
-- Other directors' awareness
+- Other directors' awareness 

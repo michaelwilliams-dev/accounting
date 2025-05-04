@@ -21,4 +21,4 @@
 - Registered number
 - Legal form
 - Law governance
-- Register details
+- Register details 

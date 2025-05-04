@@ -13,4 +13,4 @@
 - Authorised insurance company
 - Banking company
 - E-money issuer
-- MiFID (Markets in Financial Instruments)
+- MiFID (Markets in Financial Instruments) 

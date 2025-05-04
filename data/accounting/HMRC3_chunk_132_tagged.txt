@@ -20,4 +20,4 @@
 - accounting periods
 - aggregate turnover
 - aggregate balance sheet total
-- aggregate average number of employees.
+- aggregate average number of employees. 

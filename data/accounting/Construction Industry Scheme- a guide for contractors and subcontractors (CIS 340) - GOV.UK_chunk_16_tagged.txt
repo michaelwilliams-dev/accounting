@@ -7,4 +7,4 @@
 - Contractor's details
 - Subcontractor's details
 - Contract confirmation
-- Subcontractor registration check
+- Subcontractor registration check 

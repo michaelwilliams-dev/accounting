@@ -1,1 +1,1 @@
-["Changes", "Annotations", "Funding", "Fees and Charges", "Expenses", "Takeover Appeal Board", "Principal Repayment", "Interest Payment", "Reserves", "Levy", "Secretary of State", "Regulations", "Securities", "Markets", "Functions of the Panel", "Rate of Levy"]
+["Changes", "Annotations", "Funding", "Fees and Charges", "Expenses", "Takeover Appeal Board", "Principal Repayment", "Interest Payment", "Reserves", "Levy", "Secretary of State", "Regulations", "Securities", "Markets", "Functions of the Panel", "Rate of Levy"] 

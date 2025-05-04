@@ -15,4 +15,4 @@
 - Restrictions on Changing ARD
 - Extending Accounting Periods
 - Company Administration
-- Secretary of State Approval
+- Secretary of State Approval 

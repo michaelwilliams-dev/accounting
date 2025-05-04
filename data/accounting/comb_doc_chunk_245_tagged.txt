@@ -20,4 +20,4 @@
 - Deferred tax assets or liabilities
 - Employee benefit arrangements
 - Acquisition
-- Subsidiary
+- Subsidiary 

@@ -22,4 +22,4 @@
 - Micro-entity conditions
 - Turnover limit
 - Balance sheet total limit
-- Employee number limit
+- Employee number limit 

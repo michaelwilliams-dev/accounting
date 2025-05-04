@@ -17,4 +17,4 @@
 - Fee conditions
 - Information availability
 - Two-year period
-- Failure to make information available.
+- Failure to make information available. 

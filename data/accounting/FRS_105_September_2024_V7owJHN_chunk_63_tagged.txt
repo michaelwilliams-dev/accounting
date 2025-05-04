@@ -19,4 +19,4 @@
 - Fair value
 - Commercial substance
 - Subsequent measurement
-- Accumulated depreciation
+- Accumulated depreciation 

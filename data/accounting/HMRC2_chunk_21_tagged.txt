@@ -22,4 +22,4 @@
 - Authorised Insurance Company
 - Banking Company
 - E-money Issuer
-- MiFID (Markets in Financial Instruments Directive)
+- MiFID (Markets in Financial Instruments Directive) 

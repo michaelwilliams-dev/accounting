@@ -24,4 +24,4 @@
 - CIS deduction rates
 - Registered subcontractors
 - Unregistered subcontractors
-- Gross payment status.
+- Gross payment status. 

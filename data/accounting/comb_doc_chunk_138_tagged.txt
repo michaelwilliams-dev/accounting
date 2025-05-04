@@ -22,4 +22,4 @@
 - FRS 5
 - SSAP 9
 - UITF Abstract 40
-- Transitioning to FRS 102
+- Transitioning to FRS 102 

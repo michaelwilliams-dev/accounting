@@ -1,1 +1,1 @@
-#revenue_recognition, #royalties, #sales_based_royalty, #usage_based_royalty, #performance_obligation, #refund_liabilities, #service_contract, #transaction_price, #reporting_period, #accounting, #sale_with_right_of_return, #customer_satisfaction, #product_exchange
+#revenue_recognition, #royalties, #sales_based_royalty, #usage_based_royalty, #performance_obligation, #refund_liabilities, #service_contract, #transaction_price, #reporting_period, #accounting, #sale_with_right_of_return, #customer_satisfaction, #product_exchange 

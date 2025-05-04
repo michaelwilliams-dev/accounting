@@ -15,4 +15,4 @@
 - Additional investment
 - Related transactions
 - Non-market rate of interest
-- Below market rate of interest.
+- Below market rate of interest. 

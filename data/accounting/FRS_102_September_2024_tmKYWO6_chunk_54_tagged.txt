@@ -20,4 +20,4 @@
 - Right-of-use assets
 - Fixed asset investments
 - Biological assets
-- Heritage assets.
+- Heritage assets. 

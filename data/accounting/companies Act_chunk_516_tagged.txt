@@ -15,4 +15,4 @@
 - Future date
 - Annotations
 - The Companies Act 2006 (Strategic Report and Directors' Report) Regulations 2013
-- The Companies Act 2006 (Accounts, Reports and Audit) Regulations 2009.
+- The Companies Act 2006 (Accounts, Reports and Audit) Regulations 2009. 

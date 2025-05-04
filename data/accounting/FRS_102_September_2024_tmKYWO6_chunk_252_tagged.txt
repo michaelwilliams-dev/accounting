@@ -13,4 +13,4 @@
 - Equity
 - Profit or loss
 - Revaluation decrease
-- Revaluation increase.
+- Revaluation increase. 

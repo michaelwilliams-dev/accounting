@@ -15,4 +15,4 @@
 - Audit firm
 - Companies House
 - Exemptions
-- Auditor's name.
+- Auditor's name. 

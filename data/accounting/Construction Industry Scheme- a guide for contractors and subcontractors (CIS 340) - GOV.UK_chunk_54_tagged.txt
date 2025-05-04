@@ -52,4 +52,4 @@
 - Satellite receivers installation
 - Refrigeration units installation
 - Building completion
-- Structure completion.
+- Structure completion. 

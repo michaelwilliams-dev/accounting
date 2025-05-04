@@ -20,4 +20,4 @@
 - Performance
 - Accounting policy
 - IFRS 7 Financial Instruments: Disclosure
-- Recognition and measurement policies.
+- Recognition and measurement policies. 

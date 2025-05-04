@@ -20,4 +20,4 @@
 - Prospective provisions
 - Document generation date
 - Company's officer
-- Name or designation of class of shares.
+- Name or designation of class of shares. 

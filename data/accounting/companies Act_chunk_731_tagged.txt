@@ -19,4 +19,4 @@
 - Company's share capital
 - Chapter 6
 - Public companies
-- Independent
+- Independent 

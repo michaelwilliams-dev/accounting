@@ -12,4 +12,4 @@
 - Accounting periods
 - Annual turnover
 - Balance sheet total
-- Average number of employees
+- Average number of employees 

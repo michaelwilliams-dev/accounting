@@ -20,4 +20,4 @@
 - EU-adopted IFRS
 - IFRS 10 Consolidated Financial Statements
 - Company law
-- Special purpose entities
+- Special purpose entities 

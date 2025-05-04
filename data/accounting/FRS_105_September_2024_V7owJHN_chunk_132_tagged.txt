@@ -1,1 +1,1 @@
-Taxable profit, Tax loss, Customer, Date of transition, Deferred tax, Defined benefit plans, Defined contribution plans, Depreciable amount, Depreciation, Derecognition, Derivative.
+Taxable profit, Tax loss, Customer, Date of transition, Deferred tax, Defined benefit plans, Defined contribution plans, Depreciable amount, Depreciation, Derecognition, Derivative. 

@@ -1,1 +1,1 @@
-["Date", "Legal Changes", "Annotations", "Shares", "Takeover Offer", "Treasury Shares", "Contract Conditions", "Offer Acceptance"]
+["Date", "Legal Changes", "Annotations", "Shares", "Takeover Offer", "Treasury Shares", "Contract Conditions", "Offer Acceptance"] 

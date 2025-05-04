@@ -13,4 +13,4 @@
 - Liability
 - Director of the company
 - Holding company
-- Transaction authorization
+- Transaction authorization 

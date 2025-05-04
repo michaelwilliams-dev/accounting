@@ -22,4 +22,4 @@
 - Short-term Compensated Absences
 - Annual Leave
 - Sick Leave
-- Accumulating Compensated Absences.
+- Accumulating Compensated Absences. 

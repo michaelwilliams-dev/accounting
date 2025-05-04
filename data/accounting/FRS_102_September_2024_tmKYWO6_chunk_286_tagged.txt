@@ -20,4 +20,4 @@
 - Accounting policy
 - Practical expedients
 - Lease modification
-- Unchanged discount rate
+- Unchanged discount rate 

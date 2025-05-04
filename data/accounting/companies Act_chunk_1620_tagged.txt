@@ -12,4 +12,4 @@
 - Prospective provisions
 - Status of Act
 - Address specification
-- Document or information supply
+- Document or information supply 

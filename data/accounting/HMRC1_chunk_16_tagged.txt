@@ -19,4 +19,4 @@
 - Full expensing
 - 50% first-year allowance
 - Contract signing
-- Payment due date
+- Payment due date 

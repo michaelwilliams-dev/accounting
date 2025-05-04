@@ -27,4 +27,4 @@
 - Carrying amount at end of period
 - Effective interest rate
 - Interest rate benchmark reform
-- Contractual cash flows.
+- Contractual cash flows. 

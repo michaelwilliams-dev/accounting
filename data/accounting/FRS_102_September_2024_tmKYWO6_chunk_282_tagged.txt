@@ -11,4 +11,4 @@
 - Profit or loss recognition
 - Variable lease payments
 - Lease liability remeasurement
-- Adjustment to right-of-use asset
+- Adjustment to right-of-use asset 

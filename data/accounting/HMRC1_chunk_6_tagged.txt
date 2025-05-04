@@ -31,4 +31,4 @@
 - Sole Trader
 - Partnership
 - Income
-- Cash Basis System.
+- Cash Basis System. 

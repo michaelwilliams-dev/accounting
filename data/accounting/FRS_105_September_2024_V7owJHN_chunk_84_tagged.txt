@@ -23,4 +23,4 @@
 - Section 17 Liabilities and Equity
 - Section 21 Share-based Payment
 - Section 23 Employee Benefits
-- Section 7 Subsidiaries, Associates, Jointly Controlled Entities and Intermediate Payment Arrangements.
+- Section 7 Subsidiaries, Associates, Jointly Controlled Entities and Intermediate Payment Arrangements. 

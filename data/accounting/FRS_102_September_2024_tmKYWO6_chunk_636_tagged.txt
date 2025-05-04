@@ -18,4 +18,4 @@
 - Timing differences plus approach
 - Temporary differences
 - Accounting standards
-- IFRS
+- IFRS 

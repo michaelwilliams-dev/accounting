@@ -16,4 +16,4 @@
 - Attributable profit
 - SSAP 9 paragraph 9
 - Transaction
-- Reporting period.
+- Reporting period. 

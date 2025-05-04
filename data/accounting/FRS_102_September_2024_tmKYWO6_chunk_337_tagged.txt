@@ -10,4 +10,4 @@
 - Changes in transaction price
 - Estimate of consideration
 - Entity's efforts
-- Variable payment.
+- Variable payment. 

@@ -19,4 +19,4 @@
 - Estimation techniques
 - Valuation techniques
 - Changes in accounting estimates
-- Correction of prior period errors.
+- Correction of prior period errors. 

@@ -8,4 +8,4 @@
 - Reporting period
 - Sales-based royalties
 - Usage-based royalties
-- Licence of intellectual property
+- Licence of intellectual property 

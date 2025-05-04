@@ -16,4 +16,4 @@
 - Future date changes
 - Outstanding changes
 - Aggregate nominal value of shares of that class
-- F1006.
+- F1006. 

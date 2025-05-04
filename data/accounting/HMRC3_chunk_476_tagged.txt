@@ -54,4 +54,4 @@
 - Action Deadline
 - File first accounts with Companies House
 - File annual accounts with Companies House
-- Pay Corporation Tax or tell HMRC that your limited company does not owe
+- Pay Corporation Tax or tell HMRC that your limited company does not owe 

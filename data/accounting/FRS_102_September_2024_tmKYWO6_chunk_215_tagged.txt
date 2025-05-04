@@ -17,4 +17,4 @@
 - Fair value
 - Costs to sell
 - Estimated selling price
-- Measurement of inventories
+- Measurement of inventories 

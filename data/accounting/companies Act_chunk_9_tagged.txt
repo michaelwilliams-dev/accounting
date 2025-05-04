@@ -1,1 +1,1 @@
-["Company Registration", "England and Wales", "Scotland", "Northern Ireland", "Court Permission", "Economic Crime and Corporate Transparency Act 2023", "Small Business, Enterprise and Employment Act 2015", "Legal Amendments", "Regulations"]
+["Company Registration", "England and Wales", "Scotland", "Northern Ireland", "Court Permission", "Economic Crime and Corporate Transparency Act 2023", "Small Business, Enterprise and Employment Act 2015", "Legal Amendments", "Regulations"] 

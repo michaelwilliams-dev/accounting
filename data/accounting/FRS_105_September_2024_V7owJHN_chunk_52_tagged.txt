@@ -20,4 +20,4 @@
 - Agricultural produce
 - Biological assets
 - Initial recognition
-- Estimated selling price.
+- Estimated selling price. 

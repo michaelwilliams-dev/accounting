@@ -21,4 +21,4 @@
 - FRS 101 Reduced Disclosure Framework
 - FRS 103 Insurance Contracts
 - FRS 104 Interim Financial Reporting
-- The Financial Reporting Standard for Smaller Entities (FRSSE)
+- The Financial Reporting Standard for Smaller Entities (FRSSE) 

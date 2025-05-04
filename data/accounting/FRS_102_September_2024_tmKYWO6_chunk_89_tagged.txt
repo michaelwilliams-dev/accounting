@@ -1,1 +1,1 @@
-#MeasurementBasis, #AssetCharacteristics, #LiabilityCharacteristics, #CashFlowVariability, #MarketFactors, #RiskSensitivity, #HistoricalCost, #CurrentValue, #FinancialStatements, #Relevance, #FaithfulRepresentation, #AccountingMismatch, #MeasurementUncertainty, #ActiveMarket, #Estimation.
+#MeasurementBasis, #AssetCharacteristics, #LiabilityCharacteristics, #CashFlowVariability, #MarketFactors, #RiskSensitivity, #HistoricalCost, #CurrentValue, #FinancialStatements, #Relevance, #FaithfulRepresentation, #AccountingMismatch, #MeasurementUncertainty, #ActiveMarket, #Estimation. 

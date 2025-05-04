@@ -18,4 +18,4 @@
 - Company's Name
 - Company's Articles
 - Certificate of Incorporation
-- Re-registration Date
+- Re-registration Date 

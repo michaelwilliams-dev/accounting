@@ -22,4 +22,4 @@
 - Processing staff (employer)
 - Processing staff (SA)
 - Sole traders
-- Partnerships
+- Partnerships 

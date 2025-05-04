@@ -18,4 +18,4 @@
 - Depreciation
 - Consumption of economic benefits
 - Initial cost of the asset
-- Useful life.
+- Useful life. 

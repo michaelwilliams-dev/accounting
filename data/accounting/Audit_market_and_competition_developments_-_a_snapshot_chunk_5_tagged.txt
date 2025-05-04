@@ -18,4 +18,4 @@
 - Currency conversion
 - ONS
 - Refinitiv Eikon
-- FTSE 350 constituents.
+- FTSE 350 constituents. 

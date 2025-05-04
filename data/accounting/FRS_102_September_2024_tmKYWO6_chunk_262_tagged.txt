@@ -20,4 +20,4 @@
 - Lease term
 - Underlying asset
 - Low value asset
-- Section 20 Leases
+- Section 20 Leases 

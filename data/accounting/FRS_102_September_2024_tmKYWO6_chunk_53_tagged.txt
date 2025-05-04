@@ -13,4 +13,4 @@
 - Fixed assets
 - Cost
 - Revaluation
-- Fair value accounting rules
+- Fair value accounting rules 

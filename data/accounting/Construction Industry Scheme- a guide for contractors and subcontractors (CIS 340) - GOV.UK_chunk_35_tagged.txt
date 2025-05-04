@@ -19,4 +19,4 @@
 - Nominees
 - Gross payment
 - Payment under deduction
-- Standard rate of deduction
+- Standard rate of deduction 

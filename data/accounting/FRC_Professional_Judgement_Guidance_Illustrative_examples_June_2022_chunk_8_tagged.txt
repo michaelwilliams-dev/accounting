@@ -31,4 +31,4 @@
 - Bank facilities
 - Directors
 - Day-to-day operations
-- Loan repayment.
+- Loan repayment. 

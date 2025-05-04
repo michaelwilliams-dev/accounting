@@ -18,4 +18,4 @@
 - MiFID (Markets in Financial Instruments Directive)
 - UCITS (Undertakings for Collective Investment in Transferable Securities)
 - Management company
-- Financial year
+- Financial year 

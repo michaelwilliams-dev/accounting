@@ -20,4 +20,4 @@
 - Average number of employees
 - Professional accountant
 - Annual turnover
-- Financial year
+- Financial year 

@@ -10,4 +10,4 @@
 - Discount on shares
 - Different payment amounts on shares
 - Share capital
-- Act provisions
+- Act provisions 

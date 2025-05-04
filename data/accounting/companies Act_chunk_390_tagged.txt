@@ -1,1 +1,1 @@
-["Legal Text", "Regulations", "Amendments", "EU Exit", "Financial Years", "Accounts and Reports", "IP Completion Day", "S.I. 2020/523", "S.I. 2019/145", "2020 c. 1", "Sch. 5 para. 1(1)", "s. 384B(1)(c)", "s. 384B(1)(d)", "s. 384B(1)(e)"]
+["Legal Text", "Regulations", "Amendments", "EU Exit", "Financial Years", "Accounts and Reports", "IP Completion Day", "S.I. 2020/523", "S.I. 2019/145", "2020 c. 1", "Sch. 5 para. 1(1)", "s. 384B(1)(c)", "s. 384B(1)(d)", "s. 384B(1)(e)"] 

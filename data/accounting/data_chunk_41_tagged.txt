@@ -1,1 +1,1 @@
-["disqualification order", "court", "High Court", "Court of Session", "compensation orders", "compensation undertakings", "Secretary of State", "creditor", "company assets", "loss", "financial contribution", "bankruptcy debt", "variation and revocation", "application", "hearing"]
+["disqualification order", "court", "High Court", "Court of Session", "compensation orders", "compensation undertakings", "Secretary of State", "creditor", "company assets", "loss", "financial contribution", "bankruptcy debt", "variation and revocation", "application", "hearing"] 

@@ -28,4 +28,4 @@
 - Provision for doubtful debts
 - Bad debts written off
 - Reversal of impairment losses
-- Financial asset.
+- Financial asset. 

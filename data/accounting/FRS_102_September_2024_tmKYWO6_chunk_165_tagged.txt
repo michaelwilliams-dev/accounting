@@ -11,4 +11,4 @@
 - Prepayment option
 - Contingent on future events
 - Paragraph 11.9(c)
-- Section 12.
+- Section 12. 

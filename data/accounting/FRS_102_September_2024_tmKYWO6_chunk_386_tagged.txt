@@ -17,4 +17,4 @@
 - Projected unit credit method
 - Actuarial assumptions
 - Actuarial valuation
-- Funding.
+- Funding. 

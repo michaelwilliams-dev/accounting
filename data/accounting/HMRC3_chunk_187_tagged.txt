@@ -15,4 +15,4 @@
 - Company members
 - Re-appointing an auditor
 - Written resolution
-- Removing an auditor
+- Removing an auditor 

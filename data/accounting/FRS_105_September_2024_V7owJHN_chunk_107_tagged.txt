@@ -11,4 +11,4 @@
 - Present value of future cash flows
 - Estimating future cash inflows and outflows
 - Applying discount rate to future cash flows
-- Projections of cash inflows.
+- Projections of cash inflows. 

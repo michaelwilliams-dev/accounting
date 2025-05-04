@@ -16,4 +16,4 @@
 - Future date
 - Annotations
 - Registrar
-- Passed resolution
+- Passed resolution 

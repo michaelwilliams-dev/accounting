@@ -19,4 +19,4 @@
 - Foreign currency
 - Transfer
 - Acquisition
-- Liability.
+- Liability. 

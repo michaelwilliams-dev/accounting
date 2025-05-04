@@ -27,4 +27,4 @@
 - Liability of business
 - Fair value
 - Market-consistent stochastic model
-- IG1.12
+- IG1.12 

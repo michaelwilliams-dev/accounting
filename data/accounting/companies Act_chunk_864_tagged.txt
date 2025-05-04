@@ -1,1 +1,1 @@
-["transfer", "transferee", "refusal to register", "Certification and transfer of securities", "Companies Act 2006", "legislation changes", "register of members", "company refusal", "minutes of meetings", "offence", "summary conviction", "fine"]
+["transfer", "transferee", "refusal to register", "Certification and transfer of securities", "Companies Act 2006", "legislation changes", "register of members", "company refusal", "minutes of meetings", "offence", "summary conviction", "fine"] 

@@ -43,4 +43,4 @@
 - New system design
 - New service design
 - Development phase
-- Development expenditure.
+- Development expenditure. 

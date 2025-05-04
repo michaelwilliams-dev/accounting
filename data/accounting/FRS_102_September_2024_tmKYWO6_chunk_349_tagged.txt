@@ -1,1 +1,1 @@
-["Performance Obligations", "Cost Recovery", "Asset Recognition", "Measurement After Recognition", "Amortisation", "Impairment of Assets", "Recoverable Amount", "Consideration", "Contract Balances", "Customer's Credit Risk"]
+["Performance Obligations", "Cost Recovery", "Asset Recognition", "Measurement After Recognition", "Amortisation", "Impairment of Assets", "Recoverable Amount", "Consideration", "Contract Balances", "Customer's Credit Risk"] 

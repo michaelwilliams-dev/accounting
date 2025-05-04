@@ -28,4 +28,4 @@
 - XML formatted
 - UTF-8 encoding standard
 - Hypertext Transport Protocol (HTTP)
-- HTTP 1.1 POST requests
+- HTTP 1.1 POST requests 

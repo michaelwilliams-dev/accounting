@@ -17,4 +17,4 @@
 - Average number of employees
 - Issued share capital
 - Companies Act 2006
-- Audit exemption criteria
+- Audit exemption criteria 

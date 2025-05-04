@@ -14,4 +14,4 @@
 - Variable amounts
 - Single performance obligation
 - Series of distinct goods or services
-- Variable amount.
+- Variable amount. 

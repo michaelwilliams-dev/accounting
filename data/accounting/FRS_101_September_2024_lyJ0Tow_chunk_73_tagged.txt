@@ -19,4 +19,4 @@
 - accounting periods
 - 1 January 2015
 - early adoption
-- qualifying entity.
+- qualifying entity. 

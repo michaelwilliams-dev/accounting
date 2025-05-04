@@ -19,4 +19,4 @@
 - Measure
 - Classify
 - Disclose
-- Financial data.
+- Financial data. 

@@ -24,4 +24,4 @@
 - Mandatory Redemption
 - Fixed or Determinable Amount
 - Future Date
-- Right to Redeem.
+- Right to Redeem. 

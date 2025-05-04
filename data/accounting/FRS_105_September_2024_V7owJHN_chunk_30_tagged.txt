@@ -19,4 +19,4 @@
 - Arrangements
 - Guarantees
 - Security
-- Value of arrangements.
+- Value of arrangements. 

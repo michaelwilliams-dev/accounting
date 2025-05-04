@@ -17,4 +17,4 @@
 - Borrowing costs
 - Section 25 Borrowing Costs
 - Expense
-- Incurred costs
+- Incurred costs 

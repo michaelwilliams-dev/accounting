@@ -16,4 +16,4 @@
 - Annual payments
 - Interest rates
 - Cheque payments
-- Electronic payments
+- Electronic payments 

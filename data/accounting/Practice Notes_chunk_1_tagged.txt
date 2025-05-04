@@ -22,4 +22,4 @@
 - Revisions
 - Early Adoption
 - Effective Dates
-- Financial Periods.
+- Financial Periods. 

@@ -16,4 +16,4 @@
 - Inventory
 - Replacement parts
 - Carrying amount
-- Derecognition
+- Derecognition 

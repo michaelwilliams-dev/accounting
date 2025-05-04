@@ -23,4 +23,4 @@
 - Cash price equivalent
 - Deferred payment
 - Interest accounting
-- Exchanges
+- Exchanges 

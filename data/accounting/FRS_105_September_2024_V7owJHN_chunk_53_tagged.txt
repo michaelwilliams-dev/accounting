@@ -17,4 +17,4 @@
 - Damage
 - Obsolescence
 - Declining selling prices
-- Inventory impairment recognition
+- Inventory impairment recognition 

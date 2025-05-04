@@ -25,4 +25,4 @@
 - Paragraphs IG2.67 to IG2.70
 - Actual investment return
 - General insurance technical provisions
-- Associated equity.
+- Associated equity. 

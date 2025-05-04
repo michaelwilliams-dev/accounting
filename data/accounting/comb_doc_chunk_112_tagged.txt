@@ -27,4 +27,4 @@
 - Financing transactions
 - Deferred payments
 - Repayments
-- Explicit interest rate.
+- Explicit interest rate. 

@@ -27,4 +27,4 @@
 - Immediate settlement
 - Cash purchase
 - Ordinary shares
-- Investment.
+- Investment. 

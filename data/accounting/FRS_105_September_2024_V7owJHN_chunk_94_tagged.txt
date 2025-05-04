@@ -11,4 +11,4 @@
 - Allocate transaction price
 - Stand-alone selling price
 - Contract obligations
-- Allocation based on stand-alone selling prices
+- Allocation based on stand-alone selling prices 

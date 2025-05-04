@@ -15,4 +15,4 @@
 - Notification
 - Agreement parties
 - Addresses of the parties
-- Shares notification
+- Shares notification 

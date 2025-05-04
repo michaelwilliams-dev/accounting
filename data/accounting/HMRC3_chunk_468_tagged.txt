@@ -11,4 +11,4 @@
 - Requirement to deliver accounts
 - Companies Act 2006
 - The Partnerships (Accounts) Regulations 2008
-- Consolidated basis in group accounts
+- Consolidated basis in group accounts 

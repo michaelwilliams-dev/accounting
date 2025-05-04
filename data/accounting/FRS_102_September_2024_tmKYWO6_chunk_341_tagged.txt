@@ -9,4 +9,4 @@
 - Customer acceptance clauses
 - Contract cancellation
 - Remedial action
-- Agreed-upon specifications.
+- Agreed-upon specifications. 

@@ -9,4 +9,4 @@
 - Series of distinct goods or services
 - Performance obligation satisfied over time
 - Measure of progress
-- Explicit promises in contract
+- Explicit promises in contract 

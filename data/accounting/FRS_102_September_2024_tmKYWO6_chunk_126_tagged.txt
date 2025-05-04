@@ -14,4 +14,4 @@
 - Trade payables
 - Business combinations
 - Exchange differences
-- Non-cash changes.
+- Non-cash changes. 

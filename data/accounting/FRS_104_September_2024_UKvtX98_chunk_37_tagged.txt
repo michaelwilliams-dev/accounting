@@ -17,4 +17,4 @@
 - Special tax rates
 - Government grant
 - Tax loss carryback
-- Tax credit carrybacks and carryforwards
+- Tax credit carrybacks and carryforwards 

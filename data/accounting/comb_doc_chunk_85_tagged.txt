@@ -21,4 +21,4 @@
 - Distribution
 - FRS 102 references 16.7 2A.4 to 2A.6
 - Remeasurement to fair value
-- Revaluation model for property, plant.
+- Revaluation model for property, plant. 

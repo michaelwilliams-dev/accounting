@@ -19,4 +19,4 @@
 - Document availability
 - Subsection (3A)
 - Subsection (4C)
-- Document copies
+- Document copies 

@@ -16,4 +16,4 @@
 - Cost of sale
 - Selling profit
 - Micro-entity's policy
-- Artificially low rates of interest.
+- Artificially low rates of interest. 

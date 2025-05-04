@@ -22,4 +22,4 @@
 - Basic Financial Instruments
 - FRS 26 (IAS 39)
 - Financial Instruments: Recognition and Measurement
-- FRS 4 Capital Instruments.
+- FRS 4 Capital Instruments. 

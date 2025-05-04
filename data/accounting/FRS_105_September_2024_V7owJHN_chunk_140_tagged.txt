@@ -34,4 +34,4 @@
 - Amounts guaranteed by the lessee
 - Party related to the lessee
 - Lessor
-- Residual value
+- Residual value 

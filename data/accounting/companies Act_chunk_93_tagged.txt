@@ -16,4 +16,4 @@
 - Legislation changes
 - Prospective provisions
 - Document generation date
-- Future changes.
+- Future changes. 

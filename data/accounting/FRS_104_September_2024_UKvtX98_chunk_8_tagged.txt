@@ -17,4 +17,4 @@
 - Fair value of financial assets and liabilities
 - Loan default
 - Breach of loan agreement
-- Related party transactions
+- Related party transactions 

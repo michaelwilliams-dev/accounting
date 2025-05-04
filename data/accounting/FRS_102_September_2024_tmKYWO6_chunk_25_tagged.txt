@@ -28,4 +28,4 @@
 - Practical expedients
 - Completed contracts
 - Annual reporting period
-- Earliest period presented.
+- Earliest period presented. 

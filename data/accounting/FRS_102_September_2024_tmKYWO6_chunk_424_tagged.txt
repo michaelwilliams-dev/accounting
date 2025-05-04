@@ -22,4 +22,4 @@
 - Participation in a defined benefit plan
 - Arm’s length transactions
 - Aggregate disclosure
-- Financial effects of related party transactions
+- Financial effects of related party transactions 

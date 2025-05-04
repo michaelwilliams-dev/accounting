@@ -21,4 +21,4 @@
 - Liquidity threat
 - Reputation threat
 - Impact and probability assessment
-- Timescale assessment
+- Timescale assessment 

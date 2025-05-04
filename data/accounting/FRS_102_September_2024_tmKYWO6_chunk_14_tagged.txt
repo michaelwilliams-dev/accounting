@@ -25,4 +25,4 @@
 - Paragraph 1.12(f)
 - Disclosure exemption
 - Qualifying entities
-- Paragraph 24(b) of IFRS 6.
+- Paragraph 24(b) of IFRS 6. 

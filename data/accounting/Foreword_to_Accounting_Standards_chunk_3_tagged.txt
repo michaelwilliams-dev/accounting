@@ -8,4 +8,4 @@
 - Early adoption
 - High-quality financial reporting
 - Size and complexity of the entity
-- Users' information needs.
+- Users' information needs. 

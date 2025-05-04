@@ -15,4 +15,4 @@
 - Payments
 - Equity instruments distribution
 - Restrictions
-- Beneficiaries of the arrangement.
+- Beneficiaries of the arrangement. 

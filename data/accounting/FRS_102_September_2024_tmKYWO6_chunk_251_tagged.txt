@@ -15,4 +15,4 @@
 - Past expenses
 - Initial recognition
 - Asset class
-- Revalued amount
+- Revalued amount 

@@ -10,4 +10,4 @@
 - Hedge accounting
 - Ineffectiveness
 - Non-contractually specified risk component
-- Separately identifiable
+- Separately identifiable 

@@ -15,4 +15,4 @@
 - Manufacturer
 - Customer
 - Machinery
-- Sales taxes
+- Sales taxes 

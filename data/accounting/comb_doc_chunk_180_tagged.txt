@@ -15,4 +15,4 @@
 - Impairment
 - FRS 102
 - Optional exemption
-- Original cost.
+- Original cost. 

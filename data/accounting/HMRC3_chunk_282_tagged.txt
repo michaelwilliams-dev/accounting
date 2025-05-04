@@ -13,4 +13,4 @@
 - Public companies
 - Accounting reference date
 - Delivery to Companies House
-- Shortened account period.
+- Shortened account period. 

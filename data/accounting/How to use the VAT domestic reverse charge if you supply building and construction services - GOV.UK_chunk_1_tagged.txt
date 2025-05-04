@@ -10,4 +10,4 @@
 - UK VAT number
 - Construction Industry Scheme registration
 - Sole trader
-- Unique taxpayer reference
+- Unique taxpayer reference 

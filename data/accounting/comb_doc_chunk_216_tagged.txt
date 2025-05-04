@@ -23,4 +23,4 @@
 - Cash selling price
 - Arm’s length basis
 - Future payments
-- Future cash flows.
+- Future cash flows. 

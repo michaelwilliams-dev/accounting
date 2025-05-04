@@ -15,4 +15,4 @@
 - Director
 - Shareholder
 - Initial recognition of loan
-- Majority shareholder
+- Majority shareholder 

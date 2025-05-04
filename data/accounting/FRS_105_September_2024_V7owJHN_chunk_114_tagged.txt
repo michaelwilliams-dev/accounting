@@ -21,4 +21,4 @@
 - Bonuses
 - Deferred remuneration
 - Liability recognition
-- Present value of the benefit
+- Present value of the benefit 

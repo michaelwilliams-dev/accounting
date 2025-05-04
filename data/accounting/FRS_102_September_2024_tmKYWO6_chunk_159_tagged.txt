@@ -22,4 +22,4 @@
 - Taxation changes
 - Law changes
 - Market rate of interest
-- Lender's unilateral option.
+- Lender's unilateral option. 

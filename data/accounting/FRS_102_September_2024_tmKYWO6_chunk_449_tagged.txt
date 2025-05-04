@@ -18,4 +18,4 @@
 - Fair value of assets
 - Fair value of liabilities
 - Recognised as a gain in income and expenditure
-- Recognised as income.
+- Recognised as income. 

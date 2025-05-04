@@ -7,4 +7,4 @@
 - Requirement of members' approval
 - Transactions with directors
 - Non-cash asset
-- Resolution approval
+- Resolution approval 

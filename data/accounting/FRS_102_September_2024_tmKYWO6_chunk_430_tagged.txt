@@ -11,4 +11,4 @@
 - Lease liability model
 - Infrastructure assets
 - Liability recognition
-- Lease liability
+- Lease liability 

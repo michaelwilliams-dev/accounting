@@ -18,4 +18,4 @@
 - Offset
 - Zero cost interest rate collar
 - Hedge accounting
-- Hedging relationship
+- Hedging relationship 

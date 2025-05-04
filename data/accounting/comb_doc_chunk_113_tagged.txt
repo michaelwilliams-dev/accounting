@@ -24,4 +24,4 @@
 - Carrying Amount
 - Recoverable Amount
 - Impairments
-- FRC.
+- FRC. 

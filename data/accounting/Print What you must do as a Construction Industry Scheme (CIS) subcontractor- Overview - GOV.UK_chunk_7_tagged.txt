@@ -10,4 +10,4 @@
 - Trading name change
 - Business address change
 - Shareholders addition
-- Stop trading
+- Stop trading 

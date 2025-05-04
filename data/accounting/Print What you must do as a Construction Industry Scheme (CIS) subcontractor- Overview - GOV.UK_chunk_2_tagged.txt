@@ -21,4 +21,4 @@
 - Legal business name
 - Trading name
 - Unique Taxpayer Reference (UTR)
-- Deduction rates
+- Deduction rates 

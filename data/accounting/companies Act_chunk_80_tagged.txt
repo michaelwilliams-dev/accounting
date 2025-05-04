@@ -16,4 +16,4 @@
 - Annotations
 - Nominee
 - Holding company
-- Subsidiary.
+- Subsidiary. 

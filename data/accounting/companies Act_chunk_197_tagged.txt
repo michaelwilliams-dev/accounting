@@ -18,4 +18,4 @@
 - Recognised investment exchange
 - Independent broker
 - Director
-- Person connected with director.
+- Person connected with director. 

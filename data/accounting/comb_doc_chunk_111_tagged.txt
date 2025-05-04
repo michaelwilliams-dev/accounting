@@ -26,4 +26,4 @@
 - Receivables
 - Payables
 - Cash
-- Other consideration.
+- Other consideration. 

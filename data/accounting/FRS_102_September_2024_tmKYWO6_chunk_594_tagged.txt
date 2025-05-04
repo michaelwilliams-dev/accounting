@@ -16,4 +16,4 @@
 - Expected credit loss model
 - FRC's consultation
 - FRED 51
-- Exemption of certain entities.
+- Exemption of certain entities. 

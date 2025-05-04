@@ -18,4 +18,4 @@
 - Amount to be paid up
 - Amount to be unpaid on each share
 - Shares of more than one class
-- Statement of guarantee
+- Statement of guarantee 

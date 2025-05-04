@@ -26,4 +26,4 @@
 - Prioritising auditor time
 - Senior auditors and deadlines
 - Importance of meeting deadlines
-- Emphasis on audit correctness.
+- Emphasis on audit correctness. 

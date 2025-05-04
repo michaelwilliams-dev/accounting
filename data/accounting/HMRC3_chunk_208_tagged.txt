@@ -21,4 +21,4 @@
 - Charitable Company
 - Company Exclusions
 - Financial Year
-- Exemptions for Micro-Entities.
+- Exemptions for Micro-Entities. 

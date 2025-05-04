@@ -1,1 +1,1 @@
-#recognition, #measurement, #disclosure, #events, #reporting period, #financial statements, #adjusting events, #non-adjusting events, #public announcement, #profit, #loss, #financial information, #court case, #obligation, #provision, #contingencies, #contingent liability.
+#recognition, #measurement, #disclosure, #events, #reporting period, #financial statements, #adjusting events, #non-adjusting events, #public announcement, #profit, #loss, #financial information, #court case, #obligation, #provision, #contingencies, #contingent liability. 

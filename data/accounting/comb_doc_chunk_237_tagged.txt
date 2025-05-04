@@ -24,4 +24,4 @@
 - Liabilities of the holder
 - Amortised cost
 - IAS 39 Financial Instruments: Recognition and Measurement
-- IFRS 9 Financial Instruments.
+- IFRS 9 Financial Instruments. 

@@ -34,4 +34,4 @@
 - Loan receivable
 - Derivative financial instrument
 - Paragraph 11.9
-- Paragraph 11.9A.
+- Paragraph 11.9A. 

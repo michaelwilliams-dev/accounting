@@ -23,4 +23,4 @@
 - Foreign currency cash flows
 - SSAP 20
 - Reporting entity
-- Foreign entity
+- Foreign entity 

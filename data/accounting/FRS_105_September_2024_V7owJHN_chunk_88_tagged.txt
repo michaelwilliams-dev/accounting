@@ -17,4 +17,4 @@
 - Revenue recognition model
 - Goods or services
 - Consideration
-- Contract identification.
+- Contract identification. 

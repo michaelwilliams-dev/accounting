@@ -23,4 +23,4 @@
 - 859D Particulars
 - Registered name and number of the company
 - Date of creation of the charge
-- Date of acquisition
+- Date of acquisition 

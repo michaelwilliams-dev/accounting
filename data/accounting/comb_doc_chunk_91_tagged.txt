@@ -25,4 +25,4 @@
 - Capital and reserves
 - Investment property
 - Derivative financial instruments
-- Stock re-measurement.
+- Stock re-measurement. 

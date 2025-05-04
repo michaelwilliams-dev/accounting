@@ -11,4 +11,4 @@
 - Section 983
 - Acquisition
 - Joint offerors
-- Necessary shares
+- Necessary shares 

@@ -15,4 +15,4 @@
 - Present value
 - Minimum lease payments
 - Interest rate
-- Fair value.
+- Fair value. 

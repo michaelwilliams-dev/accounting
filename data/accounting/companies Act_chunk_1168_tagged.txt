@@ -1,1 +1,1 @@
-["Dissolution", "Restoration", "Register", "Striking off", "Companies Act 2006", "Legislation", "Application", "Registrar", "Gazette", "Company", "Director", "Managing Officer", "Member", "Court", "Voluntary Striking off", "Company's Name"]
+["Dissolution", "Restoration", "Register", "Striking off", "Companies Act 2006", "Legislation", "Application", "Registrar", "Gazette", "Company", "Director", "Managing Officer", "Member", "Court", "Voluntary Striking off", "Company's Name"] 

@@ -22,4 +22,4 @@
 - Payment for shares
 - Memorandum of association
 - Fees
-- Change of company name.
+- Change of company name. 

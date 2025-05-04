@@ -17,4 +17,4 @@
 - Point of Recognition
 - Stock
 - New Asset
-- Debtor.
+- Debtor. 

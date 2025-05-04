@@ -11,4 +11,4 @@
 - National Insurance
 - National Insurance category letter
 - Gross earnings for National Insurance contributions
-- Lower Earnings Limit (LEL)
+- Lower Earnings Limit (LEL) 

@@ -17,4 +17,4 @@
 - Dissolved company
 - Management of a company
 - Conduct as a director
-- References to a person's conduct.
+- References to a person's conduct. 

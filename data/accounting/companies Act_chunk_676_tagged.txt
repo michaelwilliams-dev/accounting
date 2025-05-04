@@ -10,4 +10,4 @@
 - Private company
 - Public company
 - Resolution
-- Agreement approval
+- Agreement approval 

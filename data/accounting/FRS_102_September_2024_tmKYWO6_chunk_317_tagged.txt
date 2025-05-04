@@ -17,4 +17,4 @@
 - Journal entries
 - Financial Liability
 - Convertible bond discount
-- Bond issue
+- Bond issue 

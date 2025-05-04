@@ -13,4 +13,4 @@
 - Authorisation
 - Affixing official seal
 - Deed
-- Document.
+- Document. 

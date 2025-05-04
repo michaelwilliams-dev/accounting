@@ -17,4 +17,4 @@
 - Income tax
 - Non-cash transactions
 - Tax cash flows
-- Disclosure of taxes paid.
+- Disclosure of taxes paid. 

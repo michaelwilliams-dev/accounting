@@ -1,1 +1,1 @@
-Special rate pool, Main rate pool, Accounting period, Partnership, Limited company, Long-life items, Single asset pools, Short life assets, Business, Sole trader, Capital allowances, Tax return, HM Revenue and Customs (HMRC), Tax year.
+Special rate pool, Main rate pool, Accounting period, Partnership, Limited company, Long-life items, Single asset pools, Short life assets, Business, Sole trader, Capital allowances, Tax return, HM Revenue and Customs (HMRC), Tax year. 

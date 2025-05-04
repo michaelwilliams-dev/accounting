@@ -23,4 +23,4 @@
 - Future date changes
 - Annotations
 - Notice requirement
-- Registrar.
+- Registrar. 

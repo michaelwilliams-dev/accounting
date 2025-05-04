@@ -20,4 +20,4 @@
 - Legislation
 - Changes
 - Annotations
-- Document details.
+- Document details. 

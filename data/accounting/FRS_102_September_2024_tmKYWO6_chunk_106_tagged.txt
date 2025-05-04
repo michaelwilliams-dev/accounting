@@ -31,4 +31,4 @@
 - Deferred tax liabilities
 - Deferred tax assets
 - Non-controlling interest
-- Equity attributable to the owners of the parent.
+- Equity attributable to the owners of the parent. 

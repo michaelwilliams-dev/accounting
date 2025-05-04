@@ -1,1 +1,1 @@
-["resolution", "written resolution", "poll", "votes", "member", "joint holders of shares", "company", "register of members", "company's articles", "entitlement to vote", "legal proceedings", "Resolutions and meetings", "Written resolutions", "Companies Act 2006", "legislation"]
+["resolution", "written resolution", "poll", "votes", "member", "joint holders of shares", "company", "register of members", "company's articles", "entitlement to vote", "legal proceedings", "Resolutions and meetings", "Written resolutions", "Companies Act 2006", "legislation"] 

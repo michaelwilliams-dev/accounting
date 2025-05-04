@@ -16,4 +16,4 @@
 - Restate goods
 - Donated services
 - Contributions by volunteers
-- Measurement of contributions
+- Measurement of contributions 

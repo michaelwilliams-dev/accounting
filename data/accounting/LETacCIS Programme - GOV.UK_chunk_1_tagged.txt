@@ -26,4 +26,4 @@
 - Wide Area Network (WAN)
 - Defence as a Platform
 - Protected Core Network
-- Bowman ComBAT Infrastructure and Platform 5.6 (BCIP 5.6)
+- Bowman ComBAT Infrastructure and Platform 5.6 (BCIP 5.6) 

@@ -14,4 +14,4 @@
 - UCITS Management Company
 - Insurance Market Activity
 - Financial Services and Markets Act 2000
-- Regulated Activity
+- Regulated Activity 

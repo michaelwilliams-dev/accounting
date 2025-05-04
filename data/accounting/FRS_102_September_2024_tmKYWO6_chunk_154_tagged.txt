@@ -15,4 +15,4 @@
 - Restating comparative amounts
 - Restating opening balances
 - Disclosure of prior period errors
-- Nature of prior period error
+- Nature of prior period error 

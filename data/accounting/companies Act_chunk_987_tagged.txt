@@ -17,4 +17,4 @@
 - Company's accounts
 - Accounting principles
 - Fixed assets
-- Company's activities
+- Company's activities 

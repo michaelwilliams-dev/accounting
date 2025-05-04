@@ -17,4 +17,4 @@
 - Private company
 - Public company
 - Accounting reference date
-- Month definition for accounts.
+- Month definition for accounts. 

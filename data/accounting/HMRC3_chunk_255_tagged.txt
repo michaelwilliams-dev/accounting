@@ -19,4 +19,4 @@
 - Audit requirements
 - Public company
 - Authorised insurance company
-- Insurance market activity.
+- Insurance market activity. 

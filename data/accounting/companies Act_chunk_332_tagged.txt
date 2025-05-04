@@ -13,4 +13,4 @@
 - Future date
 - Annotations
 - Sections 324 to 330 (proxies)
-- Rights on members or proxies
+- Rights on members or proxies 

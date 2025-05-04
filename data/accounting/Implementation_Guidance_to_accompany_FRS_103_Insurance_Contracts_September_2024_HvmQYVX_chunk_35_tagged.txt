@@ -25,4 +25,4 @@
 - Capital provision
 - Intra-group loans
 - Contingent arrangements
-- Subsidiary entity.
+- Subsidiary entity. 

@@ -18,4 +18,4 @@
 - Market acquisition
 - Market exit
 - Market trends
-- Data analysis
+- Data analysis 

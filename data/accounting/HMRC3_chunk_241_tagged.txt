@@ -20,4 +20,4 @@
 - Banking Company
 - Insurance Company
 - Scottish Partnership
-- Dormant Subsidiary
+- Dormant Subsidiary 

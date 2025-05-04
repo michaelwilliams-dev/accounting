@@ -19,4 +19,4 @@
 - Credit transaction definition
 - Creditor
 - Hire-purchase agreement
-- Conditional sale.
+- Conditional sale. 

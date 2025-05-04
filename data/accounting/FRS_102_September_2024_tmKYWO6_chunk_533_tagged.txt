@@ -13,4 +13,4 @@
 - Average number of employees 50
 - Newly incorporated company
 - Relevant year
-- Holding company
+- Holding company 

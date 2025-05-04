@@ -1,1 +1,1 @@
-#SecuritiesTrading, #MarketOperator, #TransparencyObligationsDirective, #CompetentAuthority, #Issuer, #Voteholder, #TradingSuspension, #TradingProhibition, #LegalProcedure, #WrittenNotice, #UnitedKingdom, #MemberState
+#SecuritiesTrading, #MarketOperator, #TransparencyObligationsDirective, #CompetentAuthority, #Issuer, #Voteholder, #TradingSuspension, #TradingProhibition, #LegalProcedure, #WrittenNotice, #UnitedKingdom, #MemberState 

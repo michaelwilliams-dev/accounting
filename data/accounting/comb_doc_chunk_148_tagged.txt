@@ -13,4 +13,4 @@
 - Accounting and Reporting Policy
 - FRS 102 Staff Education Note 9 Short-term
 - Government grant
-- Carrying amount of the fixed asset.
+- Carrying amount of the fixed asset. 

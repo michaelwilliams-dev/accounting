@@ -1,1 +1,1 @@
-Jurisdiction, Interim Period, Pre-Tax Income, Income Tax Rates, Capital Gains, Income Categories, Weighted Average, Tax Rate, Quarterly Reporting, Currency Units, Annual Earnings, Tax Expense, Pre-Tax Profit, Financial Losses, Financial Reporting Year, Tax Year.
+Jurisdiction, Interim Period, Pre-Tax Income, Income Tax Rates, Capital Gains, Income Categories, Weighted Average, Tax Rate, Quarterly Reporting, Currency Units, Annual Earnings, Tax Expense, Pre-Tax Profit, Financial Losses, Financial Reporting Year, Tax Year. 

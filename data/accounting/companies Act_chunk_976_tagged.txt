@@ -17,4 +17,4 @@
 - Future date
 - Annotations
 - Relevant financial assistance
-- Relevant payments
+- Relevant payments 

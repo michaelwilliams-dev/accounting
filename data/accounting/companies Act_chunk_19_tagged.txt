@@ -10,4 +10,4 @@
 - Restriction on amendment of articles
 - Statement of compliance
 - Company formation
-- Members of the company
+- Members of the company 

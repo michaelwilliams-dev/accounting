@@ -24,4 +24,4 @@
 - Financial assets and liabilities
 - Contractual provisions
 - Initial recognition
-- Initial measurement
+- Initial measurement 

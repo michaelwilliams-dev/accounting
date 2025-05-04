@@ -19,4 +19,4 @@
 - Issuer's accounting for convertible debt
 - Guidance
 - Requirements
-- Paragraphs 22.13 to 22.15.
+- Paragraphs 22.13 to 22.15. 

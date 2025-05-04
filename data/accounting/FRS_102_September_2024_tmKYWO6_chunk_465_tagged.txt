@@ -17,4 +17,4 @@
 - IFRS 16 Leases
 - Lease liability
 - Right-of-use asset
-- Disclosure
+- Disclosure 

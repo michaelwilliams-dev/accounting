@@ -11,4 +11,4 @@
 - IFRS for SMEs Accounting Standard
 - Section 24 Government Grants
 - Fair value
-- Asset valuation
+- Asset valuation 

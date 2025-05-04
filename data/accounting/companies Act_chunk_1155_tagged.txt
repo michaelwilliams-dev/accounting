@@ -16,4 +16,4 @@
 - Approval Requirements
 - Significant Holdings
 - Special Rights
-- Company Control
+- Company Control 

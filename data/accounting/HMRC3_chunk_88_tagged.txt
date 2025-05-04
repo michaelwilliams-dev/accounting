@@ -19,4 +19,4 @@
 - Director's responsibility
 - Filing accounts on paper
 - Company name and number
-- Balance sheet
+- Balance sheet 

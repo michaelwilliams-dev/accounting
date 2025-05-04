@@ -17,4 +17,4 @@
 - Employee
 - Associated Company
 - Partner
-- Accountant.
+- Accountant. 

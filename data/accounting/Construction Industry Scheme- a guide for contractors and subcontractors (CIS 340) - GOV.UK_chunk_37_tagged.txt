@@ -23,4 +23,4 @@
 - Registered office address
 - Private address
 - Contra
-- Set-offs
+- Set-offs 

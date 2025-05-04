@@ -17,4 +17,4 @@
 - Consolidated financial statements
 - Control
 - Voting power
-- Reporting difference
+- Reporting difference 

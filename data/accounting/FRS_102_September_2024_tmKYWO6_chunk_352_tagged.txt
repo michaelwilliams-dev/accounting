@@ -12,4 +12,4 @@
 - Contract liabilities
 - Performance obligations
 - Payment terms
-- Financing transaction
+- Financing transaction 

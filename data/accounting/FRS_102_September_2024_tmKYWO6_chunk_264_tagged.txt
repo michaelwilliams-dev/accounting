@@ -17,4 +17,4 @@
 - Acquisition date
 - Voting equity instruments
 - Non-controlling interest
-- Acquisition cost
+- Acquisition cost 

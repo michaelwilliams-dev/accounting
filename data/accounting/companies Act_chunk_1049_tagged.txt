@@ -22,4 +22,4 @@
 - Amalgamation
 - Company's Constitution
 - Resolution
-- Agreement.
+- Agreement. 

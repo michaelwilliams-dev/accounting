@@ -16,4 +16,4 @@
 - Annual turnover
 - Balance sheet total
 - Average number of employees
-- Thresholds
+- Thresholds 

@@ -18,4 +18,4 @@
 - Audit exemption
 - Outstanding liabilities
 - Balance sheet
-- Individual accounts
+- Individual accounts 

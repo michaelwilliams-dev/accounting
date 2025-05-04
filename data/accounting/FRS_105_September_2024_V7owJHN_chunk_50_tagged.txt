@@ -28,4 +28,4 @@
 - Acquisition Costs
 - Trade Discounts
 - Rebates
-- Deferred Payment.
+- Deferred Payment. 

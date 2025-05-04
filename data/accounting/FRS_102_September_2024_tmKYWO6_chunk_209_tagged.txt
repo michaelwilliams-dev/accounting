@@ -24,4 +24,4 @@
 - Hypothetical swap
 - Variable interest rate payments
 - Fixed to floating interest rate swap
-- Fixed rate of 4.3%
+- Fixed rate of 4.3% 

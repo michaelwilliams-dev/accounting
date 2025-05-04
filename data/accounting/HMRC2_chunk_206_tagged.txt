@@ -8,4 +8,4 @@
 - Sole traders/partnerships
 - Limited companies
 - Accounting period
-- Adjusting AIA
+- Adjusting AIA 

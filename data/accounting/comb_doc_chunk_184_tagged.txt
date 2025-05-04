@@ -9,4 +9,4 @@
 - Changes in accounting policies
 - Comparative information
 - First-time adoption of FRS 102
-- Small entities.
+- Small entities. 

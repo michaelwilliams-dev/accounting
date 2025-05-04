@@ -11,4 +11,4 @@
 - Price Discretion
 - Revenue Recognition
 - Consideration
-- Performance Obligation Satisfaction
+- Performance Obligation Satisfaction 

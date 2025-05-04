@@ -14,4 +14,4 @@
 - Legislation changes
 - Prospective provisions
 - Document generation date
-- Status of Act.
+- Status of Act. 

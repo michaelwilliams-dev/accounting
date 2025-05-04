@@ -20,4 +20,4 @@
 - Banking company
 - E-money issuer
 - MiFID (Markets in Financial Instruments Directive)
-- UCITS (Undertakings for Collective Investment)
+- UCITS (Undertakings for Collective Investment) 

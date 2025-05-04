@@ -12,4 +12,4 @@
 - Nominal Value of Shares
 - Rights Attached to Shares
 - Future Legislation Changes
-- Annotations in Legislation
+- Annotations in Legislation 

@@ -23,4 +23,4 @@
 - Merger costs
 - Disclosure
 - Entity combination
-- Reporting period.
+- Reporting period. 

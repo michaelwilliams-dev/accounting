@@ -16,4 +16,4 @@
 - Reporting date
 - Reliable estimate
 - Asset impairment
-- Best estimate
+- Best estimate 

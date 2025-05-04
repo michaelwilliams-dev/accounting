@@ -18,4 +18,4 @@
 - Financing transactions
 - Fixed term interest-free loans
 - Related parties
-- Owned and controlled by the same person.
+- Owned and controlled by the same person. 

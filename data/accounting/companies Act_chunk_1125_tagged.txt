@@ -21,4 +21,4 @@
 - Offeror
 - Takeover Bid
 - Offer Period
-- Rules under Section 943(1)
+- Rules under Section 943(1) 

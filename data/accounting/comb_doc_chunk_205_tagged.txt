@@ -24,4 +24,4 @@
 - Section 19 Business Combinations and Goodwill
 - Section 22 Liabilities and Equity
 - Acquisition scenarios
-- Disposal scenarios
+- Disposal scenarios 

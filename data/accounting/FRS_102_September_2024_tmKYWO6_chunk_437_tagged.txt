@@ -24,4 +24,4 @@
 - Externally imposed capital requirements
 - Subordinated debt
 - Equity components
-- Cash flow hedges.
+- Cash flow hedges. 

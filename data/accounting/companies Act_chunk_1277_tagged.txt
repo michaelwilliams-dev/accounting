@@ -11,4 +11,4 @@
 - Company's registered email address
 - Transitional provision
 - Protection of individual membership information
-- Directors' information
+- Directors' information 

@@ -11,4 +11,4 @@
 - Intangible Assets
 - Goodwill
 - Direct costs
-- Resource generation/enhancement
+- Resource generation/enhancement 

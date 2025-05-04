@@ -31,4 +31,4 @@
 - SUBMISSION_ERROR
 - DELETE_REQUEST
 - DATA_REQUEST
-- GovTalkErrors element
+- GovTalkErrors element 

@@ -15,4 +15,4 @@
 - Discounts
 - Refunds
 - Penalties
-- Performance bonuses.
+- Performance bonuses. 

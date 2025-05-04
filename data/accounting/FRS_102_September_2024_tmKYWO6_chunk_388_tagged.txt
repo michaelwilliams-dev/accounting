@@ -24,4 +24,4 @@
 - Defined benefit plan settlement
 - Defined benefit plan asset
 - Present value of defined benefit obligation
-- Fair value of plan assets.
+- Fair value of plan assets. 

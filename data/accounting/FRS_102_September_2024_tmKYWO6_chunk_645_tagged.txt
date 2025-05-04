@@ -18,4 +18,4 @@
 - Financial instruments
 - IFRS 7 Financial Instruments: Disclosures
 - Reduced disclosures
-- Disclosure requirements for financial institutions.
+- Disclosure requirements for financial institutions. 

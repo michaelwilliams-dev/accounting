@@ -16,4 +16,4 @@
 - Equity
 - Disposal of net investment
 - Change in functional currency
-- Translation procedures
+- Translation procedures 

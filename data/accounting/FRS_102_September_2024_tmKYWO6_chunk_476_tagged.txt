@@ -33,4 +33,4 @@
 - Financial liability
 - Interest income
 - Interest expense
-- Effective interest.
+- Effective interest. 

@@ -34,4 +34,4 @@
 - UCITS management company
 - Insurance market activity
 - Special register body
-- Section 117(1) of the Trade.
+- Section 117(1) of the Trade. 

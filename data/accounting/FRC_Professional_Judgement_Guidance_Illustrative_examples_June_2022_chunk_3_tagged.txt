@@ -13,4 +13,4 @@
 - True and fair
 - FRC | Professional Judgement Guidance
 - Disclosure modification
-- Materially misstated disclosure
+- Materially misstated disclosure 

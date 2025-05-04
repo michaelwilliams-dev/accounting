@@ -34,4 +34,4 @@
 - Section 1A
 - Paragraph 1A.9
 - Statement of changes in equity
-- Statement of income and retained earnings.
+- Statement of income and retained earnings. 

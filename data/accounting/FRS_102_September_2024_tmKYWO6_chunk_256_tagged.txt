@@ -19,4 +19,4 @@
 - Taxation
 - Equity Purchase
 - Net Assets
-- Liabilities Assumption
+- Liabilities Assumption 

@@ -14,4 +14,4 @@
 - Targets
 - Key performance indicators
 - Policies
-- Statement clarity and reasoning
+- Statement clarity and reasoning 

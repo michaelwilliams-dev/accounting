@@ -19,4 +19,4 @@
 - Company size
 - Small companies
 - Medium companies
-- Large companies.
+- Large companies. 

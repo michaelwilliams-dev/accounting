@@ -10,4 +10,4 @@
 - Section 24 Government Grants
 - Revenue recognition criteria
 - Measurement Statement of Principles
-- Current value to the recipient.
+- Current value to the recipient. 

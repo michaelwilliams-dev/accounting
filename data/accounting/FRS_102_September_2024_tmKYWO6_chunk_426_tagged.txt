@@ -29,4 +29,4 @@
 - Carrying amount
 - Gain or loss
 - Purchases
-- Sales.
+- Sales. 

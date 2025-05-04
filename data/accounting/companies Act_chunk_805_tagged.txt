@@ -1,1 +1,1 @@
-["meeting", "memorandum", "contract terms", "shares", "resolution", "variation of contract", "off-market purchase", "authority", "company", "Part 18 - Acquisition by limited company of its own shares", "Companies Act 2006", "legislation", "public company", "expiry date"]
+["meeting", "memorandum", "contract terms", "shares", "resolution", "variation of contract", "off-market purchase", "authority", "company", "Part 18 - Acquisition by limited company of its own shares", "Companies Act 2006", "legislation", "public company", "expiry date"] 

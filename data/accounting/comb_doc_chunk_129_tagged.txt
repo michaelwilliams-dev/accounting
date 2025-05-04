@@ -13,4 +13,4 @@
 - Leased asset
 - Lease term
 - Option to purchase
-- Asset ownership.
+- Asset ownership. 

@@ -12,4 +12,4 @@
 - Performance Obligations Satisfied Over Time
 - Point in Time Performance Obligation
 - Transfer of Control
-- Right to Payment for Asset
+- Right to Payment for Asset 

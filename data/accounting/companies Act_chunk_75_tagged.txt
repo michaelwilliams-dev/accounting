@@ -17,4 +17,4 @@
 - Company status alteration
 - Special resolution
 - Statement of compliance
-- Section references
+- Section references 

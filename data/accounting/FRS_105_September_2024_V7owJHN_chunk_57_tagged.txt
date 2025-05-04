@@ -13,4 +13,4 @@
 - Import duties
 - Non-refundable purchase taxes
 - Trade discounts and rebates
-- Asset location costs
+- Asset location costs 

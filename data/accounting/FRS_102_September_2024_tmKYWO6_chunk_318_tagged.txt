@@ -12,4 +12,4 @@
 - Periodic Payments
 - Periodic Rate of Interest
 - Present Value of Interest Payments
-- Present Value Factor
+- Present Value Factor 

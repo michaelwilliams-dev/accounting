@@ -16,4 +16,4 @@
 - Accounting for research and development
 - Small entities
 - Fair value measurement of financial instruments
-- Accounting periods.
+- Accounting periods. 

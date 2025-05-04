@@ -12,4 +12,4 @@
 - The Companies, Partnerships and Groups (Accounts and Reports) Regulations 2015
 - Abbreviated accounts
 - Accounting periods
-- Micro entity accounts.
+- Micro entity accounts. 

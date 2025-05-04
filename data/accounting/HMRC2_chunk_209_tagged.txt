@@ -13,4 +13,4 @@
 - Unused items
 - Profits before tax
 - Full expensing
-- Qualifying plant and machinery.
+- Qualifying plant and machinery. 

@@ -1,1 +1,1 @@
-["Secretary of State", "New information", "conduct report", "office-holder", "company", "insolvent", "subsection", "insolvency date", "official receiver", "liquidator", "administrator", "administrative receiver", "receiver", "winding-up order", "Insolvency Act 1986"]
+["Secretary of State", "New information", "conduct report", "office-holder", "company", "insolvent", "subsection", "insolvency date", "official receiver", "liquidator", "administrator", "administrative receiver", "receiver", "winding-up order", "Insolvency Act 1986"] 

@@ -26,4 +26,4 @@
 - Accounting periods
 - 1 January 2021
 - Eligibility criteria
-- Effective dates.
+- Effective dates. 

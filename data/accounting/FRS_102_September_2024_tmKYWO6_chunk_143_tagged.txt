@@ -11,4 +11,4 @@
 - Equalisation of Values
 - Unrealised Gain
 - Other Comprehensive Income
-- Recognise a Loss
+- Recognise a Loss 

@@ -9,4 +9,4 @@
 - Trading certificate
 - Nominal value of company's allotted share capital
 - Employees' share scheme
-- Procedure for obtaining certificate
+- Procedure for obtaining certificate 

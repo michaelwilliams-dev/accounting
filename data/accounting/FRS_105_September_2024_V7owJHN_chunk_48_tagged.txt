@@ -19,4 +19,4 @@
 - Carrying amount
 - Statement of financial position
 - Liability
-- Loss.
+- Loss. 

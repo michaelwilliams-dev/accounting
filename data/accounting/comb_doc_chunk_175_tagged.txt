@@ -26,4 +26,4 @@
 - Impairment tests
 - Arrangements containing a lease
 - Decommissioning liabilities
-- Cost of property, plant and equipment.
+- Cost of property, plant and equipment. 

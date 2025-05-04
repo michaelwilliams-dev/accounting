@@ -14,4 +14,4 @@
 - Fixed Rate
 - Loan Repayment
 - Notional Amount
-- IBOR Rates
+- IBOR Rates 

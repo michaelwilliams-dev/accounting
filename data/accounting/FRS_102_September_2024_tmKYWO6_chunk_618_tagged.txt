@@ -22,4 +22,4 @@
 - Respondents
 - Five-step revenue recognition model
 - Licensing
-- Estimates of variable consideration.
+- Estimates of variable consideration. 

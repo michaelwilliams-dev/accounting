@@ -24,4 +24,4 @@
 - Registrable person
 - Registrable relevant legal entity
 - Section 790C
-- Overseas company
+- Overseas company 

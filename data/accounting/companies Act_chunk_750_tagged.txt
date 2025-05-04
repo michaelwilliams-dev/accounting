@@ -1,1 +1,1 @@
-"Outstanding changes", "Variation of class rights", "Share capital", "Company's articles", "Consent", "Treasury shares", "Special resolution", "General meeting", "Amendment", "Abrogation", "Companies without a share capital", "Members of a company".
+"Outstanding changes", "Variation of class rights", "Share capital", "Company's articles", "Consent", "Treasury shares", "Special resolution", "General meeting", "Amendment", "Abrogation", "Companies without a share capital", "Members of a company". 

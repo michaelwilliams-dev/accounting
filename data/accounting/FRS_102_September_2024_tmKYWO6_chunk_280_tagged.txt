@@ -11,4 +11,4 @@
 - Benchmark interest rate
 - Market rents
 - Contract terms
-- Index or rate changes
+- Index or rate changes 

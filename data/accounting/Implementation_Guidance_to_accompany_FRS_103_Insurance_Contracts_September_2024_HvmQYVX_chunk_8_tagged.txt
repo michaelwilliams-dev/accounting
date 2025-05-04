@@ -26,4 +26,4 @@
 - Principles and Practices of Financial Managements (PPFM)
 - Intrinsic value
 - Option
-- Guarantee.
+- Guarantee. 

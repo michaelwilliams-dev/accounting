@@ -1,1 +1,1 @@
-#Financial_Statement, #Financial_Instrument, #Accounting_Policy, #IFRS_9, #Financial_Institution, #Credit_Risk, #Risk_Management, #Expected_Credit_Losses, #Financial_Assets, #Credit_Impaired.
+#Financial_Statement, #Financial_Instrument, #Accounting_Policy, #IFRS_9, #Financial_Institution, #Credit_Risk, #Risk_Management, #Expected_Credit_Losses, #Financial_Assets, #Credit_Impaired. 

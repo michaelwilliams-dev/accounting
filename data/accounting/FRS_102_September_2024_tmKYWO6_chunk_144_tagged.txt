@@ -1,1 +1,1 @@
-#Impairment, #Section27, #ProfitOrLoss, #ArtificialTransaction, #LackOfSubstance, #IntermediatePaymentArrangements, #Intermediary, #Trust, #SponsoringEntity, #EmployeeCompensation, #SupplierCompensation, #Beneficiaries, #CharitableDonations.
+#Impairment, #Section27, #ProfitOrLoss, #ArtificialTransaction, #LackOfSubstance, #IntermediatePaymentArrangements, #Intermediary, #Trust, #SponsoringEntity, #EmployeeCompensation, #SupplierCompensation, #Beneficiaries, #CharitableDonations. 

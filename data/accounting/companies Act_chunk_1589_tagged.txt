@@ -18,4 +18,4 @@
 - General meeting authorization
 - Alternative takeover bids
 - Share issuing
-- Control acquisition
+- Control acquisition 

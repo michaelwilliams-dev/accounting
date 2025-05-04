@@ -10,4 +10,4 @@
 - Measurement date
 - Savings plan
 - Observable market price
-- Three-tier measurement hierarchy
+- Three-tier measurement hierarchy 

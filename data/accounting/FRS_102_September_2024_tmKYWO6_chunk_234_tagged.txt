@@ -17,4 +17,4 @@
 - Section 17
 - Section 20
 - Section 13 Inventories
-- Carrying amount
+- Carrying amount 

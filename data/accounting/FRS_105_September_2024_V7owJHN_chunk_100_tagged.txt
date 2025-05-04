@@ -18,4 +18,4 @@
 - Licence period
 - Sales-based royalties
 - Usage-based royalties
-- Revenue recognition
+- Revenue recognition 

@@ -14,4 +14,4 @@
 - Grantor
 - Operator
 - Residual interest
-- Accounting for service concession.
+- Accounting for service concession. 

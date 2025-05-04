@@ -9,4 +9,4 @@
 - Alteration of company's objects
 - Voting
 - Consent
-- 28 days period
+- 28 days period 

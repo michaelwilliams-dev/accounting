@@ -28,4 +28,4 @@
 - IFRS 12 Disclosure of Interests in Other Entities
 - New disclosure requirements
 - IAS 27
-- User's understanding of the qualifying entity.
+- User's understanding of the qualifying entity. 

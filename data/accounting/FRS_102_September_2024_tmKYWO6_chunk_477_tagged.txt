@@ -38,4 +38,4 @@
 #Section 2A Fair Value Measurement
 #Finance Lease
 #Ownership of an Asset
-#Title Transfer
+#Title Transfer 

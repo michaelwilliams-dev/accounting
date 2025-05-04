@@ -25,4 +25,4 @@
 - Ineligible group
 - Public company
 - Body corporate
-- Regulated market.
+- Regulated market. 

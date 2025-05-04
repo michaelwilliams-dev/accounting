@@ -9,4 +9,4 @@
 - Small entity's financial position
 - Goodwill
 - Non-comparability
-- True and fair override
+- True and fair override 

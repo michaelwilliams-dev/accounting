@@ -1,1 +1,1 @@
-Functional Currency, Financing Activities, Operating Activities, Foreign Operation, Reporting Entity, Subsidiary, Branch, Associate, Joint Venture, Cash Flows, Debt Obligations, Foreign Currency Transactions, Initial Recognition
+Functional Currency, Financing Activities, Operating Activities, Foreign Operation, Reporting Entity, Subsidiary, Branch, Associate, Joint Venture, Cash Flows, Debt Obligations, Foreign Currency Transactions, Initial Recognition 

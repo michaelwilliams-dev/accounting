@@ -26,4 +26,4 @@
 - Adjustments
 - Prior periods
 - Deferred tax expense
-- Origination and reversal of timing.
+- Origination and reversal of timing. 

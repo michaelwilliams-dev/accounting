@@ -24,4 +24,4 @@
 - Paragraphs 7.20B, 7.20C
 - Paragraph 10.12
 - Paragraphs 1.40 to 1.68
-- Date of initial application.
+- Date of initial application. 

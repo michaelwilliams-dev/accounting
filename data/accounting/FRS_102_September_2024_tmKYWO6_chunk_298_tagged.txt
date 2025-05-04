@@ -17,4 +17,4 @@
 - Economic benefits
 - Liability definition
 - Statement of financial position
-- Expense recognition
+- Expense recognition 

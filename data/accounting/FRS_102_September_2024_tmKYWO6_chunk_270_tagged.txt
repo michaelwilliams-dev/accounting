@@ -18,4 +18,4 @@
 - Underlying asset
 - Lease-by-lease basis
 - Lease modification
-- Change in lease term
+- Change in lease term 
