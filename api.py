@@ -296,7 +296,7 @@ def generate_response():
     query_run = query_para.add_run("Original Query")
     query_run.bold = True
     query_run.font.size = Pt(13)
-    
+
     doc.add_paragraph(query_text or "No query text provided.")
 
     # User's input
@@ -334,7 +334,7 @@ def generate_response():
         if not line.strip():
             continue
         para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s+[–-]\s+(.*)", line)
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
         if match:
             bold_part = match.group(1).strip()
             rest = match.group(2).strip()
@@ -355,7 +355,7 @@ def generate_response():
         if not line.strip():
             continue
         para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s+[–-]\s+(.*)", line)
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
         if match:
             bold_part = match.group(1).strip()
             rest = match.group(2).strip()
