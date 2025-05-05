@@ -317,8 +317,8 @@ def generate_response():
     # Split the answer into structured sections
     reply_text, action_sheet, notes = "", "", ""
 
-    # (continued from previous script)
-    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", answer, flags=re.IGNORECASE)
+    #parts = re.split(r"\d+\.\s+\*\*(Reply|Action Sheet|Policy or Standard Notes)\*\*", answer, flags=re.IGNORECASE)
+    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
 
     print("🔍 Split result (parts):")
     for i, part in enumerate(parts):
@@ -334,7 +334,7 @@ def generate_response():
         action_sheet = ""
         notes = ""
 
-    # --- Reply Section ---
+   # --- Reply Section ---
     para_heading = doc.add_paragraph()
     run = para_heading.add_run("Reply")
     run.bold = True
@@ -349,22 +349,26 @@ def generate_response():
 
     lines = action_sheet.split("\n")
     for line in lines:
-        if not line.strip():
-            continue
-        para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        if match:
-            bold_part = match.group(1).strip()
-            rest = match.group(2).strip()
-            if rest.lower().startswith(bold_part.lower()):
-                rest = rest[len(bold_part):].lstrip(":–- ").strip()
-            run1 = para.add_run(bold_part + " – ")
-            run1.bold = True
-            para.add_run(rest)
+       if not line.strip():
+           continue
+
+       para = doc.add_paragraph(style="List Number")
+       match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
+    
+       if match:
+           bold_part = match.group(1).strip()
+           rest = match.group(2).strip()
+
+           if rest.lower().startswith(bold_part.lower()):
+               rest = rest[len(bold_part):].lstrip(":–- ").strip()
+
+           run1 = para.add_run(bold_part + " – ")
+           run1.bold = True
+           para.add_run(rest)
 
     # --- Policy or Standard Notes Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Policy or Standard Notes")
+    para = doc.add_paragraph()
+    run = para.add_run("Policy or Standard Notes")
     run.bold = True
     run.font.size = Pt(13)
 
@@ -382,8 +386,20 @@ def generate_response():
             para.add_run(rest)
         else:
             para.add_run(line)
+ 
+   
+    # to here >>>>Add AI Response content (simple insert for now)
+    #doc.add_paragraph(answer)
 
-    # --- Footer / Disclaimer ---
+    doc_buffer = BytesIO()
+    doc.save(doc_buffer)
+
+    # ✅ NEW: Check and log attachment size before emailing
+    doc_buffer.seek(0)
+    buffer_contents = doc_buffer.read()
+    print(f"📎 Attachment size: {len(buffer_contents)} bytes")  # Should be > 0
+
+  # --- Footer / Disclaimer ---
     COPYRIGHT_TEXT = (
         "© 2025 AIVS Software Limited. All rights reserved.\n"
         "This report was generated using proprietary AI software and is intended for internal use only.\n"
@@ -398,14 +414,18 @@ def generate_response():
     run.italic = True
     run.font.size = Pt(9)
 
+    # ✅ Save document after footer added
     doc_buffer = BytesIO()
     doc.save(doc_buffer)
 
+    # ✅ Now read contents into buffer
     doc_buffer.seek(0)
     buffer_contents = doc_buffer.read()
     print(f"📎 Attachment size: {len(buffer_contents)} bytes")
 
+    # ✅ Re-wrap for Mailjet attachment
     doc_buffer = BytesIO(buffer_contents)
+
 
     recipients = []
     if user_email:
@@ -419,16 +439,17 @@ def generate_response():
         return jsonify({"error": "No valid email addresses provided."}), 400
 
     subject = f"AI Analysis for {full_name} - {timestamp}"
-    body_text = "This document was generated using AIVS for internal compliance reporting."
-
+    # body_text = f"This document was generated following a query submitted by {full_name}. Please file or follow up according to internal procedures."
+    body_text = "AIVS test delivery — confirming Mailjet success."   
     status, response = send_email_mailjet(
-        to_emails=recipients,
-        subject=subject,
-        body_text=body_text,
-        attachment_bytes=buffer_contents,
-        full_name=full_name,
-        supervisor_name=supervisor_name
-    )
+    to_emails=recipients,
+    subject=subject,
+    body_text=body_text,
+    attachment_bytes=buffer_contents,  # ✅ New param
+    full_name=full_name,
+    supervisor_name=supervisor_name
+)
+    
 
     return jsonify({
         "status": "ok",
