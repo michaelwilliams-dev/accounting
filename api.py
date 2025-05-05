@@ -269,7 +269,8 @@ def generate_response():
 
     answer = ask_gpt_with_context(data, context)
     answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
-    # Remove markdown-style section headings like **Reply:** or **Action Sheet:**
+    
+# Remove markdown-style section headings like **Reply:** or **Action Sheet:**
     answer = re.sub(r"\*\*(Reply|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
     print(f"🧠 GPT answer: {answer[:80]}...")
 
