@@ -107,7 +107,9 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are responding to a professional business query via a secure reporting system.
+You are acting as a senior UK accountant generating a formal internal advisory report. Do **not** format this as a letter or address the client directly.
+
+Respond with factual, concise, and accurate professional guidance. Do **not** use conversational language, salutations, or softening phrases. This report is for internal use and regulatory preparation, not for client-facing communication.
 
 All responses must:
 - Be based on correct UK financial standards, accounting regulations, business risk practices, or strategic management theory.
@@ -119,16 +121,18 @@ All responses must:
 ### Context from FAISS Index:
 {context}
 
-### Additional Focus:
+### Special Instruction:
+If context contains material referring to tax year 2025 or newer, you must prioritise and apply those references. Do not rely on older legislation if updated 2024 or2025 guidance is available in the provided context.
+
+### Additional Internal Notes:
 - Support Need: {funnel_1}
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 
-### Your Task:
-Please generate a structured response that includes:
-1. **Reply** - a professional response to the enquiry, suitable for inclusion in a formal accounting document.
-2. **Action Sheet** - list up to 5 specific, practical next steps that should be taken to resolve or act on the issue. Use numbered steps, and include who is responsible (e.g., accountant, client, HMRC) and the timeline (e.g., within 7 days, before year-end).
-3. **Policy or Standard Notes** - list up to four relevant UK accounting, tax, audit, or compliance regulations or standards that apply to this issue. For each, briefly state what it requires and why it is relevant.
+### Required Respond in three clear sections:
+1. **Reply** – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
+2. **Action Sheet** – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
+3. **Policy or Standard Notes** – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
 """
     return generate_reviewed_response(prompt, discipline)
 
@@ -264,6 +268,8 @@ def generate_response():
 
     answer = ask_gpt_with_context(data, context)
     answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
+    # Remove markdown-style section headings like **Reply:** or **Action Sheet:**
+    answer = re.sub(r"\*\*(Reply|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
     print(f"🧠 GPT answer: {answer[:80]}...")
 
     discipline = data.get("discipline", "Not specified")
@@ -303,7 +309,6 @@ def generate_response():
     run_query.italic = True
     run_query.font.size = Pt(11)
 
-    doc.add_paragraph(query_text or "No query text provided.")
 
     # User's input
     # from>>> doc.add_paragraph(query_text or "No query text provided.")
