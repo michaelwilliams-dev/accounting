@@ -280,15 +280,6 @@ def generate_response():
     section.page_height = Mm(297)
     section.page_width = Mm(210)
 
-    title_para = doc.add_paragraph()
-    title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
-    title_run.bold = True
-    title_run.font.size = Pt(14)
-
-    uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
-    generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
-    doc.add_paragraph(f"Generated: {generated_datetime}")
-
     # Title
     title_para = doc.add_paragraph()
     title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
@@ -305,12 +296,78 @@ def generate_response():
     query_run = query_para.add_run("Original Query")
     query_run.bold = True
     query_run.font.size = Pt(13)
-
-    # User's input
+    
     doc.add_paragraph(query_text or "No query text provided.")
 
-    # Add AI Response content (simple insert for now)
-    doc.add_paragraph(answer)
+    # User's input
+    # from>>> doc.add_paragraph(query_text or "No query text provided.")
+    # Split the answer into structured sections
+    reply_text, action_sheet, notes = "", "", ""
+
+    parts = re.split(r"\*\*\s*(Reply|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
+
+    if len(parts) >= 7:
+        reply_text = parts[2].strip()
+        action_sheet = parts[4].strip()
+        notes = parts[6].strip()
+    else:
+        print("⚠️ GPT format not matched — fallback to full answer.")
+        reply_text = answer.strip()
+        action_sheet = ""
+        notes = ""
+
+    # --- Reply Section ---
+    para = doc.add_paragraph()
+    run = para.add_run("Reply")
+    run.bold = True
+    run.font.size = Pt(13)
+    doc.add_paragraph(reply_text or "Not provided.")
+
+    # --- Action Sheet Section ---
+    para = doc.add_paragraph()
+    run = para.add_run("Action Sheet")
+    run.bold = True
+    run.font.size = Pt(13)
+
+    lines = action_sheet.split("\n")
+    for line in lines:
+        if not line.strip():
+            continue
+        para = doc.add_paragraph(style="List Number")
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s+[–-]\s+(.*)", line)
+        if match:
+            bold_part = match.group(1).strip()
+            rest = match.group(2).strip()
+            run1 = para.add_run(bold_part + " – ")
+            run1.bold = True
+            para.add_run(rest)
+        else:
+            para.add_run(line)
+
+    # --- Policy or Standard Notes Section ---
+    para = doc.add_paragraph()
+    run = para.add_run("Policy or Standard Notes")
+    run.bold = True
+    run.font.size = Pt(13)
+
+    lines = notes.split("\n")
+    for line in lines:
+        if not line.strip():
+            continue
+        para = doc.add_paragraph(style="List Number")
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s+[–-]\s+(.*)", line)
+        if match:
+            bold_part = match.group(1).strip()
+            rest = match.group(2).strip()
+            run1 = para.add_run(bold_part + " – ")
+            run1.bold = True
+            para.add_run(rest)
+        else:
+            para.add_run(line)
+ 
+   
+    # to here >>>>Add AI Response content (simple insert for now)
+    #doc.add_paragraph(answer)
 
     doc_buffer = BytesIO()
     doc.save(doc_buffer)
