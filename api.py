@@ -266,145 +266,179 @@ def generate_response():
 
     else:
         context = "Policy lookup not available (FAISS index not loaded)."
+
     answer = ask_gpt_with_context(data, context)
-
-    # 🔧 Clean GPT output before splitting
     answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
-    answer = re.sub(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", "", answer, flags=re.IGNORECASE)
+    
+# Remove markdown-style section headings like **Reply:** or **Action Sheet:**
+    answer = re.sub(r"\*\*(Reply|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
+    print(f"🧠 GPT answer: {answer[:80]}...")
 
-    # 🧾 Debug: print full response to verify formatting
-    print("🧾 Raw GPT answer:")
-    print(answer)
+    discipline = data.get("discipline", "Not specified")
+    discipline_folder = discipline.lower().replace(" ", "_")
+    output_path = f"output/{discipline_folder}"
+    os.makedirs(output_path, exist_ok=True)
 
-# ✅ Now attempt section split
-parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", answer, flags=re.IGNORECASE)
+    doc = Document()
+    doc.styles['Normal'].font.name = 'Arial'
+    doc.styles['Normal'].font.size = Pt(11)
+    doc.styles['Normal'].font.color.rgb = RGBColor(0, 0, 0)
 
-discipline = data.get("discipline", "Not specified")
-discipline_folder = discipline.lower().replace(" ", "_")
-output_path = f"output/{discipline_folder}"
-os.makedirs(output_path, exist_ok=True)
+    section = doc.sections[0]
+    section.page_height = Mm(297)
+    section.page_width = Mm(210)
 
-doc = Document()
-doc.styles['Normal'].font.name = 'Arial'
-doc.styles['Normal'].font.size = Pt(11)
-doc.styles['Normal'].font.color.rgb = RGBColor(0, 0, 0)
+    # Title
+    title_para = doc.add_paragraph()
+    print(f"🔍 full_name before formatting: {full_name}")
+    title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
+    title_run.bold = True
+    title_run.font.size = Pt(12)
 
-section = doc.sections[0]
-section.page_height = Mm(297)
-section.page_width = Mm(210)
+    # Timestamp
+    uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
+    generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
+    doc.add_paragraph(f"Generated: {generated_datetime}")
 
-# Title
-title_para = doc.add_paragraph()
-print(f"🔍 full_name before formatting: {full_name}")
-title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
-title_run.bold = True
-title_run.font.size = Pt(12)
+    # Original Query
+    para_heading = doc.add_paragraph()
+    run_heading = para_heading.add_run("Original Query")
+    run_heading.bold = True
+    run_heading.font.size = Pt(13)
 
-# Timestamp
-uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
-generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
-doc.add_paragraph(f"Generated: {generated_datetime}")
+    para_query = doc.add_paragraph()
+    run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
+    run_query.italic = True
+    run_query.font.size = Pt(11)
 
-# Original Query
-para_heading = doc.add_paragraph()
-run_heading = para_heading.add_run("Original Query")
-run_heading.bold = True
-run_heading.font.size = Pt(13)
 
-para_query = doc.add_paragraph()
-run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
-run_query.italic = True
-run_query.font.size = Pt(11)
+    # User's input
+    # from>>> doc.add_paragraph(query_text or "No query text provided.")
+    # Split the answer into structured sections
+    reply_text, action_sheet, notes = "", "", ""
 
-# Section splitting
-reply_text, action_sheet, notes = "", "", ""
+    # (continued from previous script)
+    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", answer, flags=re.IGNORECASE)
 
-print("🔍 Split result (parts):")
-for i, part in enumerate(parts):
-    print(f"  Part {i}: {part[:80]}...")
+    print("🔍 Split result (parts):")
+    for i, part in enumerate(parts):
+        print(f"  Part {i}: {part[:80]}...")
 
-if len(parts) >= 7:
-    reply_text = parts[2].strip()
-    action_sheet = parts[4].strip()
-    notes = parts[6].strip()
-else:
-    print("⚠️ GPT format not matched — fallback to full answer.")
-    reply_text = answer.strip()
-    action_sheet = ""
-    notes = ""
-
-# --- Reply Section ---
-para_heading = doc.add_paragraph()
-run = para_heading.add_run("Reply")
-run.bold = True
-run.font.size = Pt(13)
-doc.add_paragraph(reply_text or "Not provided.")
-
-# --- Action Sheet Section ---
-para_heading = doc.add_paragraph()
-run = para_heading.add_run("Action Sheet")
-run.bold = True
-run.font.size = Pt(13)
-
-lines = action_sheet.split("\n")
-for line in lines:
-    if not line.strip():
-        continue
-    para = doc.add_paragraph(style="List Number")
-    match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-    if match:
-        bold_part = match.group(1).strip()
-        rest = match.group(2).strip()
-        if rest.lower().startswith(bold_part.lower()):
-            rest = rest[len(bold_part):].lstrip(":–- ").strip()
-        run1 = para.add_run(bold_part + " – ")
-        run1.bold = True
-        para.add_run(rest)
-
-# --- Policy or Standard Notes Section ---
-para_heading = doc.add_paragraph()
-run = para_heading.add_run("Policy or Standard Notes")
-run.bold = True
-run.font.size = Pt(13)
-
-lines = notes.split("\n")
-for line in lines:
-    if not line.strip():
-        continue
-    para = doc.add_paragraph(style="List Number")
-    match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-    if match:
-        bold_part = match.group(1).strip()
-        rest = match.group(2).strip()
-        run1 = para.add_run(bold_part + " – ")
-        run1.bold = True
-        para.add_run(rest)
+    if len(parts) >= 7:
+        reply_text = parts[2].strip()
+        action_sheet = parts[4].strip()
+        notes = parts[6].strip()
     else:
-        para.add_run(line)
+        print("⚠️ GPT format not matched — fallback to full answer.")
+        reply_text = answer.strip()
+        action_sheet = ""
+        notes = ""
 
-# --- Footer / Disclaimer ---
-COPYRIGHT_TEXT = (
-    "© 2025 AIVS Software Limited. All rights reserved.\n"
-    "This report was generated using proprietary AI software and is intended for internal use only.\n"
-    "Do not distribute externally without express written permission.\n\n"
-    "Disclaimer: The contents of this report are based on AI interpretation of internal queries "
-    "and publicly available UK guidance. It is not a substitute for professional legal or financial advice."
-)
+    # --- Reply Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Reply")
+    run.bold = True
+    run.font.size = Pt(13)
+    doc.add_paragraph(reply_text or "Not provided.")
 
-para = doc.add_paragraph()
-para.alignment = 1  # Center align
-run = para.add_run(COPYRIGHT_TEXT)
-run.italic = True
-run.font.size = Pt(9)
+    # --- Action Sheet Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Action Sheet")
+    run.bold = True
+    run.font.size = Pt(13)
 
-# ✅ Save document after footer added
-doc_buffer = BytesIO()
-doc.save(doc_buffer)
+    lines = action_sheet.split("\n")
+    for line in lines:
+        if not line.strip():
+            continue
+        para = doc.add_paragraph(style="List Number")
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
+        if match:
+            bold_part = match.group(1).strip()
+            rest = match.group(2).strip()
+            if rest.lower().startswith(bold_part.lower()):
+                rest = rest[len(bold_part):].lstrip(":–- ").strip()
+            run1 = para.add_run(bold_part + " – ")
+            run1.bold = True
+            para.add_run(rest)
 
-# ✅ Now read contents into buffer
-doc_buffer.seek(0)
-buffer_contents = doc_buffer.read()
-print(f"📎 Attachment size: {len(buffer_contents)} bytes")
+    # --- Policy or Standard Notes Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Policy or Standard Notes")
+    run.bold = True
+    run.font.size = Pt(13)
 
-# ✅ Re-wrap for Mailjet attachment
-doc_buffer = BytesIO(buffer_contents)
+    lines = notes.split("\n")
+    for line in lines:
+        if not line.strip():
+            continue
+        para = doc.add_paragraph(style="List Number")
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
+        if match:
+            bold_part = match.group(1).strip()
+            rest = match.group(2).strip()
+            run1 = para.add_run(bold_part + " – ")
+            run1.bold = True
+            para.add_run(rest)
+        else:
+            para.add_run(line)
+
+    # --- Footer / Disclaimer ---
+    COPYRIGHT_TEXT = (
+        "© 2025 AIVS Software Limited. All rights reserved.\n"
+        "This report was generated using proprietary AI software and is intended for internal use only.\n"
+        "Do not distribute externally without express written permission.\n\n"
+        "Disclaimer: The contents of this report are based on AI interpretation of internal queries "
+        "and publicly available UK guidance. It is not a substitute for professional legal or financial advice."
+    )
+
+    para = doc.add_paragraph()
+    para.alignment = 1  # Center align
+    run = para.add_run(COPYRIGHT_TEXT)
+    run.italic = True
+    run.font.size = Pt(9)
+
+    doc_buffer = BytesIO()
+    doc.save(doc_buffer)
+
+    doc_buffer.seek(0)
+    buffer_contents = doc_buffer.read()
+    print(f"📎 Attachment size: {len(buffer_contents)} bytes")
+
+    doc_buffer = BytesIO(buffer_contents)
+
+    recipients = []
+    if user_email:
+        recipients.append({"Email": user_email, "Name": full_name})
+    if supervisor_email:
+        recipients.append({"Email": supervisor_email, "Name": supervisor_name})
+    if hr_email:
+        recipients.append({"Email": hr_email, "Name": "HR Department"})
+
+    if not recipients:
+        return jsonify({"error": "No valid email addresses provided."}), 400
+
+    subject = f"AI Analysis for {full_name} - {timestamp}"
+    body_text = "This document was generated using AIVS for internal compliance reporting."
+
+    status, response = send_email_mailjet(
+        to_emails=recipients,
+        subject=subject,
+        body_text=body_text,
+        attachment_bytes=buffer_contents,
+        full_name=full_name,
+        supervisor_name=supervisor_name
+    )
+
+    return jsonify({
+        "status": "ok",
+        "message": "✅ OpenAI-powered response generated, AI reviewed and email successfully sent.",
+        "disclaimer": "This document was generated by AIVS Software Limited using AI assistance (OpenAI). Please review for accuracy and relevance before taking any formal action.",
+        "context_preview": context[:200],
+        "mailjet_status": status,
+        "mailjet_response": response
+    })
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
