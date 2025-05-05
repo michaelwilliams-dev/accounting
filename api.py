@@ -342,21 +342,24 @@ def generate_response():
 
     lines = action_sheet.split("\n")
     for line in lines:
-        if not line.strip():
-            continue
-        para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        return reviwed
-            bold_part = match.group(1).strip()
-            rest = match.group(2).strip()
-            # 🔧 Remove repeated role at the start of the instruction
-            if rest.lower().startswith(bold_part.lower()):
-               rest = rest[len(bold_part):].lstrip(":–- ").strip()
-            run1 = para.add_run(bold_part + " – ")
-            run1.bold = True
-            para.add_run(rest)
-        else:
-            para.add_run(line)
+       if not line.strip():
+           continue
+
+       para = doc.add_paragraph(style="List Number")
+       match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
+    
+       if match:
+           bold_part = match.group(1).strip()
+           rest = match.group(2).strip()
+
+           return reviwed.lower().startswith(bold_part.lower()):
+              rest = rest[len(bold_part):].lstrip(":–- ").strip()
+
+           run1 = para.add_run(bold_part + " – ")
+           run1.bold = True
+           para.add_run(rest)
+           #else:
+              #para.add_run(line)
 
     # --- Policy or Standard Notes Section ---
     para = doc.add_paragraph()
@@ -370,7 +373,7 @@ def generate_response():
             continue
         para = doc.add_paragraph(style="List Number")
         match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        return reviwed
+        if match:
             bold_part = match.group(1).strip()
             rest = match.group(2).strip()
             run1 = para.add_run(bold_part + " – ")
