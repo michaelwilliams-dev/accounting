@@ -147,10 +147,6 @@ def generate_reviewed_response(prompt, discipline):
     initial_response = completion.choices[0].message.content.strip()
     print(f"📏 Initial GPT response length: {len(initial_response)} characters")
 
-    if len(initial_response) > 3000:
-        print("⚡ Skipping review — using initial GPT response directly.")
-        return initial_response
-
     print("🔄 Reviewing GPT response...")
     initial_response = re.sub(r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$', '', initial_response, flags=re.IGNORECASE).strip()
     stripped_response = initial_response.split("### Context from FAISS Index:")[0].strip()
@@ -163,17 +159,22 @@ def generate_reviewed_response(prompt, discipline):
     --- END RESPONSE ---
     """)
 
-    review_completion = client.chat.completions.create(
-        model="gpt-4",
-        messages=[{"role": "user", "content": review_prompt}],
-        temperature=0,
-        max_tokens=700,
-        timeout=15
-    )
+    try:
+        review_completion = client.chat.completions.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": review_prompt}],
+            temperature=0,
+            max_tokens=700,
+            timeout=15
+        )
+        reviewed_response = review_completion.choices[0].message.content.strip()
+        print(f"✅ Reviewed response length: {len(reviewed_response)} characters")
+        return reviewed_response
 
-    reviewed_response = review_completion.choices[0].message.content.strip()
-    print(f"✅ Reviewed response length: {len(reviewed_response)} characters")
-    return reviewed_response
+    except Exception as e:
+        print("❌ GPT Review failed:", repr(e))
+        print("⚠️ Returning original GPT response as fallback.")
+        return initial_response
 
 # PART 3
 
