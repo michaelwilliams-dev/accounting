@@ -318,6 +318,7 @@ def generate_response():
     reply_text, action_sheet, notes = "", "", ""
 
     parts = re.split(r"\d+\.\s+\*\*(Reply|Action Sheet|Policy or Standard Notes)\*\*", answer, flags=re.IGNORECASE)
+   
 
     if len(parts) >= 7:
         reply_text = parts[2].strip()
@@ -329,16 +330,16 @@ def generate_response():
         action_sheet = ""
         notes = ""
 
-    # --- Reply Section ---
-    para = doc.add_paragraph()
-    run = para.add_run("Reply")
+   # --- Reply Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Reply")
     run.bold = True
     run.font.size = Pt(13)
     doc.add_paragraph(reply_text or "Not provided.")
 
     # --- Action Sheet Section ---
-    para = doc.add_paragraph()
-    run = para.add_run("Action Sheet")
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Action Sheet")
     run.bold = True
     run.font.size = Pt(13)
 
