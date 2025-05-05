@@ -393,8 +393,33 @@ def generate_response():
     buffer_contents = doc_buffer.read()
     print(f"📎 Attachment size: {len(buffer_contents)} bytes")  # Should be > 0
 
-    # Re-wrap the buffer for safe re-use
-    doc_buffer = BytesIO(buffer_contents)  
+  # --- Footer / Disclaimer ---
+    COPYRIGHT_TEXT = (
+        "© 2025 AIVS Software Limited. All rights reserved.\n"
+        "This report was generated using proprietary AI software and is intended for internal use only.\n"
+        "Do not distribute externally without express written permission.\n\n"
+        "Disclaimer: The contents of this report are based on AI interpretation of internal queries "
+        "and publicly available UK guidance. It is not a substitute for professional legal or financial advice."
+    )
+
+    para = doc.add_paragraph()
+    para.alignment = 1  # Center align
+    run = para.add_run(COPYRIGHT_TEXT)
+    run.italic = True
+    run.font.size = Pt(9)
+
+    # ✅ Save document after footer added
+    doc_buffer = BytesIO()
+    doc.save(doc_buffer)
+
+    # ✅ Now read contents into buffer
+    doc_buffer.seek(0)
+    buffer_contents = doc_buffer.read()
+    print(f"📎 Attachment size: {len(buffer_contents)} bytes")
+
+    # ✅ Re-wrap for Mailjet attachment
+    doc_buffer = BytesIO(buffer_contents)
+
 
     recipients = []
     if user_email:
