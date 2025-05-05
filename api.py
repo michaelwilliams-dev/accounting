@@ -147,7 +147,7 @@ def generate_reviewed_response(prompt, discipline):
     initial_response = completion.choices[0].message.content.strip()
     print(f"📏 Initial GPT response length: {len(initial_response)} characters")
 
-    if len(initial_response) > 1500:
+    if len(initial_response) > 3000:
         print("⚡ Skipping review — using initial GPT response directly.")
         return initial_response
 
@@ -346,9 +346,12 @@ def generate_response():
             continue
         para = doc.add_paragraph(style="List Number")
         match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        if match:
+        return reviwed
             bold_part = match.group(1).strip()
             rest = match.group(2).strip()
+            # 🔧 Remove repeated role at the start of the instruction
+            if rest.lower().startswith(bold_part.lower()):
+               rest = rest[len(bold_part):].lstrip(":–- ").strip()
             run1 = para.add_run(bold_part + " – ")
             run1.bold = True
             para.add_run(rest)
@@ -367,7 +370,7 @@ def generate_response():
             continue
         para = doc.add_paragraph(style="List Number")
         match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        if match:
+        return reviwed
             bold_part = match.group(1).strip()
             rest = match.group(2).strip()
             run1 = para.add_run(bold_part + " – ")
