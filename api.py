@@ -347,11 +347,16 @@ def generate_response():
     run.bold = True
     run.font.size = Pt(13)
 
+    # --- Action Sheet Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Action Sheet")
+    run.bold = True
+    
     lines = action_sheet.split("\n")
-    for line in lines:
-       if not line.strip():
-           continue
-
+    for line in lines: 
+      if not line.strip():
+         continue
+       
        para = doc.add_paragraph(style="List Number")
        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
     
