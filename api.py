@@ -173,7 +173,7 @@ def generate_reviewed_response(prompt, discipline):
 
 # PART 3
 
-def send_email_mailjet(to_emails, subject, body_text, doc_buffer, full_name=None, supervisor_name=None):
+def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_name=None, supervisor_name=None):
     MAILJET_API_KEY = os.getenv("MJ_APIKEY_PUBLIC")
     MAILJET_SECRET_KEY = os.getenv("MJ_APIKEY_PRIVATE")
 
@@ -198,7 +198,7 @@ def send_email_mailjet(to_emails, subject, body_text, doc_buffer, full_name=None
                 {
                     "ContentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "Filename": f"{full_name.replace(' ', '_')}_Response.docx",
-                    "Base64Content": base64.b64encode(doc_buffer.read()).decode()
+                    "Base64Content": base64.b64encode(attachment_bytes).decode()
                 }
             ]
         })
@@ -309,15 +309,19 @@ def generate_response():
     # User's input
     doc.add_paragraph(query_text or "No query text provided.")
 
-    doc.add_paragraph(query_text or "No query text provided.")
-
-
     # Add AI Response content (simple insert for now)
     doc.add_paragraph(answer)
 
     doc_buffer = BytesIO()
     doc.save(doc_buffer)
+
+    # ✅ NEW: Check and log attachment size before emailing
     doc_buffer.seek(0)
+    buffer_contents = doc_buffer.read()
+    print(f"📎 Attachment size: {len(buffer_contents)} bytes")  # Should be > 0
+
+    # Re-wrap the buffer for safe re-use
+    doc_buffer = BytesIO(buffer_contents)  
 
     recipients = []
     if user_email:
@@ -334,13 +338,14 @@ def generate_response():
     body_text = f"This document was generated following a query submitted by {full_name}. Please file or follow up according to internal procedures."
 
     status, response = send_email_mailjet(
-        to_emails=recipients,
-        subject=subject,
-        body_text=body_text,
-        doc_buffer=doc_buffer,
-        full_name=full_name,
-        supervisor_name=supervisor_name
-    )
+    to_emails=recipients,
+    subject=subject,
+    body_text=body_text,
+    attachment_bytes=buffer_contents,  # ✅ New param
+    full_name=full_name,
+    supervisor_name=supervisor_name
+)
+    
 
     return jsonify({
         "status": "ok",
