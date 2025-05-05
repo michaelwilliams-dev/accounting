@@ -126,9 +126,9 @@ All responses must:
 
 ### Your Task:
 Please generate a structured response that includes:
-1. **Reply** - a professional response to the enquiry, suitable for inclusion in a formal accounting document.
-2. **Action Sheet** - list up to 5 specific, practical next steps that should be taken to resolve or act on the issue. Use numbered steps, and include who is responsible (e.g., accountant, client, HMRC) and the timeline (e.g., within 7 days, before year-end).
-3. **Policy or Standard Notes** - list up to four relevant UK accounting, tax, audit, or compliance regulations or standards that apply to this issue. For each, briefly state what it requires and why it is relevant.
+1. **Client Reply**
+2. **Action Sheet**
+3. **Policy or Standard Notes**
 """
     return generate_reviewed_response(prompt, discipline)
 
@@ -288,29 +288,6 @@ def generate_response():
     uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
     generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
     doc.add_paragraph(f"Generated: {generated_datetime}")
-
-    # Title
-    title_para = doc.add_paragraph()
-    title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
-    title_run.bold = True
-    title_run.font.size = Pt(14)
-
-    # Timestamp
-    uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
-    generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
-    doc.add_paragraph(f"Generated: {generated_datetime}")
-
-    # Original Query (heading in bold, not style="Heading 1")
-    query_para = doc.add_paragraph()
-    query_run = query_para.add_run("Original Query")
-    query_run.bold = True
-    query_run.font.size = Pt(13)
-
-    # User's input
-    doc.add_paragraph(query_text or "No query text provided.")
-
-    doc.add_paragraph(query_text or "No query text provided.")
-
 
     # Add AI Response content (simple insert for now)
     doc.add_paragraph(answer)
