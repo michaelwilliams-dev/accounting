@@ -282,20 +282,26 @@ def generate_response():
 
     # Title
     title_para = doc.add_paragraph()
+    print(f"🔍 full_name before formatting: {full_name}")
     title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
     title_run.bold = True
-    title_run.font.size = Pt(14)
+    title_run.font.size = Pt(12)
 
     # Timestamp
     uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
     generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
     doc.add_paragraph(f"Generated: {generated_datetime}")
 
-    # Original Query (heading in bold, not style="Heading 1")
-    query_para = doc.add_paragraph()
-    query_run = query_para.add_run("Original Query")
-    query_run.bold = True
-    query_run.font.size = Pt(13)
+    # Original Query
+    para_heading = doc.add_paragraph()
+    run_heading = para_heading.add_run("Original Query")
+    run_heading.bold = True
+    run_heading.font.size = Pt(13)
+
+    para_query = doc.add_paragraph()
+    run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
+    run_query.italic = True
+    run_query.font.size = Pt(11)
 
     doc.add_paragraph(query_text or "No query text provided.")
 
