@@ -352,14 +352,12 @@ def generate_response():
            bold_part = match.group(1).strip()
            rest = match.group(2).strip()
 
-           return reviwed.lower().startswith(bold_part.lower()):
-              rest = rest[len(bold_part):].lstrip(":–- ").strip()
+           if rest.lower().startswith(bold_part.lower()):
+               rest = rest[len(bold_part):].lstrip(":–- ").strip()
 
            run1 = para.add_run(bold_part + " – ")
            run1.bold = True
            para.add_run(rest)
-           #else:
-              #para.add_run(line)
 
     # --- Policy or Standard Notes Section ---
     para = doc.add_paragraph()
