@@ -266,13 +266,18 @@ def generate_response():
 
     else:
         context = "Policy lookup not available (FAISS index not loaded)."
+answer = ask_gpt_with_context(data, context)
 
-    answer = ask_gpt_with_context(data, context)
-    answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
-    
-# Remove markdown-style section headings like **Reply:** or **Action Sheet:**
-    answer = re.sub(r"\*\*(Reply|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
-    print(f"🧠 GPT answer: {answer[:80]}...")
+# 🔧 Clean GPT output before splitting
+answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
+answer = re.sub(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", "", answer, flags=re.IGNORECASE)
+
+# 🧾 Debug: print full response to verify formatting
+print("🧾 Raw GPT answer:")
+print(answer)
+
+# ✅ Now attempt section split
+parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", answer, flags=re.IGNORECASE)
 
     discipline = data.get("discipline", "Not specified")
     discipline_folder = discipline.lower().replace(" ", "_")
