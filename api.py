@@ -268,13 +268,13 @@ def generate_response():
         context = "Policy lookup not available (FAISS index not loaded)."
     answer = ask_gpt_with_context(data, context)
 
-# 🔧 Clean GPT output before splitting
-answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
-answer = re.sub(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", "", answer, flags=re.IGNORECASE)
+    # 🔧 Clean GPT output before splitting
+    answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
+    answer = re.sub(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", "", answer, flags=re.IGNORECASE)
 
-# 🧾 Debug: print full response to verify formatting
-print("🧾 Raw GPT answer:")
-print(answer)
+    # 🧾 Debug: print full response to verify formatting
+    print("🧾 Raw GPT answer:")
+    print(answer)
 
 # ✅ Now attempt section split
 parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes):?\s*\*\*", answer, flags=re.IGNORECASE)
