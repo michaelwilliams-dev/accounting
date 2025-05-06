@@ -181,7 +181,7 @@ def generate_reviewed_response(prompt,discipline,):
         r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$',
         '',
         initial_response,
-        flags=re.
+        flags=re.IGNORECASE
     ).strip()
 
     # ✂️ Trim FAISS context and limit input length
