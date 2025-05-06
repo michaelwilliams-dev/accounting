@@ -271,12 +271,22 @@ def generate_response():
         reply_text = parts[2].strip()
         action_sheet = parts[4].strip()
         notes = parts[6].strip()
+    # else:
+        # print("⚠️ GPT format not matched — fallback to full answer.")
+        # reply_text = answer.strip()
+        # action_sheet = ""
+        # notes = ""
     else:
-        print("⚠️ GPT format not matched — fallback to full answer.")
-        reply_text = answer.strip()
-        action_sheet = ""
-        notes = ""
-
+        print("⚠️ GPT format not matched — attempting fallback split.")
+        parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
+        if len(parts) >= 7:
+            reply_text = parts[2].strip()
+            action_sheet = parts[4].strip()
+            notes = parts[6].strip()
+        else:
+            reply_text = answer.strip()
+            action_sheet = ""
+            notes = ""
     # --- Action Sheet Section ---
     para_heading = doc.add_paragraph()
     run = para_heading.add_run("Action Sheet")
