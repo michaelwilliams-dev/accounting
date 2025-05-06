@@ -129,10 +129,10 @@ If context contains material referring to tax year 2025 or newer, you must prior
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 
-Required Respond in three clear sections:
-Reply – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
-Action Sheet – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
-Policy or Standard Notes – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
+### Required Respond in three clear sections:
+1. **Reply** – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
+2. **Action Sheet** – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
+3. **Policy or Standard Notes** – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
 """
     return generate_reviewed_response(prompt, discipline)
 
@@ -154,9 +154,9 @@ def generate_reviewed_response(prompt, discipline):
 
     review_prompt = textwrap.dedent(f"""\
     Please clean and improve the following structured response while maintaining professional tone and factual accuracy.
-   --- START RESPONSE ---
+    --- START RESPONSE ---
     {stripped_response}
-   --- END RESPONSE ---
+    --- END RESPONSE ---
     """)
 
     try:
@@ -192,7 +192,7 @@ def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_nam
 
         messages.append({
             "From": {
-                "Email": "no@securemaildrop.uk",
+                "Email": "noreply@securemaildrop.uk",
                 "Name": "Secure Maildrop"
             },
             "To": [{"Email": email, "Name": role}],
@@ -270,8 +270,8 @@ def generate_response():
     answer = ask_gpt_with_context(data, context)
     answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
     
-# Remove markdown-style section headings like **:** or **Action Sheet:**
-    answer = re.sub(r"\*\*(|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
+# Remove markdown-style section headings like **Reply:** or **Action Sheet:**
+    answer = re.sub(r"\*\*(Reply|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
     print(f"🧠 GPT answer: {answer[:80]}...")
 
     discipline = data.get("discipline", "Not specified")
@@ -335,11 +335,11 @@ def generate_response():
         notes = ""
 
    # --- Reply Section ---
-    #para_heading = doc.add_paragraph()
-    #run = para_heading.add_run("Reply")
-    #run.bold = True
-    #run.font.size = Pt(13)
-    #doc.add_paragraph(reply_text or "Not provided.")
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Reply")
+    run.bold = True
+    run.font.size = Pt(13)
+    doc.add_paragraph(reply_text or "Not provided.")
 
     # --- Action Sheet Section ---
     para_heading = doc.add_paragraph()
@@ -347,29 +347,24 @@ def generate_response():
     run.bold = True
     run.font.size = Pt(13)
 
-    # ---  Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Action Sheet")
-    run.bold = True
-    
     lines = action_sheet.split("\n")
-    for line in lines: 
-        if not line.strip():
-            continue
-       
-        para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
+    for line in lines:
+       if not line.strip():
+           continue
+
+       para = doc.add_paragraph(style="List Number")
+       match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
     
-        if match:
-            bold_part = match.group(1).strip()
-            rest = match.group(2).strip()
+       if match:
+           bold_part = match.group(1).strip()
+           rest = match.group(2).strip()
 
-            if rest.lower().startswith(bold_part.lower()):
-                rest = rest[len(bold_part):].lstrip(":–- ").strip()
+           if rest.lower().startswith(bold_part.lower()):
+               rest = rest[len(bold_part):].lstrip(":–- ").strip()
 
-            run1 = para.add_run(bold_part + " – ")
-            run1.bold = True
-            para.add_run(rest)
+           run1 = para.add_run(bold_part + " – ")
+           run1.bold = True
+           para.add_run(rest)
 
     # --- Policy or Standard Notes Section ---
     para = doc.add_paragraph()
