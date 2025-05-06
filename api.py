@@ -142,7 +142,6 @@ def generate_reviewed_response(prompt, discipline):
 # ✅ The full `generate_response()` function and document generation logic will be inserted here next...
 # Let me know when you want the Word report structure, Action Sheet table, footer, and Mailjet response handling added.
 
-[code truncated for brevity]
 
 def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_name=None, supervisor_name=None):
     MAILJET_API_KEY = os.getenv("MJ_APIKEY_PUBLIC")
