@@ -1,46 +1,89 @@
+"""
+===============================================================
+ AIVS API — Accounting RAG Engine
+===============================================================
+ Version: 1.0.1
+ Last Updated: 2025-06-25 1626
+ Author: Michael Williams
+ Description: Flask-based API with GPT-4 + FAISS integration,
+              discipline-sensitive response generation,
+              and email delivery.
+===============================================================
+ CHANGE LOG
+===============================================================
+   v1.0.0 — 2025-05-27 Change from Police to Accounting
+   v1.0.0 — 2025-04-26
+   v1.0.0 — 2025-04-28 Prompt Change to Priority Guidance (2)
+   v1.0.0 — 2025-04-26
+   • Added discipline detection for Police Field Operations and Police Procedure
+   • Tactical brief generation for Field Ops queries
+   • Formal procedural guidance generation for Police Procedure queries
+   • Safe fallback general professional cleaning
+
+  v1.0.0 — 2025-04-26
+   • Adjusted tone of query and reply
+
+ v1.0.0 — 2025-04-25
+   • Increased max_tokens to 1800 in both GPT calls
+   • Preparing to modularize growing logic
+
+ v1.0.0 — 2025-04-24
+   • Added job title-based response shaping
+   • Cleaned up ZIP filename structure with timestamp
+
+ v1.0.0 — 2025-04-23
+   • Integrated Postmark email service
+   • Separated enquirer, supervisor, HR responses
+
+ v1.0.0 — 2025-04-20
+   • Added FAISS-based context retrieval
+   • Introduced action sheet + enquirer reply JSON format
+
+ v1.0.0 — 2025-04-10
+   • Initial deployment: GPT-4 prompt, one response
+===============================================================
+"""
 import os
-import faiss
-import pickle
+import os.path
 import json
 import base64
 import datetime
 import re
 import numpy as np
+import faiss
 import requests
 import textwrap
-import openai
-import zipfile
-from io import BytesIO
-from flask_cors import CORS
+from openai import OpenAI
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
-from zoneinfo import ZoneInfo
+from datetime import datetime
+from zoneinfo import ZoneInfo  # Python 3.9+ 
 
-# ✅ Unzip chunks.zip once at startup
-base_dir = os.path.dirname(os.path.abspath(__file__))
-zip_path = os.path.join(base_dir, "chunks.zip")
-chunks_dir = os.path.join(base_dir, "data/accounting")
-sample_chunk = os.path.join(chunks_dir, "Check when you must use the VAT domestic reverse charge for building and construction services - GOV.UK_chunk_2.txt")
-
-if os.path.exists(zip_path) and not os.path.exists(sample_chunk):
-    try:
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(chunks_dir)
-            print("✅ Unzipped chunks.zip to data/accounting/")
-    except Exception as e:
-        print(f"❌ Failed to unzip chunks.zip: {e}")
 
 __version__ = "v1.0.7-test"
 print(f"🚀 API Version: {__version__}")
 
-client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+def add_markdown_bold(paragraph, text):
+    parts = re.split(r'(\*\*[^*]+\*\*)', text)
+    for part in parts:
+        if part.startswith("**") and part.endswith("**"):
+            run = paragraph.add_run(part[2:-2])
+            run.bold = True
+        else:
+            paragraph.add_run(part)
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+print("🔒 OPENAI_API_KEY exists?", bool(OPENAI_API_KEY))
+client = OpenAI(api_key=OPENAI_API_KEY)
+
 app = Flask(__name__)
 CORS(app, origins=["https://www.aivs.uk"])
 
 @app.route("/", methods=["GET"])
 def home():
-    return "✅ Business API is running", 200
+    return "✅ Police Procedures API is running", 200
 
 @app.after_request
 def apply_cors_headers(response):
@@ -55,20 +98,21 @@ def ping():
         return '', 204
     return jsonify({"message": "pong"})
 
+# Load FAISS index
 try:
     faiss_index = faiss.read_index("data/accounting/accounting.index")
     with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
-    print("✅ Accounting FAISS index and metadata loaded.")
+    print("✅ FAISS index and metadata loaded.")
 except Exception as e:
     faiss_index = None
     metadata = []
-    print("⚠️ Failed to load Accounting FAISS index:", str(e))
+    print("⚠️ Failed to load FAISS index:", str(e))
 
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
     job_title = data.get("job_title", "Not specified")
-    seniority_level = data.get("seniority_level", "Not specified")
+    rank_level = data.get("rank_level", "Not specified")
     timeline = data.get("timeline", "Not specified")
     discipline = data.get("discipline", "Not specified")
     site = data.get("site", "Not specified")
@@ -77,13 +121,11 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are acting as a senior UK accountant generating a formal internal advisory report. Do **not** format this as a letter or address the client directly.
-
-Respond with factual, concise, and accurate professional guidance. Do **not** use conversational language, salutations, or softening phrases. This report is for internal use and regulatory preparation, not for client-facing communication.
+You are responding to an internal police procedures query via a secure reporting system.
 
 All responses must:
-- Be based on correct UK financial standards, accounting regulations, business risk practices, or strategic management theory.
-- Use British English spelling and tone.
+- Be based on UK law, police operational guidance, and internal procedures only.
+- Include British spelling, tone, and regulatory references.
 
 ### Enquiry:
 \"{query}\"
@@ -91,59 +133,133 @@ All responses must:
 ### Context from FAISS Index:
 {context}
 
-### Special Instruction:
-If context contains material referring to tax year 2025 or newer, you must prioritise and apply those references. Do not rely on older legislation if updated 2024 or 2025 guidance is available in the provided context.
+### Enquirer Details:
+- Job Title: {job_title}
+- Rank Level: {rank_level}
+- Timeline: {timeline}
+- Discipline: {discipline}
+- Site: {site}
 
-### Additional Internal Notes:
+### Additional Focus:
 - Support Need: {funnel_1}
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 
-Required Respond in three clear sections:
-Reply – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
-Action Sheet – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
-Policy or Standard Notes – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
-"""
-    return generate_reviewed_response(prompt, discipline)
+### Your Task:
+Please generate a structured response that includes:
 
-def generate_reviewed_response(prompt, discipline):
+1. **Enquirer Reply** – in plain English, appropriate for the rank level.
+2. **Action Sheet** – bullet-point steps the enquirer should follow.
+3. **Policy Notes** – cite any relevant UK policing policies, SOPs, or legal codes.
+"""
+    return generate_reviewed_response(prompt,discipline)
+
+def generate_reviewed_response(prompt,discipline,):
     print("📢 Sending initial GPT prompt...")
+
     completion = client.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
-        max_tokens=1800
+        max_tokens=1800  # Allow longer initial output
     )
     initial_response = completion.choices[0].message.content.strip()
+
+    # 📏 Initial GPT response length
     print(f"📏 Initial GPT response length: {len(initial_response)} characters")
 
-    review_prompt = textwrap.dedent(f"""
-    Please clean and improve the following structured response while maintaining professional tone and factual accuracy.
-    --- START RESPONSE ---
-    {initial_response}
-    --- END RESPONSE ---
-    """)
-
-    try:
-        review_completion = client.chat.completions.create(
-            model="gpt-4",
-            messages=[{"role": "user", "content": review_prompt}],
-            temperature=0,
-            max_tokens=500,
-            timeout=305
-        )
-        reviewed_response = review_completion.choices[0].message.content.strip()
-        print(f"✅ Reviewed response length: {len(reviewed_response)} characters")
-        return reviewed_response
-    except Exception as e:
-        print("❌ GPT Review failed:", repr(e))
+    # ⛔ Skip review if too big
+    if len(initial_response) > 1500:
+        print("⚡ Skipping review — using initial GPT response directly.")
         return initial_response
 
-# ✅ The full `generate_response()` function and document generation logic will be inserted here next...
-# Let me know when you want the Word report structure, Action Sheet table, footer, and Mailjet response handling added.
+    # 🔄 Otherwise review normally
+    print("🔄 Reviewing GPT response...")
 
+    # 🧼 Strip polite sign-offs
+    initial_response = re.sub(
+        r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$',
+        '',
+        initial_response,
+        flags=re.IGNORECASE
+    ).strip()
 
-def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_name=None, supervisor_name=None):
+    # ✂️ Trim FAISS context and limit input length
+    stripped_response = initial_response.split("### Context from FAISS Index:")[0].strip()
+    stripped_response = stripped_response[:2000]  # Safe upper limit
+
+    # 🧠 Build review prompt using textwrap.dedent
+    if discipline == "Police Field Operations":
+          review_prompt = textwrap.dedent(f"""\
+       You are acting as a UK operational police officer preparing an urgent briefing.
+       
+       Priority Guidance:
+       - When answering queries about stop and search, prioritize using Section 1 of the Police and Criminal Evidence Act 1984 (PACE).
+       - Only refer to Policing and Crime Act 2017 Section 47C/47G if specifically about property seizure.
+       - Focus on tactical deployment actions: what the officer must DO and SAY.
+       - Keep answers clear, lawful, and officer operational.
+       - Write in short, direct sentences suitable for operational use.
+       - Avoid soft or cautious civilian phrasing.
+       - Emphasize lawful authority, officer safety, and public protection.                                           
+       
+       Rewrite the following draft as if it is a formal operational briefing being issued to a frontline deployment team. Use direct tactical orders. Replace soft suggestions with clear, lawful commands ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
+
+       Use direct, command-style language. Avoid soft language ("thank you", "please", "ensure") and focus on clear tactical orders ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
+
+       Structure using clear headings:
+          - LEGAL POWER
+          - PROCEDURE
+          - IMPORTANT NOTES
+          - SPECIAL CASES
+          - EXAMPLE WORDING TO USE WITH SUSPECTS
+          - EXAMPLE WORDING TO USE WITH PUBLIC )              
+       Avoid any civilian narrative tone. Focus on immediate deployment needs.                         
+       --- START RESPONSE ---
+       {stripped_response}
+       --- END RESPONSE ---
+       """)
+    elif discipline == "Police Procedure":
+          review_prompt = textwrap.dedent(f"""\
+        You are acting as a UK police Professional Standards Officer or Custody Sergeant.
+
+        Rewrite the following draft as formal, clear procedural guidance for frontline officers. Focus on correct application of UK law (PACE, Criminal Law Act, etc.), internal policies, and officer conduct.
+
+        Structure as:
+        - ISSUE SUMMARY
+        - APPLICABLE LAW
+        - PROCEDURAL GUIDANCE
+        - RISK NOTES
+
+        No command tone needed. Use neutral, professional legal explanation style.
+
+        --- START RESPONSE ---
+        {stripped_response}
+        --- END RESPONSE ---
+        """)
+
+    else:
+        review_prompt = textwrap.dedent(f"""\
+        Please clean and improve the following structured response while maintaining professional tone and factual accuracy.
+
+        --- START RESPONSE ---
+        {stripped_response}
+        --- END RESPONSE ---
+        """)
+
+    # 🚀 Request GPT review with tight limits
+    review_completion = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": review_prompt}],
+        temperature=0,
+        max_tokens=700,  # Trimmed to avoid Render crashes
+        timeout=15        # Optional cap to prevent long hangs
+    )
+
+    reviewed_response = review_completion.choices[0].message.content.strip()
+    print(f"✅ Reviewed response length: {len(reviewed_response)} characters")
+    return reviewed_response
+
+def send_email_mailjet(to_emails, subject, body_text, attachments=[], full_name=None, supervisor_name=None):
     MAILJET_API_KEY = os.getenv("MJ_APIKEY_PUBLIC")
     MAILJET_SECRET_KEY = os.getenv("MJ_APIKEY_PRIVATE")
 
@@ -153,11 +269,28 @@ def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_nam
         role = recipient["Name"]
         email = recipient["Email"]
 
-        text_body = f"This document was generated following a query submitted by {full_name}. Please file or follow up according to internal procedures."
+        # Customise the message per role
+        if role == full_name:
+            text_body = f"""To: {full_name},
+
+Please find attached the AI-generated analysis based on your query submitted on {datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")}.
+"""
+        elif role == supervisor_name:
+            text_body = f"""To: {supervisor_name},
+
+Please review the attached report submitted by {full_name}. It contains AI-generated analysis for internal review.
+"""
+        elif role == "HR Department":
+            text_body = f"""To: HR Department,
+
+This document was generated following a query submitted by {full_name}. Please file or follow up according to internal procedures.
+"""
+        else:
+            text_body = f"Attached is an AI-generated analysis regarding {full_name}."
 
         messages.append({
             "From": {
-                "Email": "no@securemaildrop.uk",
+                "Email": "noreply@securemaildrop.uk",
                 "Name": "Secure Maildrop"
             },
             "To": [{"Email": email, "Name": role}],
@@ -167,9 +300,10 @@ def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_nam
             "Attachments": [
                 {
                     "ContentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-                    "Filename": f"{full_name.replace(' ', '_')}_Response.docx",
-                    "Base64Content": base64.b64encode(attachment_bytes).decode()
+                    "Filename": os.path.basename(file_path),
+                    "Base64Content": base64.b64encode(open(file_path, "rb").read()).decode()
                 }
+                for file_path in attachments
             ]
         })
 
@@ -178,16 +312,14 @@ def send_email_mailjet(to_emails, subject, body_text, attachment_bytes, full_nam
         auth=(MAILJET_API_KEY, MAILJET_SECRET_KEY),
         json={"Messages": messages}
     )
+
     print(f"📤 Mailjet status: {response.status_code}")
     print(response.json())
     return response.status_code, response.json()
 
-# The generate_response function and document creation logic will follow here.... The corrected and fully indented `send_email_mailjet` and `generate_response` functions, including the Mailjet logic, document generation, and Action Sheet table formatting, will be inserted in complete and tab-aligned form.
-
 @app.route("/generate", methods=["POST"])
 def generate_response():
     print("📥 /generate route hit")
-
     try:
         data = request.get_json()
         print("🔎 Payload received:", data)
@@ -201,197 +333,232 @@ def generate_response():
     supervisor_email = data.get("supervisor_email")
     hr_email = data.get("hr_email")
     supervisor_name = data.get("supervisor_name", "Supervisor")
-    timestamp = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 
     if faiss_index:
         query_vector = client.embeddings.create(
             input=[query_text.replace("\n", " ")],
             model="text-embedding-3-small"
         ).data[0].embedding
- 
- # Vector search
-        _, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
-        
-        # Safely load matched chunks
+
+        D, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
+
         matched_chunks = []
-        print("📂 Matched chunk files:")
         for i in I[0]:
-            key = str(i)
-            if key in metadata and "chunk_file" in metadata[key]:
-               chunk_file = metadata[key]["chunk_file"] 
-               file_path = f"faiss_index/{chunk_file}"
-               print(f" - {chunk_file}")
-               try:
-                   with open(file_path, "r", encoding="utf-8") as f:   
-                        matched_chunks.append(f.read().strip())
-               except FileNotFoundError:
-                    print(f"❌ Skipped missing chunk file: {file_path}")
-            else:
-                print(f"⚠️ No metadata found for FAISS index {i}")      
-        # Combine into context
+            chunk_file = metadata[i]["chunk_file"]
+            with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
+                matched_chunks.append(f.read().strip())
+
         context = "\n\n---\n\n".join(matched_chunks)
+
+        # Redact sensitive info
+        sensitive_names = ["Wiltshire Police", "Humberside Police", "Avon and Somerset Police"]
+        for name in sensitive_names:
+            context = context.replace(name, "the relevant police force")
+
+        context = re.sub(r'\b(PC|SGT|CID)?\d{3,5}\b', '[badge number]', context, flags=re.IGNORECASE)
 
     else:
         context = "Policy lookup not available (FAISS index not loaded)."
 
     answer = ask_gpt_with_context(data, context)
-    reply_text, action_sheet, notes = "", "", ""
-    answer = re.sub(r"### ORIGINAL QUERY\\s*[\\r\\n]+.*?(?=###|\\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
-    answer = re.sub(r"\*\*(|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
-   
-   # Remove markdown-style section headings like **:** or **Action Sheet:**
-   
+
+    # ✅ Remove repeated '### ORIGINAL QUERY' section if GPT included it
+    answer = re.sub(r"### ORIGINAL QUERY\s*[\r\n]+.*?(?=###|\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
+    
+    print(f"🧠 GPT answer: {answer[:80]}...")
+    
     discipline = data.get("discipline", "Not specified")
     discipline_folder = discipline.lower().replace(" ", "_")
     output_path = f"output/{discipline_folder}"
     os.makedirs(output_path, exist_ok=True)
 
+    doc_path = f"{output_path}/{full_name.replace(' ', '_')}_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.docx"
+    
     doc = Document()
-    doc.styles["Normal"].font.name = "Arial"
-    doc.styles["Normal"].font.size = Pt(11)
-    doc.styles["Normal"].font.color.rgb = RGBColor(0, 0, 0)
 
+    # ✅ Apply default document style
+    doc.styles['Normal'].font.name = 'Arial'
+    doc.styles['Normal'].font.size = Pt(11)
+    doc.styles['Normal'].font.color.rgb = RGBColor(0, 0, 0)
+
+    # Document styling
     section = doc.sections[0]
     section.page_height = Mm(297)
     section.page_width = Mm(210)
 
     title_para = doc.add_paragraph()
-    print(f"🔍 full_name before formatting: {full_name}")
     title_run = title_para.add_run(f"RESPONSE FOR {full_name.upper()}")
     title_run.bold = True
-    title_run.font.size = Pt(12)
-
-    uk_time = datetime.datetime.now(ZoneInfo("Europe/London"))
+    title_run.font.name = 'Arial'
+    title_run.font.size = Pt(14)
+    title_run.font.color.rgb = RGBColor(0, 0, 0)
+    
+    # ✅ UK-style timestamp
+    uk_time = datetime.now(ZoneInfo("Europe/London"))
     generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
     doc.add_paragraph(f"Generated: {generated_datetime}")
 
-        # --- Original Query Section ---
-    para_heading = doc.add_paragraph()
-    run_heading = para_heading.add_run("Original Query")
+    # 🔹 ORIGINAL QUERY heading
+    para_query_heading = doc.add_paragraph()
+    run_heading = para_query_heading.add_run("ORIGINAL QUERY")
     run_heading.bold = True
-    run_heading.font.size = Pt(13)
+    run_heading.font.name = 'Arial'
+    run_heading.font.size = Pt(11)
+    run_heading.font.color.rgb = RGBColor(0, 0, 0)
 
-    para_query = doc.add_paragraph()
-    run_query = para_query.add_run(f'"{query_text or "No query text provided."}"')
+    # 🔹 Divider ABOVE the query text
+    divider_above = doc.add_paragraph()
+    divider_above_run = divider_above.add_run("────────────────────────────────────────────")
+    divider_above_run.font.name = 'Arial'
+    divider_above_run.font.size = Pt(10)
+    divider_above_run.font.color.rgb = RGBColor(0, 0, 0)
+
+    # 🔹 Italicised query
+    para_query_text = doc.add_paragraph()
+    run_query = para_query_text.add_run(f'"{query_text.strip()}"')
     run_query.italic = True
+    run_query.font.name = 'Arial'
     run_query.font.size = Pt(11)
+    run_query.font.color.rgb = RGBColor(0, 0, 0)
 
-    # --- Reply Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Reply")
-    run.bold = True
-    run.font.size = Pt(13)
+    # 🔹 Divider BELOW the query text
+    divider_below = doc.add_paragraph()
+    divider_below_run = divider_below.add_run("────────────────────────────────────────────")
+    divider_below_run.font.name = 'Arial'
+    divider_below_run.font.size = Pt(10)
+    divider_below_run.font.color.rgb = RGBColor(0, 0, 0)
 
-    doc.add_paragraph(reply_text or "No reply generated.")
+    # ✅ Bold header: "AI RESPONSE"
+    para1 = doc.add_paragraph()
+    run1 = para1.add_run("AI RESPONSE")
+    run1.bold = True
+    run1.font.name = 'Arial'
+    run1.font.size = Pt(11)
+    run1.font.color.rgb = RGBColor(0, 0, 0)
 
-    # --- Action Sheet Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Action Sheet")
-    run.bold = True
-    run.font.size = Pt(13)  
-# FROM HERE
-    # Split GPT output into structured parts
-    reply_text, action_sheet, notes = "", "", ""
-    try:
-        parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
-        reply_text = parts[2].strip() if len(parts) > 2 else ""
-        action_sheet = parts[4].strip() if len(parts) > 4 else ""
-        notes = parts[6].strip() if len(parts) > 6 else ""
-    except Exception as e:
-        print("⚠️ GPT parsing error:", e)
-        reply_text = answer
-        action_sheet = ""
-        notes = ""
+    # ✅ Subheader: "Note: ..."
+    para2 = doc.add_paragraph()
+    run2 = para2.add_run("Note: This report was prepared using AI analysis based on the submitted query.")
+    run2.bold = True
+    run2.font.name = 'Arial'
+    run2.font.size = Pt(11)
+    run2.font.color.rgb = RGBColor(0, 0, 0)
 
+    # ✅ ORIGINAL QUERY label✅ ORIGINAL QUERY label
+    # ✅ ORIGINAL QUERY labelpara3 = doc.add_paragraph()
+    # ✅ ORIGINAL QUERY labelrun3 = para3.add_run("ORIGINAL QUERY:\n")
+    # ✅ ORIGINAL QUERY labelrun3.bold = True
+    # ✅ ORIGINAL QUERY labelrun3.font.name = 'Arial'
+    # ✅ ORIGINAL QUERY labelrun3.font.size = Pt(11)
+    # ✅ ORIGINAL QUERY labelrun3.font.color.rgb = RGBColor(0, 0, 0)
+ #
+    # 🔹 ORIGINAL QUERY heading
+    #para_query_heading = doc.add_paragraph()
+    #run_heading = para_query_heading.add_run("ORIGINAL QUERY")
+    #run_heading.bold = True
+    #run_heading.font.name = 'Arial'
+    #run_heading.font.size = Pt(11)
+    #run_heading.font.color.rgb = RGBColor(0, 0, 0)
 
-    # --- Original Query Section ---
-    para_heading = doc.add_paragraph()
-    run_heading = para_heading.add_run("Original Query")
-    run_heading.bold = True
-    run_heading.font.size = Pt(13)
+    # 🔹 Divider ABOVE the query text
+    # divider_above = doc.add_paragraph()
+     #divider_above_run = divider_above.add_run("────────────────────────────────────────────")
+     #divider_above_run.font.name = 'Arial'
+     #divider_above_run.font.size = Pt(10)
+     #divider_above_run.font.color.rgb = RGBColor(0, 0, 0)
 
-    para_query = doc.add_paragraph()
-    run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
-    run_query.italic = True
-    run_query.font.size = Pt(11)
+    # 🔹 Italicised query
+    #para_query_text = doc.add_paragraph()
+    #run_query = para_query_text.add_run(f'"{query_text.strip()}"')
+    #run_query.italic = True
+    #run_query.font.name = 'Arial'
+    #run_query.font.size = Pt(11)
+    #run_query.font.color.rgb = RGBColor(0, 0, 0)
 
-    # --- Reply Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Reply")
-    run.bold = True
-    run.font.size = Pt(13)
+    # 🔹 Divider BELOW the query text
+    divider_below = doc.add_paragraph()
+    divider_below_run = divider_below.add_run("────────────────────────────────────────────")
+    divider_below_run.font.name = 'Arial'
+    divider_below_run.font.size = Pt(10)
+    divider_below_run.font.color.rgb = RGBColor(0, 0, 0)
+    # ✅ Actual query content
+    #doc.add_paragraph(query_text.strip())
 
-    doc.add_paragraph(reply_text or "No reply generated.")
+    #divider = doc.add_paragraph()
+    #divider.add_run("────────────────────────────────────────────").font.size = Pt(10)
 
-    # --- Action Sheet Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Action Sheet")
-    run.bold = True
-    run.font.size = Pt(13)
+    # Split answer into structured sections
+    sections = re.split(r'^### (.*?)\n', answer, flags=re.MULTILINE)
+    structured = {}
+    current_title = None
 
-    table = doc.add_table(rows=1, cols=3)
-    table.style = "Table Grid"
-    hdr_cells = table.rows[0].cells
-    hdr_cells[0].text = "Role"
-    hdr_cells[1].text = "Action"
-    hdr_cells[2].text = "Notes"
+    for i, part in enumerate(sections):
+        content = part.strip()
+        if i == 0 and content:
+            content = re.sub(r'^\s*Enquirer Reply\s*', '', content, flags=re.IGNORECASE)
+            content = re.sub(r'^\s*Hello,\s*', '', content, flags=re.IGNORECASE)
+            structured["Enquirer Reply"] = content
+        elif i % 2 == 1:
+            current_title = content
+        elif i % 2 == 0 and current_title:
+            if current_title.lower() in ["enquirer reply", "initial response"]:
+                lines = content.splitlines()
+                cleaned_lines = [line for line in lines if not re.match(r'^\s*(enquirer reply|hello,?)\s*$', line, flags=re.IGNORECASE)]
+                content = "\n".join(cleaned_lines).strip()
+            structured[current_title] = content
+            # ✅ Added debug line here 16 38
+            print("🔍 Structured keys:", list(structured.keys()))
 
-    for line in action_sheet.split("\n"):
-        if not line.strip():
-            continue
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        if match:
-            role = match.group(1).strip()
-            action = match.group(2).strip()
+    if not structured:
+        print("⚠️ GPT returned unstructured content. Using entire answer as 'Initial Response'.")
+        structured["Initial Response"] = answer.strip()
+
+    rename = {"Enquirer Reply": "Initial Response"}
+    for title in structured:
+        heading = doc.add_paragraph()
+        heading_run = heading.add_run(rename.get(title, title).upper())
+        heading_run.bold = True
+        heading_run.font.name = 'Arial'
+        heading_run.font.size = Pt(12)
+        heading_run.font.color.rgb = RGBColor(0, 0, 0)
+
+        if title in ["Action Sheet", "Policy Notes"]:
+           lines = structured[title].splitlines()
+           for line in lines:
+              clean = line.strip()
+              clean = re.sub(r'^[-•–]?\s*\d+[.)]?\s*', '', clean)
+              clean = re.sub(r'^[-•–]\s*', '', clean)
+              if clean:
+                  para = doc.add_paragraph(clean, style='List Number')
+                  para.paragraph_format.left_indent = Mm(5) 
+
+         #elif title == "Policy Notes":
+            #lines = structured[title].splitlines()
+            #for line in lines:
+               #clean = line.strip()
+               #clean = re.sub(r'^[-•–]?\s*\d+[.)]?\s*', '', clean)
+               #clean = re.sub(r'^[-•–]\s*', '', clean)
+               #if clean:
+                   #para = doc.add_paragraph(clean, style='List Number')
+                   #para.paragraph_format.left_indent = Mm(5)         
         else:
-            role = "Unassigned"
-            action = line.strip()
-        row_cells = table.add_row().cells
-        row_cells[0].text = role
-        row_cells[1].text = action
-        row_cells[2].text = ""
-    # TO HERE
-    # --- Policy or Standard Notes Section ---
-    para = doc.add_paragraph()
-    run = para.add_run("Policy or Standard Notes")
-    run.bold = True
-    run.font.size = Pt(13)
+            # Default fallback for all other sections
+            cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', structured[title])
+            para = doc.add_paragraph()
+            run = para.add_run(cleaned_text)
+            run.font.name = 'Arial'
+            run.font.size = Pt(11)
+            run.font.color.rgb = RGBColor(0, 0, 0)
 
-    for line in notes.split("\n"):
-        if not line.strip():
-            continue
-        para = doc.add_paragraph(style="List Number")
-        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
-        if match:
-            bold_part = match.group(1).strip()
-            rest = match.group(2).strip()
-            run1 = para.add_run(bold_part + " – ")
-            run1.bold = True
-            para.add_run(rest)
-        else:
-            para.add_run(line)
+    doc.add_paragraph()
+    doc.add_paragraph("────────────────────────────────────────────")
+    doc.add_paragraph("This document was generated by AIVS Software Limited using AI assistance (OpenAI). Please review for accuracy and relevance before taking any formal action.")
+    doc.add_paragraph("© AIVS Software Limited 2025. All rights reserved.")
+    doc.add_paragraph(datetime.now(ZoneInfo("Europe/London")).strftime("Report generated on %d %B %Y at %H:%M:%S (%Z)"))
 
-    # --- Footer / Disclaimer ---
-    COPYRIGHT_TEXT = (
-        "© 2025 AIVS Software Limited. All rights reserved.\n"
-        "This report was generated using proprietary AI software and is intended for internal use only.\n"
-        "Do not distribute externally without express written permission.\n\n"
-        "Disclaimer: The contents of this report are based on AI interpretation of internal queries "
-        "and publicly available UK guidance. It is not a substitute for professional legal or financial advice."
-    )
-
-    para = doc.add_paragraph()
-    para.alignment = 1
-    run = para.add_run(COPYRIGHT_TEXT)
-    run.italic = True
-    run.font.size = Pt(9)
-
-    doc_buffer = BytesIO()
-    doc.save(doc_buffer)
-    doc_buffer.seek(0)
-    buffer_contents = doc_buffer.read()
-    print(f"📎 Attachment size: {len(buffer_contents)} bytes")
-    doc_buffer = BytesIO(buffer_contents)
+    doc.save(doc_path)
+    print(f"📄 Word saved: {doc_path}")
 
     recipients = []
     if user_email:
@@ -401,13 +568,20 @@ def generate_response():
     if hr_email:
         recipients.append({"Email": hr_email, "Name": "HR Department"})
 
+    if not recipients:
+        return jsonify({"error": "No valid email addresses provided."}), 400
+
     subject = f"AI Analysis for {full_name} - {timestamp}"
-    body_text = "AIVS test delivery — confirming Mailjet success."
+    body_text = f"""To: {full_name},
+
+Please find attached the AI-generated analysis based on your query submitted on {timestamp}.
+"""
+
     status, response = send_email_mailjet(
         to_emails=recipients,
         subject=subject,
         body_text=body_text,
-        attachment_bytes=buffer_contents,
+        attachments=[doc_path],
         full_name=full_name,
         supervisor_name=supervisor_name
     )
@@ -416,11 +590,11 @@ def generate_response():
         "status": "ok",
         "message": "✅ OpenAI-powered response generated, AI reviewed and email successfully sent.",
         "disclaimer": "This document was generated by AIVS Software Limited using AI assistance (OpenAI). Please review for accuracy and relevance before taking any formal action.",
+        "copyright": "© AIVS Software Limited 2025. All rights reserved.",
         "context_preview": context[:200],
         "mailjet_status": status,
         "mailjet_response": response
     })
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
