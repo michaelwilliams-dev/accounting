@@ -226,6 +226,7 @@ def generate_response():
         context = "Policy lookup not available (FAISS index not loaded)."
 
     answer = ask_gpt_with_context(data, context)
+    reply_text, action_sheet, notes = "", "", ""
     answer = re.sub(r"### ORIGINAL QUERY\\s*[\\r\\n]+.*?(?=###|\\Z)", "", answer, flags=re.IGNORECASE | re.DOTALL).strip()
     answer = re.sub(r"\*\*(|Action Sheet|Policy or Standard Notes):?\*\*", "", answer, flags=re.IGNORECASE)
    
