@@ -542,8 +542,9 @@ def generate_response():
                    #para.paragraph_format.left_indent = Mm(5)         
         else:
             # Default fallback for all other sections
-            cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', structured[title])
-            cleaned_text = re.sub(r'^Dear Enquirer[,\s]*', '', cleaned_text, flags=re.IGNORECASE)
+            content = re.sub(r'^Dear Enquirer[,\s]*', '', structured[title], flags=re.IGNORECASE)
+            cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', content)
+            #cleaned_text = re.sub(r'^Dear Enquirer[,\s]*', '', cleaned_text, flags=re.IGNORECASE)
             para = doc.add_paragraph()
             run = para.add_run(cleaned_text)
             run.font.name = 'Arial'
