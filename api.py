@@ -99,8 +99,8 @@ def ping():
 
 # Load FAISS index
 try:
-    faiss_index = faiss.read_index("faiss_index/police_chunks.index")
-    with open("faiss_index/police_metadata.json", "r", encoding="utf-8") as f:
+    faiss_index = faiss.read_index("data/accounting/accounting.index")
+    with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
     print("✅ FAISS index and metadata loaded.")
 except Exception as e:
