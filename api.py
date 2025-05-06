@@ -181,7 +181,7 @@ def generate_reviewed_response(prompt,discipline,):
         r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$',
         '',
         initial_response,
-        flags=re.IGNORECASE
+        flags=re.
     ).strip()
 
     # ✂️ Trim FAISS context and limit input length
@@ -437,7 +437,7 @@ def generate_response():
 
     # ✅ Subheader: "Note: ..."
     para2 = doc.add_paragraph()
-    run2 = para2.add_run("Note: This report was prepared using AI analysis based on the submitted query.")
+    run2 = para2.add_run("This report was prepared using AI analysis based on the submitted query.")
     run2.bold = True
     run2.font.name = 'Arial'
     run2.font.size = Pt(11)
@@ -543,6 +543,7 @@ def generate_response():
         else:
             # Default fallback for all other sections
             cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', structured[title])
+            cleaned_text = re.sub(r'^Dear Enquirer[,\s]*', '', cleaned_text, flags=re.IGNORECASE)
             para = doc.add_paragraph()
             run = para.add_run(cleaned_text)
             run.font.name = 'Arial'
