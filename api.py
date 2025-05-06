@@ -280,18 +280,19 @@ def generate_response():
     run.bold = True
     run.font.size = Pt(13)  
 # FROM HERE
-        # Split GPT output into structured parts
+    # Split GPT output into structured parts
     reply_text, action_sheet, notes = "", "", ""
-    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
-    if len(parts) >= 7:
-        reply_text = parts[2].strip()
-        action_sheet = parts[4].strip()
-        notes = parts[6].strip()
-    else:
-        print("⚠️ GPT format not matched — fallback to full answer.")
-        reply_text = answer.strip()
+    try:
+        parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
+        reply_text = parts[2].strip() if len(parts) > 2 else ""
+        action_sheet = parts[4].strip() if len(parts) > 4 else ""
+        notes = parts[6].strip() if len(parts) > 6 else ""
+    except Exception as e:
+        print("⚠️ GPT parsing error:", e)
+        reply_text = answer
         action_sheet = ""
         notes = ""
+
 
     # --- Original Query Section ---
     para_heading = doc.add_paragraph()
