@@ -56,7 +56,7 @@ def ping():
     return jsonify({"message": "pong"})
 
 try:
-    faiss_index = .read_index("data/accounting/accounting.index")
+    faiss_index = faiss.read_index("data/accounting/accounting.index")
     with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
     print("✅ Accounting FAISS index and metadata loaded.")
