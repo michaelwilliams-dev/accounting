@@ -129,8 +129,8 @@ def generate_reviewed_response(prompt, discipline):
             model="gpt-4",
             messages=[{"role": "user", "content": review_prompt}],
             temperature=0,
-            max_tokens=700,
-            timeout=15
+            max_tokens=500,
+            timeout=305
         )
         reviewed_response = review_completion.choices[0].message.content.strip()
         print(f"✅ Reviewed response length: {len(reviewed_response)} characters")
