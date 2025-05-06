@@ -314,11 +314,17 @@ def generate_response():
 
         matched_chunks = []
         for i in I[0]:
-            chunk_file = metadata[i]["chunk_file"]
-            with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
-                matched_chunks.append(f.read().strip())
-
-        context = "\n\n---\n\n".join(matched_chunks)
+            #chunk_file = metadata[i]["chunk_file"]
+            #with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
+                #matched_chunks.append(f.read().strip())
+            key = str(i)
+            if key in metadata and "chunk_file" in metadata[key]:
+                chunk_file = metadata[key]["chunk_file"]
+                with open(f"faiss_index/{chunk_file}", "r", encoding="utf-8") as f:
+                    matched_chunks.append(f.read().strip())
+            else:     
+                print(f"⚠️ No metadata found for FAISS index {i}")       
+                   
 
         # Redact sensitive info
         sensitive_names = ["Wiltshire Police", "Humberside Police", "Avon and Somerset Police"]
@@ -408,7 +414,7 @@ def generate_response():
 
     # ✅ Subheader: "Note: ..."
     para2 = doc.add_paragraph()
-    run2 = para2.add_run("This report only uses AI analysis based on the submitted query.")
+    run2 = para2.add_run("Note: This report only uses AI analysis based on the submitted query.")
     run2.bold = True
     run2.font.name = 'Arial'
     run2.font.size = Pt(11)
