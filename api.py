@@ -129,7 +129,7 @@ If context contains material referring to tax year 2025 or newer, you must prior
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 
-### Required Respond in three clear sections:
+Required Respond in three clear sections:
 Reply – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
 Action Sheet – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
 Policy or Standard Notes – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
@@ -347,7 +347,7 @@ def generate_response():
     run.bold = True
     run.font.size = Pt(13)
 
-    # --- Action Sheet Section ---
+    # ---  Section ---
     para_heading = doc.add_paragraph()
     run = para_heading.add_run("Action Sheet")
     run.bold = True
