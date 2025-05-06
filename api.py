@@ -317,8 +317,8 @@ def generate_response():
     # Split the answer into structured sections
     reply_text, action_sheet, notes = "", "", ""
 
-    #parts = re.split(r"\d+\.\s+\*\*(Reply|Action Sheet|Policy or Standard Notes)\*\*", answer, flags=re.IGNORECASE)
-    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
+    parts = re.split(r"\d+\.\s+\*\*(Reply|Action Sheet|Policy or Standard Notes)\*\*", answer, flags=re.IGNORECASE)
+    #parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
 
     print("🔍 Split result (parts):")
     for i, part in enumerate(parts):
