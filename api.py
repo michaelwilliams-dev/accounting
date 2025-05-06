@@ -255,6 +255,45 @@ def generate_response():
     generated_datetime = uk_time.strftime("%d %B %Y at %H:%M:%S (%Z)")
     doc.add_paragraph(f"Generated: {generated_datetime}")
 
+        # --- Original Query Section ---
+    para_heading = doc.add_paragraph()
+    run_heading = para_heading.add_run("Original Query")
+    run_heading.bold = True
+    run_heading.font.size = Pt(13)
+
+    para_query = doc.add_paragraph()
+    run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
+    run_query.italic = True
+    reply.font.size = Pt(11)
+
+    # --- Reply Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Reply")
+    run.bold = True
+    run.font.size = Pt(13)
+
+    doc.add_paragraph(reply_text or "No reply generated.")
+
+    # --- Action Sheet Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Action Sheet")
+    run.bold = True
+    run.font.size = Pt(13)  
+# FROM HERE
+        # Split GPT output into structured parts
+    reply_text, action_sheet, notes = "", "", ""
+    parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
+    if len(parts) >= 7:
+        reply_text = parts[2].strip()
+        action_sheet = parts[4].strip()
+        notes = parts[6].strip()
+    else:
+        print("⚠️ GPT format not matched — fallback to full answer.")
+        reply_text = answer.strip()
+        action_sheet = ""
+        notes = ""
+
+    # --- Original Query Section ---
     para_heading = doc.add_paragraph()
     run_heading = para_heading.add_run("Original Query")
     run_heading.bold = True
@@ -265,28 +304,14 @@ def generate_response():
     run_query.italic = True
     run_query.font.size = Pt(11)
 
-    reply_text, action_sheet, notes = "", "", ""
-    parts = re.split(r"\\*\\*\\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\\s*\\*\\*", answer, flags=re.IGNORECASE)
-    if len(parts) >= 7:
-        reply_text = parts[2].strip()
-        action_sheet = parts[4].strip()
-        notes = parts[6].strip()
-    # else:
-        # print("⚠️ GPT format not matched — fallback to full answer.")
-        # reply_text = answer.strip()
-        # action_sheet = ""
-        # notes = ""
-    else:
-        print("⚠️ GPT format not matched — attempting fallback split.")
-        parts = re.split(r"\*\*\s*(Response|Reply|Action Plan|Action Sheet|Policy or Standard Notes)\s*\*\*", answer, flags=re.IGNORECASE)
-        if len(parts) >= 7:
-            reply_text = parts[2].strip()
-            action_sheet = parts[4].strip()
-            notes = parts[6].strip()
-        else:
-            reply_text = answer.strip()
-            action_sheet = ""
-            notes = ""
+    # --- Reply Section ---
+    para_heading = doc.add_paragraph()
+    run = para_heading.add_run("Reply")
+    run.bold = True
+    run.font.size = Pt(13)
+
+    doc.add_paragraph(reply_text or "No reply generated.")
+
     # --- Action Sheet Section ---
     para_heading = doc.add_paragraph()
     run = para_heading.add_run("Action Sheet")
@@ -300,10 +325,10 @@ def generate_response():
     hdr_cells[1].text = "Action"
     hdr_cells[2].text = "Notes"
 
-    for line in action_sheet.split("\\n"):
+    for line in action_sheet.split("\n"):
         if not line.strip():
             continue
-        match = re.match(r"\\d+\\.\\s+\\*\\*(.*?)\\*\\*\\s*[:\\-–]\\s*(.*)", line)
+        match = re.match(r"\d+\.\s+\*\*(.*?)\*\*\s*[:\-–]\s*(.*)", line)
         if match:
             role = match.group(1).strip()
             action = match.group(2).strip()
@@ -314,8 +339,7 @@ def generate_response():
         row_cells[0].text = role
         row_cells[1].text = action
         row_cells[2].text = ""
-   
-    # New Seciion Ends
+    # TO HERE
     # --- Policy or Standard Notes Section ---
     para = doc.add_paragraph()
     run = para.add_run("Policy or Standard Notes")
