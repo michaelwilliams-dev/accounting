@@ -130,9 +130,9 @@ If context contains material referring to tax year 2025 or newer, you must prior
 - Follow-Up Expectation: {funnel_3}
 
 ### Required Respond in three clear sections:
-1. Reply – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
-2. Action Sheet – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
-3. Policy or Standard Notes – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
+Reply – A summary of the issue and how it should be interpreted or handled under UK accounting, tax, or legal practice.
+Action Sheet – Numbered practical steps with assigned roles (e.g., Accountant, Client, HMRC) and indicative deadlines.
+Policy or Standard Notes – List up to four relevant UK regulatory references (e.g., Companies Act, HMRC guidance, GAAP, FRS) with a brief description of why each is relevant.
 """
     return generate_reviewed_response(prompt, discipline)
 
