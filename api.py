@@ -341,25 +341,23 @@ def generate_response():
             model="text-embedding-3-small"
         ).data[0].embedding
 
-        D, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
+        _, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
 
         matched_chunks = []
         for i in I[0]:
-            chunk_file = metadata[i]["chunk_file"]
-            with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
-                matched_chunks.append(f.read().strip())
+            key = str(i)
+            if key in metadata and "chunk_file" in metadata[key]:
+                chunk_file = metadata[key]["chunk_file"]
+                file_path = f"data/accounting/{chunk_file}"
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        matched_chunks.append(f.read().strip())
+                except FileNotFoundError:
+                    pass  # Silently skip missing chunk files
+            else:
+                pass  # Silently skip missing metadata entries
 
         context = "\n\n---\n\n".join(matched_chunks)
-
-        # Redact sensitive info
-        sensitive_names = ["Wiltshire Police", "Humberside Police", "Avon and Somerset Police"]
-        for name in sensitive_names:
-            context = context.replace(name, "the relevant police force")
-
-        context = re.sub(r'\b(PC|SGT|CID)?\d{3,5}\b', '[badge number]', context, flags=re.IGNORECASE)
-
-    else:
-        context = "Policy lookup not available (FAISS index not loaded)."
 
     answer = ask_gpt_with_context(data, context)
 
