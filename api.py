@@ -154,9 +154,9 @@ def generate_reviewed_response(prompt, discipline):
 
     review_prompt = textwrap.dedent(f"""\
     Please clean and improve the following structured response while maintaining professional tone and factual accuracy.
-   #  --- START RESPONSE ---
+   --- START RESPONSE ---
     {stripped_response}
-    # --- END RESPONSE ---
+   --- END RESPONSE ---
     """)
 
     try:
@@ -335,11 +335,11 @@ def generate_response():
         notes = ""
 
    # --- Reply Section ---
-    para_heading = doc.add_paragraph()
-    run = para_heading.add_run("Reply")
-    run.bold = True
-    run.font.size = Pt(13)
-    doc.add_paragraph(reply_text or "Not provided.")
+    #para_heading = doc.add_paragraph()
+    #run = para_heading.add_run("Reply")
+    #run.bold = True
+    #run.font.size = Pt(13)
+    #doc.add_paragraph(reply_text or "Not provided.")
 
     # --- Action Sheet Section ---
     para_heading = doc.add_paragraph()
