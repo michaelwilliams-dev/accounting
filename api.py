@@ -1,45 +1,17 @@
 """
 ===============================================================
- AIVS API — Strategic Management RAG Engine
+ AIVS API — Accountin RAG Engine
 ===============================================================
- Version: 1.5.0
- Last Updated: 2025-04-26 0756
+ Version: 1.1.0
+ Last Updated: 2025-05-26 1434
  Author: Michael Williams
- Description: Flask-based API with GPT-4 + FAISS integration,
-              discipline-sensitive response generation,
-              operational (Field Ops) and procedural (Police Procedure) pathways,
-              and Postmark email delivery.
+ Description: Flask-based API with GPT-4 + 2026 Regs 
+ FAISS integration,
+              
 ===============================================================
  CHANGE LOG
 ===============================================================
-   v1.5.0 — 2025-04-28 Prompt Change to Priority Guidance (2)
-   v1.5.0 — 2025-04-26
-   • Added discipline detection for Police Field Operations and Police Procedure
-   • Tactical brief generation for Field Ops queries
-   • Formal procedural guidance generation for Police Procedure queries
-   • Safe fallback general professional cleaning
-
-  v1.4.4 — 2025-04-26
-   • Adjusted tone of query and reply
-
- v1.4.0 — 2025-04-25
-   • Increased max_tokens to 1800 in both GPT calls
-   • Preparing to modularize growing logic
-
- v1.3.2 — 2025-04-24
-   • Added job title-based response shaping
-   • Cleaned up ZIP filename structure with timestamp
-
- v1.3.0 — 2025-04-23
-   • Integrated Postmark email service
-   • Separated enquirer, supervisor, HR responses
-
- v1.2.0 — 2025-04-20
-   • Added FAISS-based context retrieval
-   • Introduced action sheet + enquirer reply JSON format
-
- v1.0.0 — 2025-04-10
-   • Initial deployment: GPT-4 prompt, one response
+   v1.1.0 — 2025-04-28 Using Police Basic API.PY 
 ===============================================================
 """
 import os
@@ -82,7 +54,7 @@ CORS(app, origins=["https://www.aivs.uk"])
 
 @app.route("/", methods=["GET"])
 def home():
-    return "✅ Police Procedures API is running", 200
+    return "✅ Accountin API is running", 200
 
 @app.after_request
 def apply_cors_headers(response):
@@ -120,11 +92,13 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are responding to an internal police procedures query via a secure reporting system.
+You are acting as a senior UK accountant generating a formal internal advisory report. Do **not** format this as a letter or address the client directly.
+
+Respond with factual, concise, and accurate professional guidance. Do **not** use conversational language, salutations, or softening phrases. This report is for internal use and regulatory preparation, not for client-facing communication.
 
 All responses must:
-- Be based on UK law, police operational guidance, and internal procedures only.
-- Include British spelling, tone, and regulatory references.
+- Be based on correct UK financial standards, accounting regulations, business risk practices, or strategic management theory.
+- Use British English spelling and tone.
 
 ### Enquiry:
 \"{query}\"
@@ -188,40 +162,36 @@ def generate_reviewed_response(prompt,discipline,):
     stripped_response = stripped_response[:2000]  # Safe upper limit
 
     # 🧠 Build review prompt using textwrap.dedent
-    if discipline == "Police Field Operations":
+    if discipline == "Chartered Accounting Standards":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK operational police officer preparing an urgent briefing.
-       
-       Priority Guidance:
-       - When answering queries about stop and search, prioritize using Section 1 of the Police and Criminal Evidence Act 1984 (PACE).
-       - Only refer to Policing and Crime Act 2017 Section 47C/47G if specifically about property seizure.
-       - Focus on tactical deployment actions: what the officer must DO and SAY.
-       - Keep answers clear, lawful, and officer operational.
-       - Write in short, direct sentences suitable for operational use.
-       - Avoid soft or cautious civilian phrasing.
-       - Emphasize lawful authority, officer safety, and public protection.                                           
-       
-       Rewrite the following draft as if it is a formal operational briefing being issued to a frontline deployment team. Use direct tactical orders. Replace soft suggestions with clear, lawful commands ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
+       You are acting as a UK accounting professional preparing internal advice and briefing notes.
 
-       Use direct, command-style language. Avoid soft language ("thank you", "please", "ensure") and focus on clear tactical orders ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
+        Priority Guidance:
+        - When responding to accounting or tax compliance queries, base your advice strictly on UK GAAP, HMRC guidance, and relevant legislation (e.g. Companies Act 2006, VAT Act 1994, Income Tax Act 2007).
+        - Focus on what the accountant or finance team must record, report, disclose, or reconcile.
+        - Write in concise, formal language suitable for internal audit, board reporting, or statutory filing.
+        - Avoid informal or vague commentary. Prioritise clarity, statutory accuracy, and audit-readiness.
+        - Emphasise procedural compliance, reporting responsibilities, and the implications of misstatement or omission.
 
-       Structure using clear headings:
-          - LEGAL POWER
-          - PROCEDURE
-          - IMPORTANT NOTES
-          - SPECIAL CASES
-          - EXAMPLE WORDING TO USE WITH SUSPECTS
-          - EXAMPLE WORDING TO USE WITH PUBLIC )              
-       Avoid any civilian narrative tone. Focus on immediate deployment needs.                         
+        Rewrite the following draft as if it is formal accounting guidance issued by a senior professional to finance staff. Use precise terminology. Replace conversational tone with directive language (e.g. “Record”, “Reconcile”, “Report”, “Disclose”, “Flag for review”).
+
+        Use structured, formal accounting tone. Avoid soft qualifiers like “you may wish to” or “perhaps consider”, and instead use confident compliance-based language (“must”, “required”, “is to be”).
+
+        Structure using clear headings:
+        - ISSUE SUMMARY
+        - ACCOUNTING TREATMENT
+        - HMRC OR STATUTORY REFERENCES
+        - REQUIRED ACTIONS
+        - RISKS IF INCORRECTLY TREATED                         
        --- START RESPONSE ---
        {stripped_response}
        --- END RESPONSE ---
        """)
-    elif discipline == "Police Procedure":
+    elif discipline == "Accounting Procedure":
           review_prompt = textwrap.dedent(f"""\
-        You are acting as a UK police Professional Standards Officer or Custody Sergeant.
+        You are acting as a UK accounting professional preparing internal advice and briefing notes.
 
-        Rewrite the following draft as formal, clear procedural guidance for frontline officers. Focus on correct application of UK law (PACE, Criminal Law Act, etc.), internal policies, and officer conduct.
+        Rewrite the following draft as formal, clear procedural guidance for accounting staff. 
 
         Structure as:
         - ISSUE SUMMARY
@@ -438,7 +408,7 @@ def generate_response():
 
     # ✅ Subheader: "Note: ..."
     para2 = doc.add_paragraph()
-    run2 = para2.add_run("Note: This report was prepared using AI analysis based on the submitted query.")
+    run2 = para2.add_run("This report only uses AI analysis based on the submitted query.")
     run2.bold = True
     run2.font.name = 'Arial'
     run2.font.size = Pt(11)
