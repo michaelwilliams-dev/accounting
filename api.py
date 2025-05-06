@@ -476,8 +476,8 @@ for line in action_sheet.split("\n"):
     if hr_email:
         recipients.append({"Email": hr_email, "Name": "HR Department"})
 
-    if not recipients:
-        return jsonify({"error": "No valid email addresses provided."}), 400
+    # if not recipients:
+        # return jsonify({"error": "No valid email addresses provided."}), 400
 
     subject = f"AI Analysis for {full_name} - {timestamp}"
     # body_text = f"This document was generated following a query submitted by {full_name}. Please file or follow up according to internal procedures."
