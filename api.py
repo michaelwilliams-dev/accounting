@@ -262,9 +262,9 @@ def generate_response():
     run_heading.font.size = Pt(13)
 
     para_query = doc.add_paragraph()
-    run_query = para_query.add_run(f"\"{query_text or 'No query text provided.'}\"")
+    run_query = para_query.add_run(f'"{query_text or "No query text provided."}"')
     run_query.italic = True
-    reply.font.size = Pt(11)
+    run_query.font.size = Pt(11)
 
     # --- Reply Section ---
     para_heading = doc.add_paragraph()
