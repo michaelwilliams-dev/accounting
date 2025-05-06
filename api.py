@@ -154,9 +154,9 @@ def generate_reviewed_response(prompt, discipline):
 
     review_prompt = textwrap.dedent(f"""\
     Please clean and improve the following structured response while maintaining professional tone and factual accuracy.
-    --- START RESPONSE ---
+   #  --- START RESPONSE ---
     {stripped_response}
-    --- END RESPONSE ---
+    # --- END RESPONSE ---
     """)
 
     try:
