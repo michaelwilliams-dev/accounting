@@ -148,9 +148,9 @@ All responses must:
 ### Your Task:
 Please generate a structured response that includes:
 
-1. **Enquirer Reply** – in plain English, appropriate for the rank level.
-2. **Action Sheet** – bullet-point steps the enquirer should follow.
-3. **Policy Notes** – cite any relevant UK policing policies, SOPs, or legal codes.
+1. **Enquirer Reply** – in plain English, appropriate for the employee level.
+2. **Action Sheet** – numbered steps the enquirer should follow.
+3. **Policy Notes** – cite any relevant UK accounting policies and NHS and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -189,48 +189,34 @@ def generate_reviewed_response(prompt,discipline,):
     stripped_response = stripped_response[:2000]  # Safe upper limit
 
     # 🧠 Build review prompt using textwrap.dedent
-    if discipline == "Police Field Operations":
+    if discipline == "Accounting Office":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK operational police officer preparing an urgent briefing.
+       You are acting as a UK professional accountant preparing a briefing.
        
        Priority Guidance:
-       - When answering queries about stop and search, prioritize using Section 1 of the Police and Criminal Evidence Act 1984 (PACE).
-       - Only refer to Policing and Crime Act 2017 Section 47C/47G if specifically about property seizure.
-       - Focus on tactical deployment actions: what the officer must DO and SAY.
-       - Keep answers clear, lawful, and officer operational.
+       - 
+       - 
+       - Keep answers clear, lawful, and client facing.
        - Write in short, direct sentences suitable for operational use.
        - Avoid soft or cautious civilian phrasing.
-       - Emphasize lawful authority, officer safety, and public protection.                                           
+       -                                            
        
-       Rewrite the following draft as if it is a formal operational briefing being issued to a frontline deployment team. Use direct tactical orders. Replace soft suggestions with clear, lawful commands ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
-
-       Use direct, command-style language. Avoid soft language ("thank you", "please", "ensure") and focus on clear tactical orders ("Establish", "Detain", "Secure", "Arrest", "Preserve evidence").
+       Use direct, professional language. Avoid soft language ("thank you", "please", "ensure", "dear") and focus on clear professional information .
 
        Structure using clear headings:
-          - LEGAL POWER
-          - PROCEDURE
+          - 
+          - 
           - IMPORTANT NOTES
-          - SPECIAL CASES
-          - EXAMPLE WORDING TO USE WITH SUSPECTS
-          - EXAMPLE WORDING TO USE WITH PUBLIC )              
-       Avoid any civilian narrative tone. Focus on immediate deployment needs.                         
+          - SPECIAL RECENT CASES
+          - EXAMPLE WORDING TO USE WITH CLIENTS
+          -               
+       Avoid any jargon narrative tone.                          
        --- START RESPONSE ---
        {stripped_response}
        --- END RESPONSE ---
        """)
-    elif discipline == "Police Procedure":
+    elif discipline == "Accouting Procedure":
           review_prompt = textwrap.dedent(f"""\
-        You are acting as a UK police Professional Standards Officer or Custody Sergeant.
-
-        Rewrite the following draft as formal, clear procedural guidance for frontline officers. Focus on correct application of UK law (PACE, Criminal Law Act, etc.), internal policies, and officer conduct.
-
-        Structure as:
-        - ISSUE SUMMARY
-        - APPLICABLE LAW
-        - PROCEDURAL GUIDANCE
-        - RISK NOTES
-
-        No command tone needed. Use neutral, professional legal explanation style.
 
         --- START RESPONSE ---
         {stripped_response}
