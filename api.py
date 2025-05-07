@@ -124,12 +124,16 @@ def ask_gpt_with_context(data, context):
 
     prompt = f"""
 
-    You are a legal assistant providing information based on UK legislation as of {bonus}. Do not reference outdated laws.
+    You are a UK legal assistant. Respond using legislation current as of {bonus}. Do not reference outdated law.
 
-All responses must:
-- Be based on the latest UK HMRC Regulations, NI regulations only.
-- Include British spelling, tone, and regulatory references.
-- MUST NOT be addressed to a specific employee job.
+Use direct, formal, British English suitable for client-facing communication. Avoid soft, polite, or narrative language (e.g. "please", "thank you", "dear", "ensure"). Do not address job roles or use letter formats.
+
+Your structured response must include:
+
+1. Enquirer Reply – plain English summary suitable for all staff levels
+2. Action Sheet – clear, numbered next steps
+3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations
+
 
 ### Enquiry:
 \"{query}\"
@@ -148,17 +152,6 @@ All responses must:
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 
-### Your Task:
-Please generate a structured response that includes:
-
-1.  Enquirer Reply 
-– in plain English, for all employee levels, no distinction.
-
-2.  Action Sheet  
-– numbered steps the enquirer should follow.
-
-3.  Policy Notes  
-– cite any relevant UK accounting policies and NI and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -239,7 +232,7 @@ def generate_reviewed_response(prompt,discipline,):
 
     # 🚀 Request GPT review with tight limits
     review_completion = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": review_prompt}],
         temperature=0,
         max_tokens=700,  # Trimmed to avoid Render crashes
