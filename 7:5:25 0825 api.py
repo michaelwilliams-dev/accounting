@@ -1,79 +1,64 @@
 """
-=============================================================================
-AIVS Accounting RAG API
-=============================================================================
+===============================================================
+ AIVS API — Accounting RAG Engine
+===============================================================
+ Version: 1.0.1
+ Last Updated: 2025-06-25 1626
+ Author: Michael Williams
+ Description: Flask-based API with GPT-4 + FAISS integration,
+              discipline-sensitive response generation,
+              and email delivery.
+===============================================================
+ CHANGE LOG
+===============================================================
+   v1.0.0 — 2025-05-27 Change from Police to Accounting
+   v1.0.0 — 2025-04-26
+   v1.0.0 — 2025-04-28 Prompt Change to Priority Guidance (2)
+   v1.0.0 — 2025-04-26
+   • Added discipline detection for Police Field Operations and Police Procedure
+   • Tactical brief generation for Field Ops queries
+   • Formal procedural guidance generation for Police Procedure queries
+   • Safe fallback general professional cleaning
 
-Version: 2.0.0
-Last Updated: 2025-04-27
-Author: Michael Williams
+  v1.0.0 — 2025-04-26
+   • Adjusted tone of query and reply
 
------------------------------------------------------------------------------
+ v1.0.0 — 2025-04-25
+   • Increased max_tokens to 1800 in both GPT calls
+   • Preparing to modularize growing logic
 
-DESCRIPTION:
-This Flask-based API provides Accounting and Bookkeeping professionals
-with AI-generated structured responses based on UK accounting standards.
-It uses a FAISS vector database built from accounting, bookkeeping,
-corporate governance, and financial compliance source materials.
+ v1.0.0 — 2025-04-24
+   • Added job title-based response shaping
+   • Cleaned up ZIP filename structure with timestamp
 
-Each query:
-- Is embedded and searched against the Accounting FAISS index.
-- Retrieves relevant context chunks.
-- Sends the combined context and question to OpenAI GPT-4.
-- Generates a structured reply including:
-    • Client-facing response
-    • Action recommendations
-    • Relevant UK accounting standards references
-- Outputs a professionally formatted Word document (.docx).
-- Sends the resulting document to the User, Supervisor, and HR via Mailjet.
+ v1.0.0 — 2025-04-23
+   • Integrated Postmark email service
+   • Separated enquirer, supervisor, HR responses
 
------------------------------------------------------------------------------
+ v1.0.0 — 2025-04-20
+   • Added FAISS-based context retrieval
+   • Introduced action sheet + enquirer reply JSON format
 
-KEY COMPLIANCE STANDARDS:
-- UK GAAP (Generally Accepted Accounting Practice)
-- IFRS (International Financial Reporting Standards)
-- FRS 102 (Small entities)
-- FRS 105 (Micro-entities)
-- UK Companies Act 2006
-- UK Corporate Governance Code
-- UK Financial Practices Code
-- Insolvency Act 1986
-- HMRC Reporting and Compliance Requirements
-
------------------------------------------------------------------------------
-
-TECHNOLOGY STACK:
-- Python 3.9+
-- Flask
-- FAISS (CPU version)
-- OpenAI API (GPT-4, Embedding 3-small)
-- Mailjet Email Delivery (via Postmarker)
-- Python-Docx (Word document generation)
-- Render or Local Hosting (Gunicorn supported)
-
------------------------------------------------------------------------------
-
-NOTES:
-- This version is Accounting and Bookkeeping only.
-- No Police, Strategic Management, or other disciplines are included.
-- Old discipline pathways (e.g., Police Procedure) have been redacted but preserved for future use.
-
-=============================================================================
+ v1.0.0 — 2025-04-10
+   • Initial deployment: GPT-4 prompt, one response
+===============================================================
 """
 import os
-import faiss
-import pickle
+import os.path
 import json
 import base64
 import datetime
 import re
 import numpy as np
+import faiss
 import requests
 import textwrap
-import openai
+from openai import OpenAI
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
+from datetime import datetime
 from zoneinfo import ZoneInfo  # Python 3.9+ 
 
 
@@ -89,18 +74,16 @@ def add_markdown_bold(paragraph, text):
         else:
             paragraph.add_run(part)
 
-#OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-#print("🔒 OPENAI_API_KEY exists?", bool(OPENAI_API_KEY))
-#client = OpenAI(api_key=OPENAI_API_KEY)
-import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+print("🔒 OPENAI_API_KEY exists?", bool(OPENAI_API_KEY))
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 app = Flask(__name__)
 CORS(app, origins=["https://www.aivs.uk"])
 
 @app.route("/", methods=["GET"])
 def home():
-    return "✅ Business API is running", 200
+    return "✅ Police Procedures API is running", 200
 
 @app.after_request
 def apply_cors_headers(response):
@@ -117,19 +100,19 @@ def ping():
 
 # Load FAISS index
 try:
-    faiss_index = faiss.read_index("data/accounting/accounting_chunks.index")
-    with open("data/accounting/metadata.pkl", "rb") as f:
-        metadata = pickle.load(f)
-    print("✅ Accounting FAISS index and metadata loaded.")
+    faiss_index = faiss.read_index("data/accounting/accounting.index")
+    with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+    print("✅ FAISS index and metadata loaded.")
 except Exception as e:
     faiss_index = None
     metadata = []
-    print("⚠️ Failed to load Accounting FAISS index:", str(e))
+    print("⚠️ Failed to load FAISS index:", str(e))
 
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
     job_title = data.get("job_title", "Not specified")
-    seniority_level = data.get("seniority_level", "Not specified") 
+    rank_level = data.get("rank_level", "Not specified")
     timeline = data.get("timeline", "Not specified")
     discipline = data.get("discipline", "Not specified")
     site = data.get("site", "Not specified")
@@ -138,11 +121,11 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are responding to a professional business query via a secure reporting system.
+You are responding to an internal accounting query via a secure reporting system.
 
 All responses must:
-- Be based on correct UK financial standards, accounting regulations, business risk practices, or strategic management theory.
-- Use British English spelling and tone.
+- Be based on the latest UK HMRC Regulations, NI regulations only.
+- Include British spelling, tone, and regulatory references.
 
 ### Enquiry:
 \"{query}\"
@@ -150,6 +133,12 @@ All responses must:
 ### Context from FAISS Index:
 {context}
 
+### Enquirer Details:
+- Job Title: {job_title}
+- Rank Level: {rank_level}
+- Timeline: {timeline}
+- Discipline: {discipline}
+- Site: {site}
 
 ### Additional Focus:
 - Support Need: {funnel_1}
@@ -159,9 +148,9 @@ All responses must:
 ### Your Task:
 Please generate a structured response that includes:
 
-1. **Client Reply** – plain English appropriate for senior business audiences.
-2. **Action Sheet** – bullet-point recommended actions.
-3. **Policy or Standard Notes** – cite relevant accounting standards, regulatory codes, or strategic management principles if applicable.
+1. **Enquirer Reply** – in plain English, appropriate for the employee level.
+2. **Action Sheet** – numbered steps the enquirer should follow.
+3. **Policy Notes** – cite any relevant UK accounting policies and NHS and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -200,43 +189,39 @@ def generate_reviewed_response(prompt,discipline,):
     stripped_response = stripped_response[:2000]  # Safe upper limit
 
     # 🧠 Build review prompt using textwrap.dedent
-    if discipline == "Accounting":
+    if discipline == "Accounting Office":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK Chartered Accountant.
-                                          
-    Review and formally rewrite the following draft according to:
-    - UK GAAP
-    - UK Accounting Standards
-    - UK Companies Act 2006
-    - UK Corporate Governance Code
-    - Other relevant UK company law and governance standards
-    - UK Financial Practices Code                
-    - IFRS
-    - Insolvency Act 1986
-    - Other relevant UK accounting regulations
-    Maintain strict professional tone, British English spelling, and correct accounting terminology.                        
+       You are acting as a UK professional accountant preparing a briefing.
+       
+       Priority Guidance:
+       - ALWAYS use the current years tax regulations for calculations and quote them.
+       - ALWAYS use the last years regulations when calculations are for multi years
+       - Keep answers clear, lawful, and client facing.
+       - Write in short, direct sentences suitable for operational use.
+       - Avoid soft or cautious civilian phrasing.
+       -                                            
+       
+       Use direct, professional language. Avoid soft language ("thank you", "please", "ensure", "dear") and focus on clear professional information .
+
+       Structure using clear headings:
+          - 
+          - 
+          - IMPORTANT NOTES
+          - SPECIAL RECENT CASES
+          - EXAMPLE WORDING TO USE WITH CLIENTS
+          -               
+       Avoid any jargon narrative tone.                          
        --- START RESPONSE ---
        {stripped_response}
        --- END RESPONSE ---
        """)
-    #elif discipline == "Police Procedure":
-          #review_prompt = textwrap.dedent(f"""\
-        #You are acting as a UK police Professional Standards Officer or Custody Sergeant.
+    elif discipline == "Accouting Procedure":
+          review_prompt = textwrap.dedent(f"""\
 
-        #Rewrite the following draft as formal, clear procedural guidance for frontline officers. Focus on correct application of UK law (PACE, Criminal Law Act, etc.), internal policies, and officer conduct.
-
-        #Structure as:
-        #- ISSUE SUMMARY
-        #- APPLICABLE LAW
-        #- PROCEDURAL GUIDANCE
-        #- RISK NOTES
-
-        #No command tone needed. Use neutral, professional legal explanation style.
-
-        #--- START RESPONSE ---
-        #{stripped_response}
-        #--- END RESPONSE ---
-        #""")
+        --- START RESPONSE ---
+        {stripped_response}
+        --- END RESPONSE ---
+        """)
 
     else:
         review_prompt = textwrap.dedent(f"""\
@@ -342,25 +327,23 @@ def generate_response():
             model="text-embedding-3-small"
         ).data[0].embedding
 
-        D, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
+        _, I = faiss_index.search(np.array([query_vector]).astype("float32"), 2)
 
         matched_chunks = []
         for i in I[0]:
-            chunk_file = metadata[i]["chunk_file"]
-            with open(f"data/{chunk_file}", "r", encoding="utf-8") as f:
-                matched_chunks.append(f.read().strip())
+            key = str(i)
+            if key in metadata and "chunk_file" in metadata[key]:
+                chunk_file = metadata[key]["chunk_file"]
+                file_path = f"data/accounting/{chunk_file}"
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        matched_chunks.append(f.read().strip())
+                except FileNotFoundError:
+                    pass  # Silently skip missing chunk files
+            else:
+                pass  # Silently skip missing metadata entries
 
         context = "\n\n---\n\n".join(matched_chunks)
-
-        # Redact sensitive info
-        #sensitive_names = ["Wiltshire Police", "Humberside Police", "Avon and Somerset Police"]
-        #for name in sensitive_names:
-            #context = context.replace(name, "the relevant police force")
-
-        #context = re.sub(r'\b(PC|SGT|CID)?\d{3,5}\b', '[badge number]', context, flags=re.IGNORECASE)
-
-    else:
-        context = "Policy lookup not available (FAISS index not loaded)."
 
     answer = ask_gpt_with_context(data, context)
 
@@ -440,7 +423,7 @@ def generate_response():
 
     # ✅ Subheader: "Note: ..."
     para2 = doc.add_paragraph()
-    run2 = para2.add_run("Note: This report was prepared using AI analysis based on the submitted query.")
+    run2 = para2.add_run("This report was prepared using AI analysis based on the submitted query.")
     run2.bold = True
     run2.font.name = 'Arial'
     run2.font.size = Pt(11)
@@ -516,7 +499,7 @@ def generate_response():
         structured["Initial Response"] = answer.strip()
 
     rename = {"Enquirer Reply": "Initial Response"}
-    
+    for title in structured:
         heading = doc.add_paragraph()
         heading_run = heading.add_run(rename.get(title, title).upper())
         heading_run.bold = True
@@ -545,7 +528,9 @@ def generate_response():
                    #para.paragraph_format.left_indent = Mm(5)         
         else:
             # Default fallback for all other sections
-            cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', structured[title])
+            content = re.sub(r'^Dear Enquirer[,\s]*', '', structured[title], flags=re.IGNORECASE)
+            cleaned_text = re.sub(r'\*\*(.*?)\*\*', r'\1', content)
+            #cleaned_text = re.sub(r'^Dear Enquirer[,\s]*', '', cleaned_text, flags=re.IGNORECASE)
             para = doc.add_paragraph()
             run = para.add_run(cleaned_text)
             run.font.name = 'Arial'
