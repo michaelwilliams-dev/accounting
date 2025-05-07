@@ -140,7 +140,7 @@ Your structured response must include:
 3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations  
 
 ### Context from FAISS Index:
-{context}
+#ive commented it out so lets test{context}
 
 ### Enquirer Details:
 - Job Title: {job_title}
@@ -468,7 +468,7 @@ def generate_response():
     #doc.add_paragraph(query_text.strip())
 
     #divider = doc.add_paragraph()
-    #divider.add_run("────────────────────────────────────────────").font.size = Pt(10)
+ #divider.add_run("────────────────────────────────────────────").font.size = Pt(10)
 
     # Split answer into structured sections
     sections = re.split(r'^### (.*?)\n', answer, flags=re.MULTILINE)
