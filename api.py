@@ -121,11 +121,12 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are responding to an internal accounting query via a secure reporting system.
+You are responding to an internal accounting query via a secure reporting system to a member of staff.
 
 All responses must:
 - Be based on the latest UK HMRC Regulations, NI regulations only.
 - Include British spelling, tone, and regulatory references.
+- MUST NOT be addressed to a specific employee job.
 
 ### Enquiry:
 \"{query}\"
@@ -148,9 +149,9 @@ All responses must:
 ### Your Task:
 Please generate a structured response that includes:
 
-1. **Enquirer Reply** – in plain English, appropriate for the employee level.
+1. **Enquirer Reply** – in plain English, for all employee levels, no distinction.
 2. **Action Sheet** – numbered steps the enquirer should follow.
-3. **Policy Notes** – cite any relevant UK accounting policies and NHS and HMRC regulations.
+3. **Policy Notes** – cite any relevant UK accounting policies and NI and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -191,7 +192,7 @@ def generate_reviewed_response(prompt,discipline,):
     # 🧠 Build review prompt using textwrap.dedent
     if discipline == "Accounting Office":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK professional accountant preparing a briefing.
+       You are acting as a UK professional accounting preparing a briefing.
        
        Priority Guidance:
        - ALWAYS use the current years tax regulations for calculations and quote them.
@@ -199,17 +200,14 @@ def generate_reviewed_response(prompt,discipline,):
        - Keep answers clear, lawful, and client facing.
        - Write in short, direct sentences suitable for operational use.
        - Avoid soft or cautious civilian phrasing.
-       -                                            
+       - DO NOT address a job function avoid headings or letter format                                           
        
        Use direct, professional language. Avoid soft language ("thank you", "please", "ensure", "dear") and focus on clear professional information .
 
        Structure using clear headings:
-          - 
-          - 
           - IMPORTANT NOTES
           - SPECIAL RECENT CASES
-          - EXAMPLE WORDING TO USE WITH CLIENTS
-          -               
+          - EXAMPLE WORDING TO USE WITH CLIENTS            
        Avoid any jargon narrative tone.                          
        --- START RESPONSE ---
        {stripped_response}
