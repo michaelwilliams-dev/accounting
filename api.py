@@ -112,16 +112,19 @@ except Exception as e:
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
     job_title = data.get("job_title", "Not specified")
-    rank_level = data.get("rank_level", "Not specified")
+    #rank_level = data.get("rank_level", "Not specified")
     timeline = data.get("timeline", "Not specified")
     discipline = data.get("discipline", "Not specified")
     site = data.get("site", "Not specified")
     funnel_1 = data.get("funnel_1", "Not specified")
     funnel_2 = data.get("funnel_2", "Not specified")
     funnel_3 = data.get("funnel_3", "Not specified")
+    bonus = data.get("bonus", "2025")  # ✅ Capture the year
+    print("🧪 BONUS received from frontend:", bonus)  # ✅ Debug output 
 
     prompt = f"""
-You are responding to an internal accounting query via a secure reporting system to a member of staff.
+
+    You are a legal assistant providing information based on UK legislation as of {bonus}. Do not reference outdated laws.
 
 All responses must:
 - Be based on the latest UK HMRC Regulations, NI regulations only.
@@ -136,7 +139,6 @@ All responses must:
 
 ### Enquirer Details:
 - Job Title: {job_title}
-- Rank Level: {rank_level}
 - Timeline: {timeline}
 - Discipline: {discipline}
 - Site: {site}
@@ -149,9 +151,14 @@ All responses must:
 ### Your Task:
 Please generate a structured response that includes:
 
-1. **Enquirer Reply** – in plain English, for all employee levels, no distinction.
-2. **Action Sheet** – numbered steps the enquirer should follow.
-3. **Policy Notes** – cite any relevant UK accounting policies and NI and HMRC regulations.
+1.  Enquirer Reply 
+– in plain English, for all employee levels, no distinction.
+
+2.  Action Sheet  
+– numbered steps the enquirer should follow.
+
+3.  Policy Notes  
+– cite any relevant UK accounting policies and NI and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -192,7 +199,7 @@ def generate_reviewed_response(prompt,discipline,):
     # 🧠 Build review prompt using textwrap.dedent
     if discipline == "Accounting Office":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK professional accounting preparing a briefing.
+       “You are a legal assistant providing information based on UK legislation as of 2025. Do not reference outdated laws.”
        
        Priority Guidance:
        - ALWAYS use the current years tax regulations for calculations and quote them.
