@@ -124,19 +124,20 @@ def ask_gpt_with_context(data, context):
 
     prompt = f"""
 
-    You are a UK legal assistant. Respond using legislation current as of {bonus}. Do not reference outdated law.
+You are a UK accountant.
+
+The user has asked:
+\"{query}\"
+
+Please respond based on UK legislation current as of {bonus}. Do not reference outdated law.
 
 Use direct, formal, British English suitable for client-facing communication. Avoid soft, polite, or narrative language (e.g. "please", "thank you", "dear", "ensure"). Do not address job roles or use letter formats.
 
 Your structured response must include:
 
-1. Enquirer Reply – plain English summary suitable for all staff levels
-2. Action Sheet – clear, numbered next steps
-3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations
-
-
-### Enquiry:
-\"{query}\"
+1. Enquirer Reply – plain English summary suitable for all staff levels  
+2. Action Sheet – clear, numbered next steps  
+3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations  
 
 ### Context from FAISS Index:
 {context}
@@ -146,12 +147,9 @@ Your structured response must include:
 - Timeline: {timeline}
 - Discipline: {discipline}
 - Site: {site}
-
-### Additional Focus:
 - Support Need: {funnel_1}
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
-
 """
     return generate_reviewed_response(prompt,discipline)
 
