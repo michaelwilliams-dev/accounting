@@ -176,12 +176,14 @@ def generate_reviewed_response(prompt,discipline,):
     print("🔄 Reviewing GPT response...")
 
     # 🧼 Strip polite sign-offs
+    
     initial_response = re.sub(
         r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$',
         '',
         initial_response,
         flags=re.IGNORECASE
     ).strip()
+    
 
     # ✂️ Trim FAISS context and limit input length
     stripped_response = initial_response.split("### Context from FAISS Index:")[0].strip()
