@@ -121,10 +121,10 @@ def ask_gpt_with_context(data, context):
     funnel_3 = data.get("funnel_3", "Not specified")
 
     prompt = f"""
-You are responding to an internal police procedures query via a secure reporting system.
+You are responding to an internal accounting query via a secure reporting system.
 
 All responses must:
-- Be based on UK law, police operational guidance, and internal procedures only.
+- Be based on the latest UK HMRC Regulations, NI regulations only.
 - Include British spelling, tone, and regulatory references.
 
 ### Enquiry:
@@ -194,8 +194,8 @@ def generate_reviewed_response(prompt,discipline,):
        You are acting as a UK professional accountant preparing a briefing.
        
        Priority Guidance:
-       - 
-       - 
+       - ALWAYS use the current years tax regulations for calculations and quote them.
+       - ALWAYS use the last years regulations when calculations are for multi years
        - Keep answers clear, lawful, and client facing.
        - Write in short, direct sentences suitable for operational use.
        - Avoid soft or cautious civilian phrasing.
