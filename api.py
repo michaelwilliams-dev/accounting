@@ -123,9 +123,9 @@ def ask_gpt_with_context(data, context):
     print("🧪 BONUS received from frontend:", bonus)  # ✅ Debug output 
 
     prompt = f"""
-
 You are a UK accountant.
-
+Use only the legal context provided below to answer this query. If statutory rates are present, apply them.
+{f'Please calculate any totals, durations, or amounts mentioned in the query. Apply statutory rate changes across the date range if applicable.' if funnel_1 == 'calculate' else ''}
 The user has asked:
 \"{query}\"
 
@@ -140,14 +140,14 @@ Your structured response must include:
 3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations  
 
 ### Context from FAISS Index:
-#ive commented it out so lets test{context}
+{context}
 
 ### Enquirer Details:
 - Job Title: {job_title}
 - Timeline: {timeline}
 - Discipline: {discipline}
 - Site: {site}
-- Support Need: {funnel_1}
+#- Support Need: {funnel_1}
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
 """
