@@ -98,14 +98,23 @@ def ping():
         return '', 204
     return jsonify({"message": "pong"})
 
-# Load FAISS index + metadata + merged enriched chunks
+import os
+import json
+import faiss
+
+# Load FAISS index, metadata, and enriched merged chunks
 try:
-    faiss_index = faiss.read_index("data/accounting/accounting.index")
-    
-    with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
+    base_path = os.path.dirname(__file__)
+    index_path = os.path.join(base_path, "data", "accounting", "accounting.index")
+    metadata_path = os.path.join(base_path, "data", "accounting", "accounting_metadata.json")
+    merged_path = os.path.join(base_path, "data", "accounting", "merged_chunks.json")
+
+    faiss_index = faiss.read_index(index_path)
+
+    with open(metadata_path, "r", encoding="utf-8") as f:
         metadata = json.load(f)
 
-    with open(os.path.join(os.path.dirname(__file__), "data", "accounting", "merged_chunks.json"), "r", encoding="utf-8") as f:
+    with open(merged_path, "r", encoding="utf-8") as f:
         merged_chunks = json.load(f)
 
     print("✅ FAISS index, metadata, and merged chunks loaded.")
