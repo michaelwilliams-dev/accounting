@@ -102,13 +102,19 @@ import os
 import json
 import faiss
 
+# ✅ Paths
 base_path = os.path.dirname(__file__)
 data_path = os.path.join(base_path, "data")
-
 index_path = os.path.join(data_path, "accounting_index.index")
 metadata_path = os.path.join(data_path, "accounting_metadata.json")
 merged_path = os.path.join(data_path, "merged_chunks.json")
 
+# ✅ Build index on the fly if missing
+if not os.path.exists(index_path):
+    from build_faiss_from_chunks import build_faiss_index_from_chunks
+    build_faiss_index_from_chunks(merged_path, index_path, metadata_path)
+
+# ✅ Then load it safely
 try:
     faiss_index = faiss.read_index(index_path)
     with open(metadata_path, "r", encoding="utf-8") as f:
