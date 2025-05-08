@@ -85,6 +85,20 @@ CORS(app, origins=["https://www.aivs.uk"])
 def home():
     return "✅ Accounting API is running", 200
 
+@app.route("/generate", methods=["POST", "OPTIONS"])
+def generate_response():
+    print("📥 /generate was called")
+    try:
+        data = request.get_json()
+        print("🔎 Payload received:", data)
+    except Exception as e:
+        print("❌ Failed to parse JSON:", e)
+        return jsonify({"error": "Invalid JSON input"}), 400
+
+    return jsonify({"message": "OK"}), 200
+
+
+
 @app.after_request
 def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Origin", "https://www.aivs.uk")
@@ -93,6 +107,16 @@ def apply_cors_headers(response):
     return response
 
 @app.route("/ping", methods=["GET","POST", "OPTIONS"])
+def ping():
+    if request.method == "OPTIONS":
+        return '', 204
+    # return jsonify({"message": "pong"})@app.route("/ping", methods=["GET","POST", "OPTIONS"])
+
+
+def ping():
+    if request.method == "OPTIONS":
+        return '', 204
+    return jsonify({"message": "pong"})@app.route("/ping", methods=["GET","POST", "OPTIONS"])
 def ping():
     if request.method == "OPTIONS":
         return '', 204
