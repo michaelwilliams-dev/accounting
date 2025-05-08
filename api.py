@@ -107,7 +107,7 @@ try:
     base_path = os.path.dirname(__file__)
     index_path = os.path.join(base_path, "data", "accounting", "accounting.index")
     metadata_path = os.path.join(base_path, "data", "accounting", "accounting_metadata.json")
-    merged_path = os.path.join(base_path, "data", "accounting", "merged_chunks.json")
+    merged_path = os.path.join(base_path, "accounting","data", "accounting", "merged_chunks.json")
 
     faiss_index = faiss.read_index(index_path)
 
