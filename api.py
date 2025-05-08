@@ -2,8 +2,8 @@
 ===============================================================
  AIVS API — Accounting RAG Engine
 ===============================================================
- Version: 1.0.2
- Last Updated: 2025-04-8 1006
+ Version: 1.0.3
+ Last Updated: 2025-04-8 16.51
  Author: Michael Williams
  Description: Flask-based API with GPT-4 + FAISS integration,
               discipline-sensitive response generation,
@@ -101,20 +101,21 @@ def ping():
 import os
 import json
 import faiss
+from build_faiss_from_chunks import build_faiss_index_from_chunks
 
-# ✅ Paths
 base_path = os.path.dirname(__file__)
 data_path = os.path.join(base_path, "data")
+
 index_path = os.path.join(data_path, "accounting_index.index")
 metadata_path = os.path.join(data_path, "accounting_metadata.json")
 merged_path = os.path.join(data_path, "merged_chunks.json")
 
-# ✅ Build index on the fly if missing
+# ✅ Rebuild index if it's missing
 if not os.path.exists(index_path):
-    from build_faiss_from_chunks import build_faiss_index_from_chunks
+    print("⚠️ FAISS index not found — rebuilding now.")
     build_faiss_index_from_chunks(merged_path, index_path, metadata_path)
 
-# ✅ Then load it safely
+# ✅ Load everything
 try:
     faiss_index = faiss.read_index(index_path)
     with open(metadata_path, "r", encoding="utf-8") as f:
