@@ -84,19 +84,19 @@ CORS(app, origins=["https://www.aivs.uk"])
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Accounting API is running", 200
-# keep
-@app.route("/generate-test", methods=["POST", "OPTIONS"])
-def generate_test():
-    print("📥 /generate was called")
-    try:
-        data = request.get_json()
-        print("🔎 Payload received:", data)
-    except Exception as e:
-        print("❌ Failed to parse JSON:", e)
-        return jsonify({"error": "Invalid JSON input"}), 400
+# out
+#@app.route("/generate-test", methods=["POST", "OPTIONS"])
+#def generate_test():
+    #print("📥 /generate was called")
+    #try:
+        #data = request.get_json()
+        #print("🔎 Payload received:", data)
+    #except Exception as e:
+        #print("❌ Failed to parse JSON:", e)
+        #return jsonify({"error": "Invalid JSON input"}), 400
 
-    return jsonify({"message": "OK"}), 200
-# keep
+    #return jsonify({"message": "OK"}), 200
+# out
 
 
 @app.after_request
@@ -346,7 +346,7 @@ This document was generated following a query submitted by {full_name}. Please f
     return response.status_code, response.json()
 
 @app.route("/generate", methods=["POST"])
-def generate_test():
+def generate_response():
     print("📥 /generate route hit")
     try:
         data = request.get_json()
