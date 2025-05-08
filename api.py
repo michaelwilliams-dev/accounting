@@ -83,7 +83,7 @@ CORS(app, origins=["https://www.aivs.uk"])
 
 @app.route("/", methods=["GET"])
 def home():
-    return "✅ Police Procedures API is running", 200
+    return "✅ Accounting API is running", 200
 
 @app.after_request
 def apply_cors_headers(response):
@@ -92,7 +92,7 @@ def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
     return response
 
-@app.route("/ping", methods=["POST", "OPTIONS"])
+@app.route("/ping", methods=["GET","POST", "OPTIONS"])
 def ping():
     if request.method == "OPTIONS":
         return '', 204
