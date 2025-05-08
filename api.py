@@ -84,9 +84,9 @@ CORS(app, origins=["https://www.aivs.uk"])
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Accounting API is running", 200
-
-@app.route("/generate", methods=["POST", "OPTIONS"])
-def generate_response():
+# keep
+@app.route("/generate-test", methods=["POST", "OPTIONS"])
+def generate_test():
     print("📥 /generate was called")
     try:
         data = request.get_json()
@@ -96,7 +96,7 @@ def generate_response():
         return jsonify({"error": "Invalid JSON input"}), 400
 
     return jsonify({"message": "OK"}), 200
-
+# keep
 
 
 @app.after_request
