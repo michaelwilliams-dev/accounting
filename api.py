@@ -2,8 +2,8 @@
 ===============================================================
  AIVS API — Accounting RAG Engine
 ===============================================================
- Version: 1.0.1
- Last Updated: 2025-06-25 1626
+ Version: 1.0.2
+ Last Updated: 2025-04-8 1006
  Author: Michael Williams
  Description: Flask-based API with GPT-4 + FAISS integration,
               discipline-sensitive response generation,
@@ -98,16 +98,22 @@ def ping():
         return '', 204
     return jsonify({"message": "pong"})
 
-# Load FAISS index
+# Load FAISS index + metadata + merged enriched chunks
 try:
     faiss_index = faiss.read_index("data/accounting/accounting.index")
+    
     with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
-    print("✅ FAISS index and metadata loaded.")
+
+    with open("data/accounting/merged_chunks.json", "r", encoding="utf-8") as f:
+        merged_chunks = json.load(f)
+
+    print("✅ FAISS index, metadata, and merged chunks loaded.")
 except Exception as e:
     faiss_index = None
     metadata = []
-    print("⚠️ Failed to load FAISS index:", str(e))
+    merged_chunks = []
+    print("⚠️ Failed to load one or more FAISS components:", str(e))
 
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
@@ -329,17 +335,11 @@ def generate_response():
 
         matched_chunks = []
         for i in I[0]:
-            key = str(i)
-            if key in metadata and "chunk_file" in metadata[key]:
-                chunk_file = metadata[key]["chunk_file"]
-                file_path = f"data/accounting/{chunk_file}"
-                try:
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        matched_chunks.append(f.read().strip())
-                except FileNotFoundError:
-                    pass  # Silently skip missing chunk files
-            else:
-                pass  # Silently skip missing metadata entries
+            if i < len(merged_chunks):
+                chunk = merged_chunks[i]
+                # Enrich context with filename and tags
+                formatted = f"Source: {chunk['filename']}\nTags: {', '.join(chunk['tags'])}\n\n{chunk['text']}"
+                matched_chunks.append(formatted)
 
         context = "\n\n---\n\n".join(matched_chunks)
 
