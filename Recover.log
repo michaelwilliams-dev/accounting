@@ -1,0 +1,213 @@
+﻿Timestamp	Filename	Error	Message
+2025-05-07 15:21:21.591 +0100	OAM.fmp12	0	*** Started recovery of 'OAM.fmp12'
+2025-05-07 15:21:21.591 +0100	OAM.fmp12	0	Scanning blocks and rebuilding file...
+2025-05-07 15:21:21.633 +0100	OAM.fmp12	0	Scan complete, found 149 page(s) to process
+2025-05-07 15:21:21.635 +0100	OAM.fmp12	0	Rebuild processed 149 page(s), completing end of file
+2025-05-07 15:21:21.636 +0100	OAM.fmp12	0	Completed copy or rebuild of file blocks
+2025-05-07 15:21:21.641 +0100	OAM.fmp12	0	Recovering: font catalog
+2025-05-07 15:21:21.641 +0100	OAM.fmp12	0	  Rebuilding font catalog order list: name 
+2025-05-07 15:21:21.641 +0100	OAM.fmp12	0	  Recovering: font 'Arial' (0)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font '.SF NS' (1)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica Neue' (2)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica Neue' (3)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica Neue' (4)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica Neue' (5)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica' (6)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Lucida Grande' (7)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Calibri' (8)
+2025-05-07 15:21:21.642 +0100	OAM.fmp12	0	  Recovering: font 'Helvetica Neue' (9)
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	Recovering schema
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	Recovering schema catalogs
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	Recovering: table catalog
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	  Rebuilding table catalog order list: name 
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	  Rebuilding table catalog order list: custom 
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	  Recovering: table 'Master' (129)
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	  Recovering: table 'CC Users' (131)
+2025-05-07 15:21:21.643 +0100	OAM.fmp12	0	Recovering: table alias catalog
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	  Rebuilding table alias catalog order list: name 
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	  Rebuilding table alias catalog order list: custom 
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	  Deleted relational dependencies
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	  Recovering: table alias 'Master' (1065089)
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	  Recovering: table alias 'CC Users' (1065091)
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	Recovering fields for table 'Master'
+2025-05-07 15:21:21.644 +0100	OAM.fmp12	0	Recovering: field catalog 'Master'
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Rebuilding field catalog 'Master' order list: name 
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Rebuilding field catalog 'Master' order list: custom 
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Rebuilding field catalog 'Master' order list: type 
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Recovering data for table 'Master'
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Evaluating library (129)
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Recovering: field 'Cardholder Name x' (1)
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Recovering: field 'Account Number x' (2)
+2025-05-07 15:21:21.645 +0100	OAM.fmp12	0	  Recovering: field 'Transaction Date' (3)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Merchant Name' (4)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Amount x' (5)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Account Number' (6)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Cardholder Name' (7)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Import Date' (22)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Blank Col' (23)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Amount Copy' (24)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Amount' (25)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Description' (26)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'Date' (27)
+2025-05-07 15:21:21.646 +0100	OAM.fmp12	0	  Recovering: field 'TimeStamp' (28)
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Recovering: field 'Delete' (29)
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Recovering: field 'Field 30' (30)
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Recovering: field 'Delete 2' (31)
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Recovering: field 'Company' (33)
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	Recovering fields for table 'CC Users'
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	Recovering: field catalog 'CC Users'
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Rebuilding field catalog 'CC Users' order list: name 
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Rebuilding field catalog 'CC Users' order list: custom 
+2025-05-07 15:21:21.647 +0100	OAM.fmp12	0	  Rebuilding field catalog 'CC Users' order list: type 
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering data for table 'CC Users'
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Evaluating library (131)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'PrimaryKey' (1)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'CreationTimestamp' (2)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'CreatedBy' (3)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'ModificationTimestamp' (4)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'ModifiedBy' (5)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'Name' (6)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'Card Number' (7)
+2025-05-07 15:21:21.648 +0100	OAM.fmp12	0	  Recovering: field 'Index No' (9)
+2025-05-07 15:21:21.649 +0100	OAM.fmp12	0	  Recovering: field 'Card NO (4dig)' (10)
+2025-05-07 15:21:21.649 +0100	OAM.fmp12	0	  Recovering: field 'OALComp' (11)
+2025-05-07 15:21:21.651 +0100	OAM.fmp12	0	Recovering indexes for table 'Master'
+2025-05-07 15:21:21.651 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Cardholder Name x'; 3 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.651 +0100	OAM.fmp12	0	  Rebuilt word index for field 'Cardholder Name x'; 6 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.651 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Account Number x'; 3 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.651 +0100	OAM.fmp12	0	  Rebuilt word index for field 'Account Number x'; 3 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.652 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Transaction Date'; 3 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.652 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Account Number'; 2 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.652 +0100	OAM.fmp12	0	  Rebuilt word index for field 'Account Number'; 1 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.652 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Cardholder Name'; 2 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.652 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Date'; 3 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.653 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Delete 2'; 1 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.653 +0100	OAM.fmp12	0	Recovering indexes for table 'CC Users'
+2025-05-07 15:21:21.653 +0100	OAM.fmp12	0	  Rebuilt value index for field 'PrimaryKey'; 19 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.653 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Name'; 15 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.653 +0100	OAM.fmp12	0	  Rebuilt value index for field 'Index No'; 19 item(s) now exist, difference from old index is 0
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	Recovering: user account catalog
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Rebuilding user account catalog order list: name 
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Rebuilding user account catalog order list: custom 
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Recovering: user account '<No Access>' (1)
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Recovering: user account '<No Access>' (2)
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	Recovering: privilege set catalog
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Rebuilding privilege set catalog order list: name 
+2025-05-07 15:21:21.654 +0100	OAM.fmp12	0	  Rebuilding privilege set catalog order list: custom 
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Rebuilding privilege set catalog order list: quick reference 
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	Recovering: extended privileges catalog
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Rebuilding extended privileges catalog order list: name 
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmwebdirect' (1)
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmxdbc' (2)
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmapp' (3)
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmreauthenticate10' (4)
+2025-05-07 15:21:21.655 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmxml' (5)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmphp' (6)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmextscriptaccess' (7)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmurlscript' (8)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmrest' (9)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmodata' (10)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	  Recovering: extended privilege 'fmplugin' (11)
+2025-05-07 15:21:21.656 +0100	OAM.fmp12	0	Recovering: authorized files catalog
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: authorized file '<No Access>' (1)
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: authorized file '<No Access>' (2)
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: authorized file '<No Access>' (3)
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	Recovering: value list catalog
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Rebuilding value list catalog order list: name 
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Rebuilding value list catalog order list: custom 
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Rebuilding value list catalog order list: type 
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: value list 'CC Users' (1)
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: value list '1' (2)
+2025-05-07 15:21:21.657 +0100	OAM.fmp12	0	  Recovering: value list 'Company' (3)
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	Recovering: library catalog
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Rebuilding library catalog order list: quick reference 
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Rebuilding library catalog order list: type 
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Recovering: library '' (3)
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Recovering: library '' (4)
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Recovering: library '' (5)
+2025-05-07 15:21:21.658 +0100	OAM.fmp12	0	  Recovering: library '' (7)
+2025-05-07 15:21:21.659 +0100	OAM.fmp12	0	  Recovering: library '' (8)
+2025-05-07 15:21:21.659 +0100	OAM.fmp12	0	  Recovering: library '' (10)
+2025-05-07 15:21:21.659 +0100	OAM.fmp12	0	  Recovering: library '' (11)
+2025-05-07 15:21:21.659 +0100	OAM.fmp12	0	Recovering: layout catalog
+2025-05-07 15:21:21.661 +0100	OAM.fmp12	0	  Rebuilding layout catalog order list: quick reference 
+2025-05-07 15:21:21.662 +0100	OAM.fmp12	0	  Rebuilding layout catalog order list: name 
+2025-05-07 15:21:21.662 +0100	OAM.fmp12	0	  Rebuilding layout catalog order list: custom 
+2025-05-07 15:21:21.663 +0100	OAM.fmp12	0	  Recovering: layout 'Input Layout' (2)
+2025-05-07 15:21:21.673 +0100	OAM.fmp12	0	  Recovering: layout 'CC Users' (4)
+2025-05-07 15:21:21.679 +0100	OAM.fmp12	0	  Recovering: layout 'Quick Books Export' (5)
+2025-05-07 15:21:21.690 +0100	OAM.fmp12	0	  Recovering: layout 'WEB Expenses Export ' (6)
+2025-05-07 15:21:21.700 +0100	OAM.fmp12	0	  Recovering: layout 'Index' (7)
+2025-05-07 15:21:21.721 +0100	OAM.fmp12	0	Recovering: theme catalog
+2025-05-07 15:21:21.722 +0100	OAM.fmp12	0	  Rebuilding theme catalog order list: name 
+2025-05-07 15:21:21.724 +0100	OAM.fmp12	0	  Recovering: theme 'com.filemaker.theme.apex_blue' (1)
+2025-05-07 15:21:21.726 +0100	OAM.fmp12	0	  Evaluating library for layouts and themes
+2025-05-07 15:21:21.750 +0100	OAM.fmp12	0	Recovering: script catalog
+2025-05-07 15:21:21.757 +0100	OAM.fmp12	0	  Rebuilding script catalog order list: quick reference 
+2025-05-07 15:21:21.757 +0100	OAM.fmp12	0	  Rebuilding script catalog order list: name 
+2025-05-07 15:21:21.757 +0100	OAM.fmp12	0	  Rebuilding script catalog order list: custom 
+2025-05-07 15:21:21.758 +0100	OAM.fmp12	0	  Recovering: script 'Quickbooks Export MLP COPY' (1)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'Delete all recorde' (2)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'WEBxExport MLP' (3)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'Import MLP' (4)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'All Records' (5)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'Remove Unwanted' (7)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'Window Size' (10)
+2025-05-07 15:21:21.759 +0100	OAM.fmp12	0	  Recovering: script 'Import OAM' (11)
+2025-05-07 15:21:21.761 +0100	OAM.fmp12	0	  Recovering: script 'Quickbooks Export OAM COPY' (12)
+2025-05-07 15:21:21.761 +0100	OAM.fmp12	0	  Recovering: script 'WEBxExport OAM' (13)
+2025-05-07 15:21:21.761 +0100	OAM.fmp12	0	  Recovering: script 'Dupilcates' (14)
+2025-05-07 15:21:21.762 +0100	OAM.fmp12	0	  Recovering: script 'Quickbooks Export OAM ' (15)
+2025-05-07 15:21:21.762 +0100	OAM.fmp12	0	  Recovering: script 'Quickbooks Export MLP' (16)
+2025-05-07 15:21:21.762 +0100	OAM.fmp12	0	  Recovering: script 'WEBxExport OAM 2' (17)
+2025-05-07 15:21:21.762 +0100	OAM.fmp12	0	  Recovering: script 'Find ' (18)
+2025-05-07 15:21:21.762 +0100	OAM.fmp12	0	  Recovering: script 'Find Records with no data' (19)
+2025-05-07 15:21:21.763 +0100	OAM.fmp12	0	  Recovering: script 'Set Field Company MLP' (20)
+2025-05-07 15:21:21.763 +0100	OAM.fmp12	0	  Recovering: script 'Set Field Company OAM' (21)
+2025-05-07 15:21:21.770 +0100	OAM.fmp12	0	Recovering: custom menu catalog
+2025-05-07 15:21:21.771 +0100	OAM.fmp12	0	  Rebuilding custom menu catalog order list: name 
+2025-05-07 15:21:21.771 +0100	OAM.fmp12	0	  Rebuilding custom menu catalog order list: custom 
+2025-05-07 15:21:21.771 +0100	OAM.fmp12	0	  Recovering: custom menu '[Format]' (1)
+2025-05-07 15:21:21.771 +0100	OAM.fmp12	0	  Recovering: custom menu '[Scripts]' (2)
+2025-05-07 15:21:21.771 +0100	OAM.fmp12	0	  Recovering: custom menu '[Window]' (3)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Recent]' (4)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Import Records]' (5)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Save/Send Records As]' (6)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Go to Layout]' (7)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Align Text]' (8)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Manage]' (9)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Find/Replace]' (10)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Font]' (11)
+2025-05-07 15:21:21.772 +0100	OAM.fmp12	0	  Recovering: custom menu '[Line Spacing]' (12)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Sharing]' (13)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Go to Request]' (14)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Go to Record]' (15)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Show Window]' (16)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Size]' (17)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Spelling]' (18)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Style]' (19)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Text Color]' (20)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Saved Finds]' (21)
+2025-05-07 15:21:21.773 +0100	OAM.fmp12	0	  Recovering: custom menu '[Send]' (22)
+2025-05-07 15:21:21.774 +0100	OAM.fmp12	0	  Recovering: custom menu '[Favorites]' (23)
+2025-05-07 15:21:21.774 +0100	OAM.fmp12	0	  Recovering: custom menu '[Hosts]' (24)
+2025-05-07 15:21:21.774 +0100	OAM.fmp12	0	Recovering: custom menu set catalog
+2025-05-07 15:21:21.774 +0100	OAM.fmp12	0	  Rebuilding custom menu set catalog order list: name 
+2025-05-07 15:21:21.774 +0100	OAM.fmp12	0	  Rebuilding custom menu set catalog order list: custom 
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	  Recovering: custom menu set '[Standard FileMaker Menus]' (1)
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used page format
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used print settings
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used layout formatting defaults
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used window settings
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used import orders
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used export orders
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used sort orders
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used request sets
+2025-05-07 15:21:21.775 +0100	OAM.fmp12	0	Deleted last used found sets
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	Recover built a new database without detecting any problems. The new database is safe to use, though you should monitor the results carefully and make sure to keep up-to-date backups of your databases.
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	Note: Recover only checks the data blocks of the file and generates a new file from that data.  The Consistency Check checks all blocks of the file, and may find more problems in the original file than Recover does.
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	File blocks: scanned and rebuilt 149 block(s), dropped 0 invalid data block(s)
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	Schema: scanned fields and tables; no problems found
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	Structure: scanned; 0 item(s) modified
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	File size after recovery is 593920 bytes
+2025-05-07 15:21:21.780 +0100	OAM.fmp12	0	*** Completed recovery to 'OAM 2.fmp12'
