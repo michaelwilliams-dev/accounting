@@ -108,10 +108,9 @@ import faiss
 
 # Use the current folder only (no subdirectories)
 base_path = os.path.dirname(__file__)
-
-index_path = os.path.join(base_path, "accounting.index")
-metadata_path = os.path.join(base_path, "accounting_metadata.json")
-merged_path = os.path.join(base_path, "merged_chunks.json")
+index_path = os.path.join(base_path, "accounting", "accounting.index")
+metadata_path = os.path.join(base_path, "accounting", "accounting_metadata.json")
+merged_path = os.path.join(base_path, "accounting", "merged_chunks.json")
 
 try:
     faiss_index = faiss.read_index(index_path)
