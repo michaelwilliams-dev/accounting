@@ -43,24 +43,28 @@
    • Initial deployment: GPT-4 prompt, one response
 ===============================================================
 """
+# Standard library imports
 import os
-import os.path
 import json
 import base64
 import datetime
 import re
 import numpy as np
-import faiss
 import requests
 import textwrap
+from datetime import datetime
+from zoneinfo import ZoneInfo  # Python 3.9+
+
+# Third-party imports
+import faiss
 from openai import OpenAI
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
-from datetime import datetime
-from zoneinfo import ZoneInfo  # Python 3.9+ 
 
+# Local application imports
+from build_faiss_from_chunks import build_faiss_index_from_chunks
 
 __version__ = "v1.0.7-test"
 print(f"🚀 API Version: {__version__}")
@@ -84,20 +88,6 @@ CORS(app, origins=["https://www.aivs.uk"])
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Accounting API is running", 200
-# out
-#@app.route("/generate-test", methods=["POST", "OPTIONS"])
-#def generate_test():
-    #print("📥 /generate was called")
-    #try:
-        #data = request.get_json()
-        #print("🔎 Payload received:", data)
-    #except Exception as e:
-        #print("❌ Failed to parse JSON:", e)
-        #return jsonify({"error": "Invalid JSON input"}), 400
-
-    #return jsonify({"message": "OK"}), 200
-# out
-
 
 @app.after_request
 def apply_cors_headers(response):
@@ -106,26 +96,19 @@ def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
     return response
 
-@app.route("/ping", methods=["GET","POST", "OPTIONS"])
-def ping():
-    if request.method == "OPTIONS":
-        return '', 204
-    # return jsonify({"message": "pong"})@app.route("/ping", methods=["GET","POST", "OPTIONS"])
+@app.route("/ping", methods=["GET", "POST", "OPTIONS"])
+
+# **************end part 1**************
 
 
 def ping():
     if request.method == "OPTIONS":
         return '', 204
     return jsonify({"message": "pong"})@app.route("/ping", methods=["GET","POST", "OPTIONS"])
-def ping():
-    if request.method == "OPTIONS":
-        return '', 204
-    return jsonify({"message": "pong"})
 
-import os
-import json
-import faiss
-from build_faiss_from_chunks import build_faiss_index_from_chunks
+
+
+# **************start part 2**************
 
 base_path = os.path.dirname(__file__)
 data_path = os.path.join(base_path, "data")
