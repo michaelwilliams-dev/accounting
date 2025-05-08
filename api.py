@@ -346,7 +346,7 @@ This document was generated following a query submitted by {full_name}. Please f
     return response.status_code, response.json()
 
 @app.route("/generate", methods=["POST"])
-def generate_response():
+def generate_test():
     print("📥 /generate route hit")
     try:
         data = request.get_json()
