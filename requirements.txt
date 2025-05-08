@@ -6,4 +6,5 @@ gunicorn
 python-docx
 reportlab
 postmarker
-numpy
+dumpy
+sentence-transformers
