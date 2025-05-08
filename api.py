@@ -102,21 +102,23 @@ import os
 import json
 import faiss
 
-# Load FAISS index, metadata, and enriched merged chunks
+import os
+import json
+import faiss
+
+# Use the current folder only (no subdirectories)
+base_path = os.path.dirname(__file__)
+
+index_path = os.path.join(base_path, "accounting.index")
+metadata_path = os.path.join(base_path, "accounting_metadata.json")
+merged_path = os.path.join(base_path, "merged_chunks.json")
+
 try:
-    base_path = os.path.dirname(__file__)
-    index_path = os.path.join(base_path, "data", "accounting", "accounting.index")
-    metadata_path = os.path.join(base_path, "data", "accounting", "accounting_metadata.json")
-    merged_path = os.path.join(base_path, "accounting","data", "accounting", "merged_chunks.json")
-
     faiss_index = faiss.read_index(index_path)
-
     with open(metadata_path, "r", encoding="utf-8") as f:
         metadata = json.load(f)
-
     with open(merged_path, "r", encoding="utf-8") as f:
         merged_chunks = json.load(f)
-
     print("✅ FAISS index, metadata, and merged chunks loaded.")
 except Exception as e:
     faiss_index = None
