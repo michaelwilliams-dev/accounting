@@ -105,7 +105,7 @@ try:
     with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
         metadata = json.load(f)
 
-    with open("data/accounting/merged_chunks.json", "r", encoding="utf-8") as f:
+    with open(os.path.join(os.path.dirname(__file__), "data", "accounting", "merged_chunks.json"), "r", encoding="utf-8") as f:
         merged_chunks = json.load(f)
 
     print("✅ FAISS index, metadata, and merged chunks loaded.")
