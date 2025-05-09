@@ -3,7 +3,7 @@
  AIVS API — Accounting RAG Engine
 ===============================================================
  Version: 1.0.3
- Last Updated: 2025-04-8 16.51
+ Last Updated: 2025-04-9 17.51
  Author: Michael Williams
  Description: Flask-based API with GPT-4 + FAISS integration,
               discipline-sensitive response generation,
@@ -12,35 +12,7 @@
  CHANGE LOG
 ===============================================================
    v1.0.0 — 2025-05-27 Change from Police to Accounting
-   v1.0.0 — 2025-04-26
-   v1.0.0 — 2025-04-28 Prompt Change to Priority Guidance (2)
-   v1.0.0 — 2025-04-26
-   • Added discipline detection for Police Field Operations and Police Procedure
-   • Tactical brief generation for Field Ops queries
-   • Formal procedural guidance generation for Police Procedure queries
-   • Safe fallback general professional cleaning
-
-  v1.0.0 — 2025-04-26
-   • Adjusted tone of query and reply
-
- v1.0.0 — 2025-04-25
-   • Increased max_tokens to 1800 in both GPT calls
-   • Preparing to modularize growing logic
-
- v1.0.0 — 2025-04-24
-   • Added job title-based response shaping
-   • Cleaned up ZIP filename structure with timestamp
-
- v1.0.0 — 2025-04-23
-   • Integrated Postmark email service
-   • Separated enquirer, supervisor, HR responses
-
- v1.0.0 — 2025-04-20
-   • Added FAISS-based context retrieval
-   • Introduced action sheet + enquirer reply JSON format
-
- v1.0.0 — 2025-04-10
-   • Initial deployment: GPT-4 prompt, one response
+  
 ===============================================================
 """
 # Standard library imports
@@ -95,6 +67,42 @@ def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Headers", "Content-Type")
     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
     return response
+
+
+@app.route("/generate", methods=["POST", "OPTIONS"])
+def generate():
+    if request.method == "OPTIONS":
+        return '', 204  # Handle preflight CORS request
+
+    try:
+        data = request.get_json()
+        print("📥 Received request:", data)
+
+        query = data.get("query", "")
+        job_title = data.get("jobTitle", "")
+        timeline = data.get("timeline", "")
+        site = data.get("siteName", "")
+        urgency = data.get("urgency", "")
+
+        # Dummy GPT logic (to be replaced with actual FAISS + GPT response later)
+        response = {
+            "enquirer_reply": f"Hello {job_title}, your query was: '{query}'",
+            "action_sheet": [
+                f"Step 1: Review the situation at {site}",
+                f"Step 2: Escalate if marked as {urgency}",
+                "Step 3: Follow up within the defined timeline"
+            ]
+        }
+
+        return jsonify({
+            "status": "success",
+            "generated": response,
+            "timestamp": datetime.utcnow().isoformat() + "Z"
+        }), 200
+
+    except Exception as e:
+        print("❌ Error in /generate:", str(e))
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 # @app.route("/ping", methods=["GET", "POST", "OPTIONS"])
 # def ping():
