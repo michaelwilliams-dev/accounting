@@ -90,7 +90,7 @@ def generate():
         funnel_1 = data.get("funnel_1", "")
         funnel_2 = data.get("funnel_2", "")
         funnel_3 = data.get("funnel_3", "")
-        bonus = data.get("bonus", "")
+        bonus = data.get("bonus", "2025")
         job_code = data.get("job_code", "")
         requires_action_sheet = data.get("requires_action_sheet", False)
         source_context = data.get("source_context", "")

@@ -84,13 +84,15 @@ except Exception as e:
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
     job_title = data.get("job_title", "Not specified")
-    rank_level = data.get("rank_level", "Not specified")
+    # rank_level = data.get("rank_level", "Not specified")
     timeline = data.get("timeline", "Not specified")
     discipline = data.get("discipline", "Not specified")
     site = data.get("site", "Not specified")
     funnel_1 = data.get("funnel_1", "Not specified")
     funnel_2 = data.get("funnel_2", "Not specified")
     funnel_3 = data.get("funnel_3", "Not specified")
+    bonus = data.get("bonus", "2025")
+    search_type = data.get("search_type", "Not specified") 
 
     prompt = f"""
 You are accounting proffesional.
@@ -108,6 +110,9 @@ Your structured response must include:
 
 ### Context from FAISS Index:
 {context}
+
+### Support Type:
+- {search_type}
 
 ### Enquirer Details:
 - Job Title: {job_title}
