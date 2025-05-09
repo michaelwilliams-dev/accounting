@@ -96,15 +96,17 @@ def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
     return response
 
-@app.route("/ping", methods=["GET", "POST", "OPTIONS"])
+# @app.route("/ping", methods=["GET", "POST", "OPTIONS"])
+# def ping():
+    # if request.method == "OPTIONS":
+       #  return '', 204
+    # return jsonify({"message": "pong"})
 
 # **************end part 1**************
 
 
-def ping():
-    if request.method == "OPTIONS":
-        return '', 204
-    return jsonify({"message": "pong"})@app.route("/ping", methods=["GET","POST", "OPTIONS"])
+
+
 
 
 
