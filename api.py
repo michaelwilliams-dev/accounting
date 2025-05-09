@@ -78,11 +78,11 @@ def generate():
         data = request.get_json()
         print("📥 Received request:", data)
 
-        #query = data.get("query", "")
-        #job_title = data.get("jobTitle", "")
-        #timeline = data.get("timeline", "")
-        #site = data.get("siteName", "")
-        #urgency = data.get("urgency", "")
+        query = data.get("query", "")
+        job_title = data.get("jobTitle", "")
+        timeline = data.get("timeline", "")
+        site = data.get("siteName", "")
+        urgency = data.get("urgency", "")
 
         # Dummy GPT logic (to be replaced with actual FAISS + GPT response later)
         response = {
