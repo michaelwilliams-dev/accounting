@@ -145,9 +145,10 @@ def generate_reviewed_response(prompt,discipline,):
     )
     initial_response = completion.choices[0].message.content.strip()
 
-    # 📏 Initial GPT response length
+    # 📏 Initial GPT response length two new lines Initial and Review
     print(f"📏 Initial GPT response length: {len(initial_response)} characters")
-
+    print("🧪 Review logic is active. Checking length...")
+    print(f"🧪 Skipping threshold is 2500, current length: {len(initial_response)}")
     # ⛔ Skip review if too big
     if len(initial_response) > 2500:
         print("⚡ Skipping review — using initial GPT response directly.")
