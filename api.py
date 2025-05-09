@@ -455,7 +455,7 @@ def generate_response():
     for i, part in enumerate(sections):
         content = part.strip()
         if i == 0 and content:
-            content = re.sub(r'^\s*Enquirer Reply\s*', '', content, =re.IGNORECASE)
+            content = re.sub(r'^\s*Enquirer Reply\s*', '', content, flags=re.IGNORECASE)
             content = re.sub(r'^\s*Hello,\s*', '', content, flags=re.IGNORECASE)
             structured["Enquirer Reply"] = content
         elif i % 2 == 1:
