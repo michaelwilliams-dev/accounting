@@ -138,14 +138,14 @@ def generate_reviewed_response(prompt,discipline,):
     print("📢 Sending initial GPT prompt...")
 
     completion = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
         max_tokens=1800  # Allow longer initial output
     )
     initial_response = completion.choices[0].message.content.strip()
 
-    # 📏 Initial GPT response length two new lines Initial and Review
+    # 📏 Initial GPT response length two new lines Initial and review
     print(f"📏 Initial GPT response length: {len(initial_response)} characters")
     print("🧪 Review logic is active. Checking length...")
     print(f"🧪 Skipping threshold is 2500, current length: {len(initial_response)}")
@@ -215,11 +215,11 @@ def generate_reviewed_response(prompt,discipline,):
 
     # 🚀 Request GPT review with tight limits
     review_completion = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": review_prompt}],
         temperature=0,
         max_tokens=700,  # Trimmed to avoid Render crashes
-        timeout=15        # Optional cap to prevent long hangs
+        timeout=45        # Optional cap to prevent long hangs
     )
 
     reviewed_response = review_completion.choices[0].message.content.strip()
