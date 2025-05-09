@@ -2,8 +2,8 @@
 ===============================================================
  AIVS API — Accounting RAG Engine
 ===============================================================
- Version: 1.0.2
- Last Updated: 2025-09-05 851
+ Version: 1.0.3
+ Last Updated: 2025-04-9 17.51
  Author: Michael Williams
  Description: Flask-based API with GPT-4 + FAISS integration,
               discipline-sensitive response generation,
@@ -12,27 +12,31 @@
  CHANGE LOG
 ===============================================================
    v1.0.0 — 2025-05-27 Change from Police to Accounting
- 
+  
 ===============================================================
 """
+# Standard library imports
 import os
-import os.path
 import json
 import base64
 import datetime
 import re
 import numpy as np
-import faiss
 import requests
 import textwrap
+from datetime import datetime
+from zoneinfo import ZoneInfo  # Python 3.9+
+
+# Third-party imports
+import faiss
 from openai import OpenAI
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from docx import Document
 from docx.shared import Mm, Pt, RGBColor
-from datetime import datetime
-from zoneinfo import ZoneInfo  # Python 3.9+ 
 
+# Local application imports
+from build_faiss_from_chunks import build_faiss_index_from_chunks
 
 __version__ = "v1.0.7-test"
 print(f"🚀 API Version: {__version__}")
@@ -64,38 +68,141 @@ def apply_cors_headers(response):
     response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
     return response
 
-@app.route("/ping", methods=["POST", "OPTIONS"])
-def ping():
+# FROM HERE
+@app.route("/generate", methods=["POST", "OPTIONS"])
+def generate():
     if request.method == "OPTIONS":
         return '', 204
-    return jsonify({"message": "pong"})
 
-# Load FAISS index
+    try:
+        data = request.get_json()
+        print("📥 Received request:", data)
+
+        # Extract input fields
+        full_name = data.get("full_name", "")
+        user_email = data.get("user_email", "")
+        query = data.get("query", "")
+        job_title = data.get("job_title", "")
+        timeline = data.get("timeline", "")
+        urgency = data.get("urgency", "")
+        site = data.get("site", "")
+        search_type = data.get("search_type", "")
+        funnel_1 = data.get("funnel_1", "")
+        funnel_2 = data.get("funnel_2", "")
+        funnel_3 = data.get("funnel_3", "")
+        bonus = data.get("bonus", "")
+        job_code = data.get("job_code", "")
+        requires_action_sheet = data.get("requires_action_sheet", False)
+        source_context = data.get("source_context", "")
+        supervisor_name = data.get("supervisor_name", "")
+        supervisor_email = data.get("supervisor_email", "")
+        hr_email = data.get("hr_email", "")
+
+        # FAISS search
+        results = search_faiss(faiss_index, metadata, query, top_k=5)
+        context = "\n\n".join([r["content"] for r in results])
+
+        # GPT call
+        gpt_response = ask_gpt_with_context(data, context)
+        enquirer_reply = gpt_response.get("enquirer_reply", "")
+        action_sheet = gpt_response.get("action_sheet", [])
+
+        # Generate docs
+        timestamp = datetime.now(ZoneInfo("Europe/London")).strftime("%Y-%m-%d_%H-%M-%S")
+        zip_path = generate_response_zip(
+            full_name=full_name,
+            query=query,
+            job_title=job_title,
+            timeline=timeline,
+            urgency=urgency,
+            site=site,
+            discipline=data.get("discipline", ""),
+            enquirer_reply=enquirer_reply,
+            action_sheet=action_sheet,
+            context=context,
+            supervisor_name=supervisor_name,
+            bonus=bonus,
+            timestamp=timestamp
+        )
+
+        # Email responses
+        send_all_role_emails(
+            full_name=full_name,
+            user_email=user_email,
+            supervisor_email=supervisor_email,
+            hr_email=hr_email,
+            zip_path=zip_path
+        )
+
+        return jsonify({
+            "status": "success",
+            "timestamp": timestamp,
+            "message": "Response generated and emailed."
+        }), 200
+
+    except Exception as e:
+        print("❌ Error in /generate:", str(e))
+        return jsonify({"status": "error", "message": str(e)}), 500
+
+# TO HERE
+
+
+# **************end part 1**************
+
+
+
+
+
+
+
+# **************start part 2**************
+
+base_path = os.path.dirname(__file__)
+data_path = os.path.join(base_path, "data")
+
+index_path = os.path.join(data_path, "accounting_index.index")
+metadata_path = os.path.join(data_path, "accounting_metadata.json")
+merged_path = os.path.join(data_path, "merged_chunks.json")
+
+# ✅ Rebuild index if it's missing
+if not os.path.exists(index_path):
+    print("⚠️ FAISS index not found — rebuilding now.")
+    build_faiss_index_from_chunks(merged_path, index_path, metadata_path)
+
+# ✅ Load everything
 try:
-    faiss_index = faiss.read_index("data/accounting/accounting.index")
-    with open("data/accounting/accounting_metadata.json", "r", encoding="utf-8") as f:
+    faiss_index = faiss.read_index(index_path)
+    with open(metadata_path, "r", encoding="utf-8") as f:
         metadata = json.load(f)
-    print("✅ FAISS index and metadata loaded.")
+    with open(merged_path, "r", encoding="utf-8") as f:
+        merged_chunks = json.load(f)
+    print("✅ FAISS index, metadata, and merged chunks loaded.")
 except Exception as e:
     faiss_index = None
     metadata = []
-    print("⚠️ Failed to load FAISS index:", str(e))
+    merged_chunks = []
+    print("⚠️ Failed to load one or more FAISS components:", str(e))
 
 def ask_gpt_with_context(data, context):
     query = data.get("query", "")
     job_title = data.get("job_title", "Not specified")
-    rank_level = data.get("rank_level", "Not specified")
+    #rank_level = data.get("rank_level", "Not specified")
     timeline = data.get("timeline", "Not specified")
     discipline = data.get("discipline", "Not specified")
     site = data.get("site", "Not specified")
     funnel_1 = data.get("funnel_1", "Not specified")
     funnel_2 = data.get("funnel_2", "Not specified")
     funnel_3 = data.get("funnel_3", "Not specified")
+    bonus = data.get("bonus", "2025")  # ✅ Capture the year
+    print("🧪 BONUS received from frontend:", bonus)  # ✅ Debug output 
 
     prompt = f"""
-You are accounting proffesional.
-The user asked:
+You are a UK accountant.
+Use only the legal context provided below to answer this query. If statutory rates are present, apply them.
+{f'Please calculate any totals, durations, or amounts mentioned in the query. Apply statutory rate changes across the date range if applicable.' if funnel_1 == 'calculate' else ''}
+The user has asked:
 \"{query}\"
+
 Please respond based on UK legislation current as of {bonus}. Do not reference outdated law.
 
 Use direct, formal, British English suitable for client-facing communication. Avoid soft, polite, or narrative language (e.g. "please", "thank you", "dear", "ensure"). Do not address job roles or use letter formats.
@@ -104,7 +211,7 @@ Your structured response must include:
 
 1. Enquirer Reply – plain English summary suitable for all staff levels  
 2. Action Sheet – clear, numbered next steps  
-3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations 
+3. Policy Notes – cite relevant HMRC, NI, or UK accounting regulations  
 
 ### Context from FAISS Index:
 {context}
@@ -114,18 +221,9 @@ Your structured response must include:
 - Timeline: {timeline}
 - Discipline: {discipline}
 - Site: {site}
-
-### Additional Focus:
-- Support Need: {funnel_1}
+#- Support Need: {funnel_1}
 - Current Status: {funnel_2}
 - Follow-Up Expectation: {funnel_3}
-
-### Your Task:
-Please generate a structured response that includes:
-
-1. **Enquirer Reply** – in plain English, appropriate for the employee level.
-2. **Action Sheet** – numbered steps the enquirer should follow.
-3. **Policy Notes** – cite any relevant UK accounting policies and NHS and HMRC regulations.
 """
     return generate_reviewed_response(prompt,discipline)
 
@@ -152,12 +250,14 @@ def generate_reviewed_response(prompt,discipline,):
     print("🔄 Reviewing GPT response...")
 
     # 🧼 Strip polite sign-offs
+    
     initial_response = re.sub(
         r'(Best regards,|Yours sincerely,|Kind regards,)[\s\S]*$',
         '',
         initial_response,
         flags=re.IGNORECASE
     ).strip()
+    
 
     # ✂️ Trim FAISS context and limit input length
     stripped_response = initial_response.split("### Context from FAISS Index:")[0].strip()
@@ -166,7 +266,7 @@ def generate_reviewed_response(prompt,discipline,):
     # 🧠 Build review prompt using textwrap.dedent
     if discipline == "Accounting Office":
           review_prompt = textwrap.dedent(f"""\
-       You are acting as a UK professional accountant preparing a briefing.
+       “You are a legal assistant providing information based on UK legislation as of 2025. Do not reference outdated laws.”
        
        Priority Guidance:
        - ALWAYS use the current years tax regulations for calculations and quote them.
@@ -174,17 +274,14 @@ def generate_reviewed_response(prompt,discipline,):
        - Keep answers clear, lawful, and client facing.
        - Write in short, direct sentences suitable for operational use.
        - Avoid soft or cautious civilian phrasing.
-       -                                            
+       - DO NOT address a job function avoid headings or letter format                                           
        
        Use direct, professional language. Avoid soft language ("thank you", "please", "ensure", "dear") and focus on clear professional information .
 
        Structure using clear headings:
-          - 
-          - 
           - IMPORTANT NOTES
           - SPECIAL RECENT CASES
-          - EXAMPLE WORDING TO USE WITH CLIENTS
-          -               
+          - EXAMPLE WORDING TO USE WITH CLIENTS            
        Avoid any jargon narrative tone.                          
        --- START RESPONSE ---
        {stripped_response}
@@ -209,7 +306,7 @@ def generate_reviewed_response(prompt,discipline,):
 
     # 🚀 Request GPT review with tight limits
     review_completion = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o",
         messages=[{"role": "user", "content": review_prompt}],
         temperature=0,
         max_tokens=700,  # Trimmed to avoid Render crashes
@@ -278,9 +375,9 @@ This document was generated following a query submitted by {full_name}. Please f
     print(response.json())
     return response.status_code, response.json()
 
-@app.route("/generate", methods=["POST"])
-def generate_response():
-    print("📥 /generate route hit")
+@app.route("/generate_debug", methods=["POST"])
+def generate_debug():
+    print("📥 /generate_debug route hit")
     try:
         data = request.get_json()
         print("🔎 Payload received:", data)
@@ -306,17 +403,11 @@ def generate_response():
 
         matched_chunks = []
         for i in I[0]:
-            key = str(i)
-            if key in metadata and "chunk_file" in metadata[key]:
-                chunk_file = metadata[key]["chunk_file"]
-                file_path = f"data/accounting/{chunk_file}"
-                try:
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        matched_chunks.append(f.read().strip())
-                except FileNotFoundError:
-                    pass  # Silently skip missing chunk files
-            else:
-                pass  # Silently skip missing metadata entries
+            if i < len(merged_chunks):
+                chunk = merged_chunks[i]
+                # Enrich context with filename and tags
+                formatted = f"Source: {chunk['filename']}\nTags: {', '.join(chunk['tags'])}\n\n{chunk['text']}"
+                matched_chunks.append(formatted)
 
         context = "\n\n---\n\n".join(matched_chunks)
 
@@ -445,7 +536,7 @@ def generate_response():
     #doc.add_paragraph(query_text.strip())
 
     #divider = doc.add_paragraph()
-    #divider.add_run("────────────────────────────────────────────").font.size = Pt(10)
+ #divider.add_run("────────────────────────────────────────────").font.size = Pt(10)
 
     # Split answer into structured sections
     sections = re.split(r'^### (.*?)\n', answer, flags=re.MULTILINE)
@@ -455,7 +546,7 @@ def generate_response():
     for i, part in enumerate(sections):
         content = part.strip()
         if i == 0 and content:
-            content = re.sub(r'^\s*Enquirer Reply\s*', '', content, =re.IGNORECASE)
+            content = re.sub(r'^\s*Enquirer Reply\s*', '', content, flags=re.IGNORECASE)
             content = re.sub(r'^\s*Hello,\s*', '', content, flags=re.IGNORECASE)
             structured["Enquirer Reply"] = content
         elif i % 2 == 1:
